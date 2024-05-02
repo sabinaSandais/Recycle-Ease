@@ -1,0 +1,501 @@
+Address,Lat,Lon,Status,Status_Update_Time,Score
+"Albert Heijn, Praamplein 4A, 1431 CV Aalsmeer, Netherlands",52.2682473,4.7464845,1,2024-04-29 14:30:00,1
+"Albert Heijn, De Hoven 25, 7122 BJ Aalten, Netherlands",51.9271798,6.5794883,1,2024-04-29 14:30:00,1
+"Albert Heijn, Raadhuisweg 3, 1921 AA Castricum, Netherlands",52.5608401,4.7302568,1,2024-04-29 14:30:00,1
+"Albert Heijn, Makado-Center 41, 2951 EH Alblasserdam, Netherlands",51.8638572,4.6575937,1,2024-04-29 14:30:00,1
+"Kwakelkade, 1823 CK Alkmaar, Netherlands",52.6338626,4.7521844,1,2024-04-29 14:30:00,1
+"Albert Heijn, Botplein 15, 1317 SK Almere, Netherlands",52.3890952,5.2317157,1,2024-04-29 14:30:00,1
+"Juan Grisstraat 44, 1328 KA Almere, Netherlands",52.3719458,5.2658209,1,2024-04-29 14:30:00,1
+"Albert Heijn, Lavendelplantsoen 60, 1313 GA Almere, Netherlands",52.3822688,5.1987431,1,2024-04-29 14:30:00,1
+"Albert Heijn, Margaret Cavendishweg 95, 1349 BN Almere, Netherlands",52.3472859,5.3329662,1,2024-04-29 14:30:00,1
+"Albert Heijn, Markenlaan 3, 1355 BA Almere, Netherlands",52.3417762,5.2261934,1,2024-04-29 14:30:00,1
+"Watercipresstraat 15, 1326 CM Almere, Netherlands",52.3757691,5.2436112,1,2024-04-29 14:30:00,1
+"Albert Heijn, De Aarhof 61, 2406 BT Alphen aan den Rijn, Netherlands",52.1296104,4.6655263,1,2024-04-29 14:30:00,1
+"Albert Heijn, Ridderhof 2, 2402 EN Alphen aan den Rijn, Netherlands",52.1448897,4.6742198,1,2024-04-29 14:30:00,1
+"Albert Heijn, Euterpeplein 43, 3816 NR Amersfoort, Netherlands",52.1515763,5.4056544,1,2024-04-29 14:30:00,1
+"Hoofdstraat 45, 6436 CB Amstenrade, Netherlands",50.9414132,5.9235982,1,2024-04-29 14:30:00,1
+"Gelderlandplein, Albert Heijn XL, Gelderlandplein 47, 1082 KZ Amsterdam, Netherlands",52.3310249,4.8785321,1,2024-04-29 14:30:00,1
+"Gulden Winckelplantsoen 5, 1055 EK Amsterdam, Netherlands",52.3786063,4.8468234,1,2024-04-29 14:30:00,1
+"Albert Heijn, Jan van Galenstraat 87, 1056 BJ Amsterdam, Netherlands",52.3747276,4.8607837,1,2024-04-29 14:30:00,1
+"Albert Heijn, Johan Cruijff Boulevard 177, 1101 EJ Amsterdam, Netherlands",52.3130615,4.9457851,1,2024-04-29 14:30:00,1
+"Koningsplein 6, 1017 BB Amsterdam, Netherlands",52.3671752,4.8890496,1,2024-04-29 14:30:00,1
+"Albert Heijn, Leidseplein 31, 1017 PS Amsterdam, Netherlands",52.3633839,4.8820679,1,2024-04-29 14:30:00,1
+"Albert Heijn, Molenwijk 35, 1035 EG Amsterdam, Netherlands",52.4170661,4.8931066,1,2024-04-29 14:30:00,1
+"Albert Heijn, New Market 18, 1012 CR Amsterdam, Netherlands",52.3726884,4.8997302,1,2024-04-29 14:30:00,1
+"Nieuwpoortstraat, 1055 RZ Amsterdam, Netherlands",52.384099,4.8585887,1,2024-04-29 14:30:00,1
+"Osdorpplein, Albert Heijn XL, Osdorpplein 469, 1068 SZ Amsterdam, Netherlands",52.3591985,4.8028753,1,2024-04-29 14:30:00,1
+Parnassusweg 701 739 1077DG Amsterdam,52.37403,4.88969,1,2024-04-29 14:30:00,1
+"Albert Heijn, Pieter Calandlaan 212-A, 1069 LA Amsterdam, Netherlands",52.3521575,4.7994975,1,2024-04-29 14:30:00,1
+"Rietwijkerstraat 22-H, 1059 XA Amsterdam, Netherlands",52.3492845,4.8498366,1,2024-04-29 14:30:00,1
+"Sarphatistraat 141K, 1018 GD Amsterdam, Netherlands",52.36226,4.9123807,1,2024-04-29 14:30:00,1
+"Albert Heijn, Stadhouderskade 101, 1073 AW Amsterdam, Netherlands",52.3573336,4.8971131,1,2024-04-29 14:30:00,1
+"Albert Heijn, Utrechtsestraat 17, 1017 VH Amsterdam, Netherlands",52.365416,4.8978876,1,2024-04-29 14:30:00,1
+"Albert Heijn, Van Limburg Stirumstraat 44, 1051 BC Amsterdam, Netherlands",52.3836237,4.8760256,1,2024-04-29 14:30:00,1
+"Waterlandplein 255, 1024 LT Amsterdam, Netherlands",52.3928007,4.9554084,1,2024-04-29 14:30:00,1
+"Westermarkt 21, 1016 DJ Amsterdam, Netherlands",52.3738806,4.8839455,1,2024-04-29 14:30:00,1
+"Willem Kraanstraat 2, 1063 MG Amsterdam, Netherlands",52.3798557,4.823691,1,2024-04-29 14:30:00,1
+"Karspeldreef 1389, 1104 SE Amsterdam, Netherlands",52.3163248,4.9787603,1,2024-04-29 14:30:00,1
+"Molensluis, Albert Heijn, Doorlaat 1, 1761 AW Anna Paulowna, Netherlands",52.8617921,4.8325357,1,2024-04-29 14:30:00,1
+"De Eglantier, Albert Heijn, De Eglantier 234, 7329 DH Apeldoorn, Netherlands",52.1958123,6.0060026,1,2024-04-29 14:30:00,1
+"t Fort, Albert Heijn, Linie 189, 7325 DR Apeldoorn, Netherlands",52.217188,6.0030544,1,2024-04-29 14:30:00,1
+"Etos, Overdiep 1, 9902 DB Appingedam, Netherlands",53.3184139,6.8590418,1,2024-04-29 14:30:00,1
+"Albert Heijn, Vossenstraat 1, 6811 JL Arnhem, Netherlands",51.9803116,5.9053293,1,2024-04-29 14:30:00,1
+"Triade 14, 9401 ZH Assen, Netherlands",52.9976539,6.5604769,1,2024-04-29 14:30:00,1
+"Albert Heijn, Dorpsstraat 537A, 1566 BL Assendelft, Netherlands",52.4741639,4.747662,1,2024-04-29 14:30:00,1
+"Szydlowskiplein, 4571 EW Axel, Netherlands",51.2664654,3.9085786,1,2024-04-29 14:30:00,1
+"Burgemeester Kuntzelaan 35, 3771 EP Barneveld, Netherlands",52.1376505,5.5902534,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Heuvelplein 11, 5741 JH Beek en Donk, Netherlands",51.528775,5.6344756,1,2024-04-29 14:30:00,1
+"Albert Heijn, Weversstraat 3, 9411 NC Beilen, Netherlands",52.8605916,6.5161438,1,2024-04-29 14:30:00,1
+"Bennekom Centrum, Albert Heijn, Dorpsstraat 36, 6721 JL Bennekom, Netherlands",51.9983644,5.675278,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Raadhuisstraat 7, 5854 AX Nieuw Bergen, Netherlands",51.603055,6.0501055,1,2024-04-29 14:30:00,1
+"Albert Heijn, Breelaan 14, 1861 GE Bergen, Netherlands",52.6712225,4.7008787,1,2024-04-29 14:30:00,1
+"Albert Heijn, Hoofdstraat 35, 9531 AB Borger, Netherlands",52.9233491,6.7918251,1,2024-04-29 14:30:00,1
+"Albert Heijn, De Middend 250-252, 1611 KN Bovenkarspel, Netherlands",52.6979897,5.2342265,1,2024-04-29 14:30:00,1
+"Etos, Prins Hendrikstraat 62, 5281 CN Boxtel, Netherlands",51.5860618,5.3221188,1,2024-04-29 14:30:00,1
+"Anna van Burenstraat 24, 4811 BS Breda, Netherlands",51.5963567,4.7815987,1,2024-04-29 14:30:00,1
+"Albert Heijn, Ginnekenweg 46, 4818 JG Breda, Netherlands",51.5773949,4.7802626,1,2024-04-29 14:30:00,1
+"Albert Heijn, Haagdijk 108, 4811 TW Breda, Netherlands",51.5874392,4.768745,1,2024-04-29 14:30:00,1
+"Albert Heijn, Heksenwaag 2, 4823 JV Breda, Netherlands",51.6232677,4.7433727,1,2024-04-29 14:30:00,1
+"Albert Heijn, Pastoor van Spaandonkstraat 48, 4813 BS Breda, Netherlands",51.5783411,4.7394509,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Kerkstraat 40, 6441 BE Brunssum, Netherlands",50.9452717,5.971874,1,2024-04-29 14:30:00,1
+"Albert Heijn, Doctor Ant. Mathijsenstraat 20, 6021 CL Budel, Netherlands",51.2750187,5.5772027,1,2024-04-29 14:30:00,1
+"Albert Heijn, Van Hardenbroeklaan 3, 3981 EN Bunnik, Netherlands",52.0673635,5.1997417,1,2024-04-29 14:30:00,1
+"Albert Heijn, Burghseweg 73, 4328 LA Burgh-Haamstede, Netherlands",51.6921755,3.7359112,1,2024-04-29 14:30:00,1
+"Centrumpassage 27, 2903 HA Capelle aan den IJssel, Netherlands",51.9319126,4.589246,1,2024-04-29 14:30:00,1
+"Albert Heijn, Geesterduin 27, 1902 EJ Castricum, Netherlands",52.5508491,4.6744953,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Grotestraat 99, 5431 DJ Cuijk, Netherlands",51.7219191,5.8884235,1,2024-04-29 14:30:00,1
+"Gall & Gall, Smidstraat 70, 5431 BJ Cuijk, Netherlands",51.7296085,5.8735135,1,2024-04-29 14:30:00,1
+"Albert Heijn, Markt 69, 7701 GW Dedemsvaart, Netherlands",52.6014823,6.4563311,1,2024-04-29 14:30:00,1
+"Albert Heijn, Bastiaanpoort 7, 2611 MC Delft, Netherlands",52.0093532,4.3644714,1,2024-04-29 14:30:00,1
+"Albert Heijn, Choorstraat 35, 2611 JE Delft, Netherlands",52.0130927,4.3582842,1,2024-04-29 14:30:00,1
+"In de Hoven, Albert Heijn XL, Martinus Nijhofflaan 7, 2624 ER Delft, Netherlands",51.9963702,4.3530504,1,2024-04-29 14:30:00,1
+"Geldmaat, Willemstraat 26, 9934 BC Delfzijl, Netherlands",53.3327049,6.9286818,1,2024-04-29 14:30:00,1
+"Albert Heijn, Paduaweg 3, 3734 GG Zeist, Netherlands",52.139261,5.2406839,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Helmondseweg 65a, 5751 GB Deurne, Netherlands",51.462208,5.784692,1,2024-04-29 14:30:00,1
+"Albert Heijn, Wolfsberg 20, 5751 GX Deurne, Netherlands",51.4622843,5.7968554,1,2024-04-29 14:30:00,1
+"Albert Heijn, Leliestraat 47, 6942 XL Loil, Netherlands",51.9416728,6.1357767,1,2024-04-29 14:30:00,1
+"Albert Heijn, Houtsmastraat 150, 7002 KK Doetinchem, Netherlands",51.9734512,6.3157941,1,2024-04-29 14:30:00,1
+"Rozengaardseweg 18A, 7001 DP Doetinchem, Netherlands",51.9675428,6.2958871,1,2024-04-29 14:30:00,1
+"Albert Heijn, Zaagmolenpad 16, 7008 AJ Doetinchem, Netherlands",51.9703478,6.2725974,1,2024-04-29 14:30:00,1
+"Albert Heijn, Looiershof 1, 5104 HV Dongen, Netherlands",51.6252923,4.942502,1,2024-04-29 14:30:00,1
+"Albert Heijn, Dorpsstraat 25, 3941 JK Doorn, Netherlands",52.0346173,5.3442849,1,2024-04-29 14:30:00,1
+"Achterom 42, 3311 KC Dordrecht, Netherlands",51.8124378,4.6668522,1,2024-04-29 14:30:00,1
+"Promenade en Kaden, Albert Heijn, De Marke 33, 9203 DV Drachten, Netherlands",53.1054398,6.1006193,1,2024-04-29 14:30:00,1
+"Albert Heijn, Middelwyk 31, 9202 GN Drachten, Netherlands",53.1097163,6.1114557,1,2024-04-29 14:30:00,1
+"Polenplein 24a, 6665 CN Driel, Netherlands",51.9609487,5.8133709,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Grotestraat 164B, 5151 BP Drunen, Netherlands",51.6872283,5.1357443,1,2024-04-29 14:30:00,1
+"Albert Heijn, Mexicoplein 1, 5152 LC Drunen, Netherlands",51.6824071,5.1298235,1,2024-04-29 14:30:00,1
+"Gall & Gall, Brink 47, 7991 CJ Dwingeloo, Netherlands",52.8326699,6.3661391,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Clarastraat 2, 6102 CD Pey, Netherlands",51.0985873,5.888043,1,2024-04-29 14:30:00,1
+"Albert Heijn, Langemeerstraat 2b, 1135 JE Edam, Netherlands",52.5072507,5.0529753,1,2024-04-29 14:30:00,1
+"Ardèchelaan 5, 5627 EM Eindhoven, Netherlands",51.4886213,5.4406004,1,2024-04-29 14:30:00,1
+"Franz Leharplein 19, 5654 AZ Eindhoven, Netherlands",51.4231501,5.4626938,1,2024-04-29 14:30:00,1
+"Albert Heijn XL, Limburglaan 2, 5652 AA Eindhoven, Netherlands",51.4350075,5.4515908,1,2024-04-29 14:30:00,1
+"Albert Heijn, Meerzand 6, 5658 LJ Eindhoven, Netherlands",51.4429946,5.4093935,1,2024-04-29 14:30:00,1
+"Sint Petrus Canisiuslaan 43, 5645 GC Eindhoven, Netherlands",51.4278847,5.5096605,1,2024-04-29 14:30:00,1
+"Tarwelaan 70, 5632 KG Eindhoven, Netherlands",51.4769799,5.4931945,1,2024-04-29 14:30:00,1
+"Winkelcentrum WoensXL, Albert Heijn XL, Winkelcentrum Woensel 119, 5625 AG Eindhoven, Netherlands",51.4682235,5.4740767,1,2024-04-29 14:30:00,1
+"Geldmaat, Lange Nering 200, 8302 EZ Emmeloord, Netherlands",52.7110607,5.7629087,1,2024-04-29 14:30:00,1
+"Etos, Noord Esmarkerrondweg 421-4, 7533 BL Enschede, Netherlands",52.219442,6.9288663,1,2024-04-29 14:30:00,1
+"Albert Heijn, Rijnstraat 20, 7523 GG Enschede, Netherlands",52.2392717,6.8948563,1,2024-04-29 14:30:00,1
+"Albert Heijn, Veldhoflanden 2, 7542 LA Enschede, Netherlands",52.1936296,6.9009165,1,2024-04-29 14:30:00,1
+"Wesseler-nering, 7544 JL Enschede, Netherlands",52.1925101,6.8787801,1,2024-04-29 14:30:00,1
+"Albert Heijn, Wethouder Nijhuisstraat 164, 7545 NM Enschede, Netherlands",52.2130288,6.861793,1,2024-04-29 14:30:00,1
+"Albert Heijn, Zonstraat 28, 7521 HH Enschede, Netherlands",52.2287624,6.8592693,1,2024-04-29 14:30:00,1
+"Albert Heijn, Pastoor Heimerikxstraat 3, 7468 EB Wierden, Netherlands",52.292551,6.5775805,1,2024-04-29 14:30:00,1
+"Albert Heijn, Branderskamp 9, 3851 XV Ermelo, Netherlands",52.3017027,5.6316766,1,2024-04-29 14:30:00,1
+"Albert Heijn, Cruijgenstraat 3, 5469 BS Erp, Netherlands",51.6011319,5.6076309,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, De Klef 22, 6644 CT Beuningen, Netherlands",51.8700734,5.7403183,1,2024-04-29 14:30:00,1
+"Albert Heijn, Leeuwarderweg 8a, 8801 BV Franeker, Netherlands",53.187497,5.5505799,1,2024-04-29 14:30:00,1
+"Albert Heijn Prinses Máximaplein, Prinses Máximaplein 8, 4191 XT Geldermalsen, Netherlands",51.8866584,5.2994431,1,2024-04-29 14:30:00,1
+"Albert Heijn, Eindhovenseweg 40, 5662 AB Geldrop, Netherlands",51.4247752,5.5474609,1,2024-04-29 14:30:00,1
+"Albert Heijn, Laan van Tolkien 220, 5663 SC Geldrop, Netherlands",51.4133428,5.5429871,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Markt 101A, 6161 GN Geleen, Netherlands",50.9706977,5.8290943,1,2024-04-29 14:30:00,1
+"Albert Heijn, Kolveniershof 44, 4461 DB Goes, Netherlands",51.5030824,3.887308,1,2024-04-29 14:30:00,1
+"Albert Heijn, Westhavendijk 103, 4463 AD Goes, Netherlands",51.5104473,3.8904958,1,2024-04-29 14:30:00,1
+"Albert Heijn, De Hovel 19, 5051 NP Goirle, Netherlands",51.5212007,5.0697834,1,2024-04-29 14:30:00,1
+"Albert Heijn, Koningsschild 11, 5051 TT Goirle, Netherlands",51.5192259,5.0565514,1,2024-04-29 14:30:00,1
+"Albert Heijn, Weversplein 5, 7471 VS Goor, Netherlands",52.2313359,6.5851171,1,2024-04-29 14:30:00,1
+B. van Dijkesingel 53 2809RB Gouda,52.01667,4.70833,1,2024-04-29 14:30:00,1
+"Albert Heijn, Lekkenburg 3, 2804 XA Gouda, Netherlands",52.0320178,4.7043658,1,2024-04-29 14:30:00,1
+"Albert Heijn, Markt 50, 2801 JL Gouda, Netherlands",52.0121033,4.7099167,1,2024-04-29 14:30:00,1
+"Middenmolenplein 64, 2807 GZ Gouda, Netherlands",52.0115208,4.7434193,1,2024-04-29 14:30:00,1
+"Albert Heijn, Langestraat 5, 3295 BJ 's-Gravendeel, Netherlands",51.7786689,4.617124,1,2024-04-29 14:30:00,1
+"Albert Heijn, Amsterdamsestraat 9, 2587 CN The Hague, Netherlands",52.1118054,4.2877102,1,2024-04-29 14:30:00,1
+"Albert Heijn, Conradkade 67, 2517 BS The Hague, Netherlands",52.0806052,4.2846234,1,2024-04-29 14:30:00,1
+"Albert Heijn, De Savornin Lohmanplein 20, 2566 AC The Hague, Netherlands",52.066326,4.2453238,1,2024-04-29 14:30:00,1
+"Albert Heijn, Escamplaan 281, 2547 EA The Hague, Netherlands",52.0620902,4.2700917,1,2024-04-29 14:30:00,1
+"Albert Heijn, Fahrenheitstraat 709, 2561 DE The Hague, Netherlands",52.0802958,4.2679535,1,2024-04-29 14:30:00,1
+"Albert Heijn, Frederik Hendriklaan 80, 2582 BE The Hague, Netherlands",52.0942335,4.2772763,1,2024-04-29 14:30:00,1
+"Albert Heijn, Goeverneurplein 20, 2523 EC The Hague, Netherlands",52.0555477,4.3142656,1,2024-04-29 14:30:00,1
+"Albert Heijn, Grote Marktstraat 55A, 2511 BH The Hague, Netherlands",52.0765906,4.3130487,1,2024-04-29 14:30:00,1
+"Hildo Kroplaan 20, 2552 XS The Hague, Netherlands",52.0548804,4.2505367,1,2024-04-29 14:30:00,1
+"Albert Heijn, Hofweg 11, 2511 AA The Hague, Netherlands",52.0782743,4.3128443,1,2024-04-29 14:30:00,1
+"Albert Heijn, Keizerstraat 342, 2584 BP The Hague, Netherlands",52.1042267,4.2762462,1,2024-04-29 14:30:00,1
+"Koningin Julianaplein, 2595 AA The Hague, Netherlands",52.0815252,4.3233129,1,2024-04-29 14:30:00,1
+"Lorentzplein, Albert Heijn, Lorentzplein 76, 2522 EH The Hague, Netherlands",52.0609837,4.328559,1,2024-04-29 14:30:00,1
+"Albert Heijn, Stationsplein 75, 2515 BX The Hague, Netherlands",52.070692,4.3222606,1,2024-04-29 14:30:00,1
+"Ekoplaza, Stationsweg 36;16-30, 2515 BN The Hague, Netherlands",52.0736714,4.3187987,1,2024-04-29 14:30:00,1
+"Albert Heijn, Steijnlaan 106, 2571 RH The Hague, Netherlands",52.0682756,4.2898381,1,2024-04-29 14:30:00,1
+"Sumatrastraat 8, 2585 CS The Hague, Netherlands",52.091943,4.3043086,1,2024-04-29 14:30:00,1
+"Albert Heijn, Theresiastraat 182, 2593 AV The Hague, Netherlands",52.0860188,4.3362981,1,2024-04-29 14:30:00,1
+"Albert Heijn, Torenstraat 27, 2513 BN The Hague, Netherlands",52.0777507,4.3058926,1,2024-04-29 14:30:00,1
+"Albert Heijn, Turfmarkt 103, 2511 DP The Hague, Netherlands",52.0789229,4.3207167,1,2024-04-29 14:30:00,1
+"Albert Heijn, Valkenboslaan 173E, 2563 CK The Hague, Netherlands",52.072543,4.275068,1,2024-04-29 14:30:00,1
+"Albert Heijn, Willem de Zwijgerlaan 51, 2582 EG The Hague, Netherlands",52.0908707,4.2738102,1,2024-04-29 14:30:00,1
+"Albert Heijn, Oudelandstraat 16, 2691 CE 's-Gravenzande, Netherlands",52.0003396,4.1641856,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Spoorlaan 5, 6562 AL Groesbeek, Netherlands",51.7774269,5.9351854,1,2024-04-29 14:30:00,1
+"Albert Heijn, Akerkhof 1, 9712 BA Groningen, Netherlands",53.2168297,6.5637245,1,2024-04-29 14:30:00,1
+"Albert Heijn, B.S.F. von Suttnerstraat 1, 9728 WZ Groningen, Netherlands",53.187585,6.5548363,1,2024-04-29 14:30:00,1
+"Floresplein 13, 9715 HH Groningen, Netherlands",53.2318331,6.5696415,1,2024-04-29 14:30:00,1
+"Albert Heijn, Gedempte Zuiderdiep 14, 9711 HG Groningen, Netherlands",53.2153885,6.5702582,1,2024-04-29 14:30:00,1
+"Albert Heijn, Nieuwe Ebbingestraat 73, 9712 NG Groningen, Netherlands",53.2246121,6.5626811,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Kloosterstraat 70, 5971 BD Grubbenvorst, Netherlands",51.4203388,6.1453361,1,2024-04-29 14:30:00,1
+"Clothildestraat 551, 2033 LW Haarlem, Netherlands",52.3705537,4.6472093,1,2024-04-29 14:30:00,1
+"Albert Heijn, Marsmanplein 222, 2025 DV Haarlem, Netherlands",52.4170393,4.6471962,1,2024-04-29 14:30:00,1
+"Albert Heijn, Soendaplein 18, 2022 BA Haarlem, Netherlands",52.3984379,4.6451453,1,2024-04-29 14:30:00,1
+"Albert Heijn Heerschap, Linsenhof 5, 6081 GM Haelen, Netherlands",51.234638,5.9599683,1,2024-04-29 14:30:00,1
+"Albert Heijn, Vogelenzang 95, 4661 JD Bergen op Zoom, Netherlands",51.522579,4.2728666,1,2024-04-29 14:30:00,1
+"Albert Heijn, Vogelenzang 95, 4661 JD Bergen op Zoom, Netherlands",51.522579,4.2728666,1,2024-04-29 14:30:00,1
+"Albert Heijn, Sportlaan 5, 8084 VA 't Harde, Netherlands",52.4150363,5.8821308,1,2024-04-29 14:30:00,1
+"Albert Heijn, Van Wevelinckhovenplein 60, 7772 VJ Hardenberg, Netherlands",52.576872,6.6195977,1,2024-04-29 14:30:00,1
+"Albert Heijn, Krommekamp 115, 3848 DP Harderwijk, Netherlands",52.3494148,5.648464,1,2024-04-29 14:30:00,1
+"Albert Heijn, Dorpsstraat 36, 7971 CS Havelte, Netherlands",52.7708043,6.2352513,1,2024-04-29 14:30:00,1
+Europassage 21 1966WH Heemskerk,52.51108,4.67165,1,2024-04-29 14:30:00,1
+"De Waterwegen, Albert Heijn, Rijksstraatweg 40, 1964 LJ Heemskerk, Netherlands",52.5054609,4.6559954,1,2024-04-29 14:30:00,1
+"Albert Heijn, Zandvoortselaan 169, 2106 AM Heemstede, Netherlands",52.3597414,4.6044708,1,2024-04-29 14:30:00,1
+"Albert Heijn, Nico de Regtplein 5, 3218 XW Heenvliet, Netherlands",51.8621144,4.2355823,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Bautscherweg 43, 6418 EJ Heerlen, Netherlands",50.867444,6.0063404,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Sittarderweg 152, 6412 CM Heerlen, Netherlands",50.9009301,5.9716562,1,2024-04-29 14:30:00,1
+"Albert Heijn, 't Dorp 40, 5384 MC Heesch, Netherlands",51.7359173,5.5303507,1,2024-04-29 14:30:00,1
+"Albert Heijn, 't Loo 61, 1851 HT Heiloo, Netherlands",52.605732,4.7120929,1,2024-04-29 14:30:00,1
+"Albert Heijn, Dorpsstraat 48b, 7447 CT Hellendoorn, Netherlands",52.3905005,6.448769,1,2024-04-29 14:30:00,1
+"Struytse Hoeck 91a, 3224 HA Hellevoetsluis, Netherlands",51.83063,4.1453442,1,2024-04-29 14:30:00,1
+"Albert Heijn, De Plaetse 87, 5708 ZK Helmond, Netherlands",51.4597071,5.6108063,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Dijksestraat 131, 5701 AL Helmond, Netherlands",51.4883026,5.6676428,1,2024-04-29 14:30:00,1
+Janssen en Fritsenplein 11 5706DZ Helmond,51.48167,5.66111,1,2024-04-29 14:30:00,1
+"PLUS, Sophiapromenade 14, 3344 PM Hendrik-Ido-Ambacht, Netherlands",51.8351599,4.6468024,1,2024-04-29 14:30:00,1
+"Albert Heijn, Uitslagsweg 95-1, 7556 LN Hengelo, Netherlands",52.2767094,6.7922748,1,2024-04-29 14:30:00,1
+"Albert Heijn, Willem de Mérodestraat 10, 7552 WZ Hengelo, Netherlands",52.2626675,6.8208042,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Craenberglaan 13, 6075 HC Herkenbosch, Netherlands",51.1555541,6.0639723,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Groene Kruisstraat 8, 6049 BW Merum, Netherlands",51.1797164,5.9633265,1,2024-04-29 14:30:00,1
+"Albert Heijn, Gruttostraat 23, 5212 VM 's-Hertogenbosch, Netherlands",51.7009327,5.3023027,1,2024-04-29 14:30:00,1
+"Albert Heijn, Lokerenpassage 25, 5235 KR 's-Hertogenbosch, Netherlands",51.7261794,5.3084674,1,2024-04-29 14:30:00,1
+"Albert Heijn Heerschap, Sint Antoniusstraat 1a, 6093 GA Heythuysen, Netherlands",51.2506709,5.8997217,1,2024-04-29 14:30:00,1
+"Gall & Gall, Gelderstraat 52, 5081 AV Hilvarenbeek, Netherlands",51.482616,5.1378091,1,2024-04-29 14:30:00,1
+"Bodemanstraat 9B, 1216 AH Hilversum, Netherlands",52.2214634,5.1552988,1,2024-04-29 14:30:00,1
+"Gijsbrecht van Amstelstraat 177, 1214 AX Hilversum, Netherlands",52.2154341,5.1679827,1,2024-04-29 14:30:00,1
+"Albert Heijn, Kapittelweg 105, 1216 HX Hilversum, Netherlands",52.2161337,5.1407587,1,2024-04-29 14:30:00,1
+"Albert Heijn, Oosterengweg 70, 1212 CP Hilversum, Netherlands",52.2188907,5.1950414,1,2024-04-29 14:30:00,1
+"Albert Heijn, Prins Hendrikstraat 382, 3151 AW Hook of Holland, Netherlands",51.9777455,4.1286673,1,2024-04-29 14:30:00,1
+"Albert Heijn, Larenseweg 102D, 7451 EN Holten, Netherlands",52.2712327,6.4058376,1,2024-04-29 14:30:00,1
+"Dijkstraat 102, 2675 AZ Honselersdijk, Netherlands",52.0085085,4.2291052,1,2024-04-29 14:30:00,1
+"Albert Heijn, Genderenplein 13, 2134 DP Hoofddorp, Netherlands",52.306975,4.638628,1,2024-04-29 14:30:00,1
+"Albert Heijn, Muiderbos 140, 2134 SV Hoofddorp, Netherlands",52.3146925,4.6595284,1,2024-04-29 14:30:00,1
+"Albert Heijn, Gorecht-Oost 6a, 9603 AA Hoogezand, Netherlands",53.1566156,6.756279,1,2024-04-29 14:30:00,1
+"Albert Heijn, Streekweg 210, 1616 AN Hoogkarspel, Netherlands",52.6940185,5.1777257,1,2024-04-29 14:30:00,1
+"Albert Heijn, Kraailandhof 106, 3828 JM Amersfoort, Netherlands",52.187146,5.3755141,1,2024-04-29 14:30:00,1
+"Winkelcentrum De Kersenboogerd, Albert Heijn, Aagje Dekenplein 29, 1628 NX Hoorn, Netherlands",52.6515605,5.0861291,1,2024-04-29 14:30:00,1
+"De Huesmolen, Albert Heijn, De Huesmolen 2, 1625 HZ Hoorn, Netherlands",52.6575558,5.055742,1,2024-04-29 14:30:00,1
+"Grote Noord, 1621 KL Hoorn, Netherlands",52.6413824,5.0561433,1,2024-04-29 14:30:00,1
+"Albert Heijn, Stan Kentonhof 88, 1628 TR Hoorn, Netherlands",52.6532823,5.0985484,1,2024-04-29 14:30:00,1
+"Albert Heijn, Van Dedemstraat 19, 1624 NN Hoorn, Netherlands",52.6461882,5.0515436,1,2024-04-29 14:30:00,1
+"Albert Heijn, Steenstraat 11, 5961 ET Horst, Netherlands",51.4531167,6.0527265,1,2024-04-29 14:30:00,1
+"Albert Heijn, Cardo 12, 3995 XM Houten, Netherlands",52.0170652,5.1781647,1,2024-04-29 14:30:00,1
+"Albert Heijn, Lindenlaan 10, 1271 BA Huizen, Netherlands",52.2971621,5.2350408,1,2024-04-29 14:30:00,1
+"Albert Heijn, Oostermeent-Zuid 48, 1274 SV Huizen, Netherlands",52.2944747,5.2630588,1,2024-04-29 14:30:00,1
+"Albert Heijn XL, Stationsplein 17, 4561 GC Hulst, Netherlands",51.2765956,4.0444992,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Begoniastraat 12, 6014 BJ Ittervoort, Netherlands",51.1711444,5.819108,1,2024-04-29 14:30:00,1
+"Albert Heijn, Sinnebuorren 28, 8501 CB Joure, Netherlands",52.9666954,5.7987658,1,2024-04-29 14:30:00,1
+"Albert Heijn, Schoolweg 15, 1787 AV Julianadorp, Netherlands",52.8983247,4.7538929,1,2024-04-29 14:30:00,1
+"Kruidvat, De Arend 2, 8265 NK Kampen, Netherlands",52.5332805,5.9164137,1,2024-04-29 14:30:00,1
+"Albert Heijn XL, Zeilmakerstraat 2, 2222 AA Katwijk, Netherlands",52.202395,4.4274224,1,2024-04-29 14:30:00,1
+"Albert Heijn, Hertogenlaan 29, 6461 BT Kerkrade, Netherlands",50.8692725,6.0692164,1,2024-04-29 14:30:00,1
+"Albert Heijn, Einsteinstraat 103, 1433 KJ Aalsmeer, Netherlands",52.2340092,4.7492455,1,2024-04-29 14:30:00,1
+"Dorpsstraat, 1121 BZ Landsmeer, Netherlands",52.4308004,4.913976,1,2024-04-29 14:30:00,1
+"Albert Heijn, Zevenend 2, 1251 RN Laren, Netherlands",52.2543087,5.2266306,1,2024-04-29 14:30:00,1
+"Albert Heijn, Bilgaardpassage 1, 8918 HR Leeuwarden, Netherlands",53.2153064,5.7928137,1,2024-04-29 14:30:00,1
+"Albert Heijn, Tesselschadestraat 23, 8913 HA Leeuwarden, Netherlands",53.1985995,5.7827195,1,2024-04-29 14:30:00,1
+"Albert Heijn, Winkelhof 29, 2353 TS Leiderdorp, Netherlands",52.1631062,4.5325065,1,2024-04-29 14:30:00,1
+"Albert Heijn, Ranonkellaan 1, 8245 HE Lelystad, Netherlands",52.4901846,5.4395236,1,2024-04-29 14:30:00,1
+"Albert Heijn, Schoolstraat 12, 8531 JW Lemmer, Netherlands",52.8457084,5.7101395,1,2024-04-29 14:30:00,1
+"Albert Heijn XL, Oranje Marieplein 8, 6663 RL Nijmegen, Netherlands",51.8645346,5.853789,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Oude Molen 2, 5757 AZ Liessel, Netherlands",51.4157871,5.8195027,1,2024-04-29 14:30:00,1
+"Albert Heijn, Vuurbaak 1, 1906 BS Castricum, Netherlands",52.57124,4.695703,1,2024-04-29 14:30:00,1
+"Blokhuis 67, 2161 EV Lisse, Netherlands",52.2613616,4.5597571,1,2024-04-29 14:30:00,1
+"Albert Heijn, Oud-Loosdrechtsedijk 182, 1231 NG Loosdrecht, Netherlands",52.2070192,5.0819583,1,2024-04-29 14:30:00,1
+"Albert Heijn, Bisonspoor 1078, 3605 KJ Maarssen, Netherlands",52.1346972,5.0306543,1,2024-04-29 14:30:00,1
+"Geldmaat, Doctor Plesmanlaan 138, 3601 DE Maarssen, Netherlands",52.1439001,5.0446449,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Masadastraat 51, 6222 DZ Maastricht, Netherlands",50.865115,5.71105,1,2024-04-29 14:30:00,1
+"Rijksweg 62A, 6228 XZ Maastricht, Netherlands",50.8280614,5.7287975,1,2024-04-29 14:30:00,1
+"Albert Heijn, Boxenring 40A, 1156 DL Marken, Netherlands",52.4561143,5.1052613,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Tongerseweg 57A-02, 6213 GA Maastricht, Netherlands",50.8431724,5.6777415,1,2024-04-29 14:30:00,1
+"Albert Heijn, Wendtsteinweg 64, 9363 AR Marum, Netherlands",53.1442996,6.2691107,1,2024-04-29 14:30:00,1
+"Albert Heijn, Overleek 1, 1671 GD Medemblik, Netherlands",52.7661983,5.1011482,1,2024-04-29 14:30:00,1
+"Markt 26, 6074 BB Melick, Netherlands",51.1574208,6.0135254,1,2024-04-29 14:30:00,1
+"Albert Heijn, Grote Akkerstraat 1, 7941 BB Meppel, Netherlands",52.6981016,6.1889453,1,2024-04-29 14:30:00,1
+"Gedempt Kanaal 99, 3241 DB Middelharnis, Netherlands",51.7608858,4.1554457,1,2024-04-29 14:30:00,1
+"Albert Heijn, Rijperweg 50, 1462 ME Middenbeemster, Netherlands",52.5489601,4.9102093,1,2024-04-29 14:30:00,1
+"Albert Heijn, Leicester 13, 3641 LH Mijdrecht, Netherlands",52.2123489,4.8625556,1,2024-04-29 14:30:00,1
+"Albert Heijn, 't Spil 37, 1141 SG Monnickendam, Netherlands",52.4501394,5.036488,1,2024-04-29 14:30:00,1
+"Albert Heijn, Boslaan 40, 3417 AB Montfoort, Netherlands",52.0472267,4.9513674,1,2024-04-29 14:30:00,1
+"Ganker 3a, 1654 JH Benningbroek, Netherlands",52.7037959,5.056116,1,2024-04-29 14:30:00,1
+"Hoogzandveld, Albert Heijn, Winkelcentrum Hoogzandveld 2, 3434 EE Nieuwegein, Netherlands",52.0055567,5.0855685,1,2024-04-29 14:30:00,1
+"Reigerhof 150, 2914 KE Nieuwerkerk aan den IJssel, Netherlands",51.9681662,4.6189243,1,2024-04-29 14:30:00,1
+Frieswijkstraat 72 3862BM Nijkerk Gld,52.22,5.48611,1,2024-04-29 14:30:00,1
+"Groenestraat, 6531 HH Nijmegen, Netherlands",51.8311995,5.8486811,1,2024-04-29 14:30:00,1
+"Albert Heijn, Meijhorst 7001, 6537 EN Nijmegen, Netherlands",51.8114291,5.7998871,1,2024-04-29 14:30:00,1
+"Albert Heijn XL, Zwanenveld 5505, 6538 TZ Nijmegen, Netherlands",51.8232599,5.7983029,1,2024-04-29 14:30:00,1
+"Albert Heijn, Spoelerstraat 6, 7442 AA Nijverdal, Netherlands",52.3641914,6.4658753,1,2024-04-29 14:30:00,1
+"Albert Heijn, Dorpsstraat 520, 1723 HG Noord-Scharwoude, Netherlands",52.698636,4.8106678,1,2024-04-29 14:30:00,1
+"Albert Heijn, Bonnikeplein 2, 2201 XA Noordwijk, Netherlands",52.2298318,4.4410513,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Vincent van Goghstraat 37, 5671 GW Nuenen, Netherlands",51.4749676,5.5511787,1,2024-04-29 14:30:00,1
+"Albert Heijn, Wethouder Van der Veldenweg 8, 3281 AN Numansdorp, Netherlands",51.729712,4.4399291,1,2024-04-29 14:30:00,1
+"Albert Heijn, Dorpsstraat 119, 1713 HD Obdam, Netherlands",52.6752634,4.9078541,1,2024-04-29 14:30:00,1
+"Winkelcentrum De Kempenaerstraat, Albert Heijn, Terweeplein 3, 2341 CZ Oegstgeest, Netherlands",52.1770212,4.4687044,1,2024-04-29 14:30:00,1
+"Albert Heijn, Haven Noord 1, 7731 GZ Ommen, Netherlands",52.5253273,6.4255165,1,2024-04-29 14:30:00,1
+"Albert Heijn, Pastoor Bruggemanlaan 1, 6861 GR Oosterbeek, Netherlands",51.9876711,5.8432554,1,2024-04-29 14:30:00,1
+"Albert Heijn, Keiweg 11, 4901 JD Oosterhout, Netherlands",51.64313,4.8606743,1,2024-04-29 14:30:00,1
+"Geldmaat, Zuiderhout 103, 4904 AW Oosterhout, Netherlands",51.6276586,4.8583168,1,2024-04-29 14:30:00,1
+"Albert Heijn, Stipeplein 14, 8431 WE Oosterwolde, Netherlands",52.9900265,6.2899738,1,2024-04-29 14:30:00,1
+"Gall & Gall, Denekamperstraat 5A, 7631 AA Ootmarsum, Netherlands",52.4100882,6.898389,1,2024-04-29 14:30:00,1
+"Albert Heijn, Swaenenstate 4, 4043 KE Opheusden, Netherlands",51.934191,5.6274437,1,2024-04-29 14:30:00,1
+"Albert Heijn, Sterrebos 2, 5344 AM Oss, Netherlands",51.7544617,5.5115507,1,2024-04-29 14:30:00,1
+"Beijersehof 19, 3262 VR Oud-Beijerland, Netherlands",51.8204596,4.4048772,1,2024-04-29 14:30:00,1
+"Albert Heijn, Dorpstienden 14, 3253 AS Ouddorp, Netherlands",51.809525,3.93415,1,2024-04-29 14:30:00,1
+"Albert Heijn, Wagenhoek 9, 4731 JB Oudenbosch, Netherlands",51.5893415,4.5247064,1,2024-04-29 14:30:00,1
+"Albert Heijn, Bloemendaalseweg 240, 2051 GM Overveen, Netherlands",52.390682,4.6088354,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Kepringelehof 3, 5981 CP Panningen, Netherlands",51.3294072,5.9834075,1,2024-04-29 14:30:00,1
+"Ackershof, 2641 DZ Pijnacker, Netherlands",52.019189,4.4326457,1,2024-04-29 14:30:00,1
+"Albert Heijn, Hoefbladplein 4, 2643 KD Pijnacker, Netherlands",52.0041027,4.4432056,1,2024-04-29 14:30:00,1
+"Albert Heijn, Beeksestraat 55, 4841 GB Prinsenbeek, Netherlands",51.6042898,4.717125,1,2024-04-29 14:30:00,1
+"Albert Heijn, John F. Kennedyplein 73, 1443 EB Purmerend, Netherlands",52.5091711,4.9681874,1,2024-04-29 14:30:00,1
+"Albert Heijn, Van Damplein 13, 1448 NB Purmerend, Netherlands",52.4971573,4.938851,1,2024-04-29 14:30:00,1
+"Albert Heijn, Voorthuizerstraat 2, 3881 SH Putten, Netherlands",52.2602031,5.6099717,1,2024-04-29 14:30:00,1
+"Het Anker 7, 4941 RG Raamsdonksveer, Netherlands",51.6962554,4.872943,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Markt 6, 5541 EA Reusel, Netherlands",51.3621803,5.1615958,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Pater Claretstraat 1a, 5953 LC Reuver, Netherlands",51.2841529,6.0913515,1,2024-04-29 14:30:00,1
+"Albert Heijn, M.W. van de Waalstraat 2, 3911 LP Rhenen, Netherlands",51.9578472,5.5688245,1,2024-04-29 14:30:00,1
+"Albert Heijn, Hof van Portland 12, 3162 WJ Rhoon, Netherlands",51.857935,4.4720426,1,2024-04-29 14:30:00,1
+"Julianastraat 37, 3161 AJ Rhoon, Netherlands",51.8565494,4.4184858,1,2024-04-29 14:30:00,1
+"Dillenburgplein 5, 2983 CB Ridderkerk, Netherlands",51.8839712,4.6054744,1,2024-04-29 14:30:00,1
+"Ridderhof 25, 2981 ET Ridderkerk, Netherlands",51.8700574,4.5988479,1,2024-04-29 14:30:00,1
+"Albert Heijn, Wilhelminaplein 8, 5121 ES Rijen, Netherlands",51.5884317,4.9183379,1,2024-04-29 14:30:00,1
+"Bogaardplein 22, 2284 DM Rijswijk, Netherlands",52.0352641,4.3153733,1,2024-04-29 14:30:00,1
+"Albert Heijn, Grolloërstraat 5, 9451 KA Rolde, Netherlands",52.9859983,6.6487393,1,2024-04-29 14:30:00,1
+"Albert Heijn, Tolbergcentrum 160, 4708 HK Roosendaal, Netherlands",51.513824,4.4387701,1,2024-04-29 14:30:00,1
+"Albert Heijn, Van Beethovenlaan 4, 4702 JS Roosendaal, Netherlands",51.535326,4.4666372,1,2024-04-29 14:30:00,1
+"Bergweg 228, 3035 BP Rotterdam, Netherlands",51.9344771,4.4750858,1,2024-04-29 14:30:00,1
+"Albert Heijn, Coolsingel 47, 3012 AA Rotterdam, Netherlands",51.9231275,4.4778373,1,2024-04-29 14:30:00,1
+"Goudsesingel 217A, 3031 EJ Rotterdam, Netherlands",51.9248276,4.4877691,1,2024-04-29 14:30:00,1
+"Albert Heijn, Grotemarkt 98, 3011 PA Rotterdam, Netherlands",51.9202016,4.4872081,1,2024-04-29 14:30:00,1
+"Hesseplaats 13, 3069 EA Rotterdam, Netherlands",51.9627553,4.554041,1,2024-04-29 14:30:00,1
+"Albert Heijn, Marinus Bolkplein 4, 3067 AK Rotterdam, Netherlands",51.9418993,4.5476034,1,2024-04-29 14:30:00,1
+"Albert Heijn, Mathenesserplein 76, 3022 LD Rotterdam, Netherlands",51.9178008,4.4448847,1,2024-04-29 14:30:00,1
+"Paul Krugerstraat 220, 3072 GS Rotterdam, Netherlands",51.8988679,4.4967993,1,2024-04-29 14:30:00,1
+"Poolsterstraat 36, 3067 LX Rotterdam, Netherlands",51.9494775,4.5544638,1,2024-04-29 14:30:00,1
+"Albert Heijn, Vierhavensstraat 147, 3029 BB Rotterdam, Netherlands",51.9095285,4.4362514,1,2024-04-29 14:30:00,1
+"Zuidplein 60H, 3083 CW Rotterdam, Netherlands",51.8884552,4.4896016,1,2024-04-29 14:30:00,1
+"Albert Heijn, Molenweg 71, 3181 AT Rozenburg, Netherlands",51.9044396,4.2503091,1,2024-04-29 14:30:00,1
+"ING, Westkade 48, 4551 BV Sas van Gent, Netherlands",51.2246558,3.8011571,1,2024-04-29 14:30:00,1
+"Albert Heijn, Kapelanieplein 23, 5374 BX Schaijk, Netherlands",51.745501,5.6331815,1,2024-04-29 14:30:00,1
+"Lange Kerkstraat 34, 3111 NP Schiedam, Netherlands",51.9180696,4.4002844,1,2024-04-29 14:30:00,1
+"Molenstraat 20, 5482 GB Schijndel, Netherlands",51.6161409,5.4434251,1,2024-04-29 14:30:00,1
+"Albert Heijn, Cellebroedersstraat 1, 2871 AS Schoonhoven, Netherlands",51.9467013,4.8586918,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Pastoor Vullinghsstraat 53, 5975 AP Sevenum, Netherlands",51.4132205,6.0365826,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, De Merret 1, 5845 DA Sint Anthonis, Netherlands",51.6266943,5.8799194,1,2024-04-29 14:30:00,1
+"Markt 18, 5492 AB Sint-Oedenrode, Netherlands",51.5643484,5.4601336,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Industriestraat 19, 6135 KE Sittard, Netherlands",51.0004293,5.8452779,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Kerkstraat 30d, 5711 GW Someren, Netherlands",51.3796362,5.7151705,1,2024-04-29 14:30:00,1
+"Albert Heijn, Dorpsweg 40, 3245 VC Sommelsdijk, Netherlands",51.7558498,4.1507974,1,2024-04-29 14:30:00,1
+"Wuiver, 1715 EV Spanbroek, Netherlands",52.7023865,4.9477244,1,2024-04-29 14:30:00,1
+"Albert Heijn, Nieuwstraat 370, 3201 EG Spijkenisse, Netherlands",51.8495426,4.3314411,1,2024-04-29 14:30:00,1
+"Albert Heijn, Het Schar 3, 8332 CL Steenwijk, Netherlands",52.7930026,6.1307153,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Industrieweg 19, 6171 CN Stein, Netherlands",50.9781251,5.7665168,1,2024-04-29 14:30:00,1
+"Albert Heijn, De Poort 10, 8255 AA Dronten, Netherlands",52.5716915,5.6438435,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Kerkstraat 42, 5931 NN Tegelen, Netherlands",51.3412748,6.1398434,1,2024-04-29 14:30:00,1
+"Albert Heijn, Terreplein 4, 4691 AA Tholen, Netherlands",51.5363026,4.2263293,1,2024-04-29 14:30:00,1
+"Albert Heijn, Molenstraatje 2, 4001 CB Tiel, Netherlands",51.8881744,5.4290089,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Boerenovenweg 3, 5865 BV Tienray, Netherlands",51.4921913,6.0893022,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Boerenovenweg 3, 5865 BV Tienray, Netherlands",51.4921913,6.0893022,1,2024-04-29 14:30:00,1
+"Albert Heijn, Dalempromenade 40, 5035 KL Tilburg, Netherlands",51.5825162,4.983758,1,2024-04-29 14:30:00,1
+"Piusplein 34, 5038 WN Tilburg, Netherlands",51.5544293,5.0906914,1,2024-04-29 14:30:00,1
+"Anna van Renesseplein 1, 1911 KT Uitgeest, Netherlands",52.5211085,4.7017507,1,2024-04-29 14:30:00,1
+"Amsterdamsestraatweg 367A, 3551 CK Utrecht, Netherlands",52.1042883,5.0940861,1,2024-04-29 14:30:00,1
+"Winkelcentrum Rokkade, Slagerij Abraham, Doornburglaan 2, 3554 EP Utrecht, Netherlands",52.1134436,5.0893817,1,2024-04-29 14:30:00,1
+"Ella Fitzgeraldplein 6, 3543 EP Utrecht, Netherlands",52.1013967,5.0442771,1,2024-04-29 14:30:00,1
+"Albert Heijn, Hondsrug 60, 3524 BR Utrecht, Netherlands",52.0649205,5.1381599,1,2024-04-29 14:30:00,1
+"Albert Heijn, Oudenoord 1, 3513 EG Utrecht, Netherlands",52.0970883,5.1133806,1,2024-04-29 14:30:00,1
+Potterstraat [Neude] 1 3512TA Utrecht,52.09083,5.12222,1,2024-04-29 14:30:00,1
+"Houtzagersstraat 6, 8171 CW Vaassen, Netherlands",52.2878017,5.9692709,1,2024-04-29 14:30:00,1
+"Albert Heijn, Beneden Oosterdiep 165, 9645 LN Veendam, Netherlands",53.1119037,6.8848681,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, De Boekt 20, 5463 HT Veghel, Netherlands",51.6090951,5.5467198,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Markt 10D, 5941 GA Velden, Netherlands",51.4149613,6.1655182,1,2024-04-29 14:30:00,1
+"Albert Heijn, Mira 25, 5505 AR Veldhoven, Netherlands",51.4126228,5.3973334,1,2024-04-29 14:30:00,1
+"Jumbo, Wieënpassage 40, 5921 GD Venlo, Netherlands",51.3682376,6.149932,1,2024-04-29 14:30:00,1
+"Albert Heijn, Doctor Wiardi Beckmansingel 10, 3132 CX Vlaardingen, Netherlands",51.9094339,4.3161845,1,2024-04-29 14:30:00,1
+"Hair & Beauty Company, Hindersteinlaan 25, 3451 EV Vleuten, Netherlands",52.1055861,5.0146193,1,2024-04-29 14:30:00,1
+"Albert Heijn, Middenburcht 14, 3452 MT Vleuten, Netherlands",52.0929439,5.0130454,1,2024-04-29 14:30:00,1
+"Oliemaat, 5251 AB Vlijmen, Netherlands",51.6945964,5.2210909,1,2024-04-29 14:30:00,1
+"Albert Heijn, De Stient 4, 1132 BE Volendam, Netherlands",52.4977602,5.053047,1,2024-04-29 14:30:00,1
+"Albert Heijn, Zeestraat 21-1, 1131 ZD Volendam, Netherlands",52.4937923,5.0724307,1,2024-04-29 14:30:00,1
+"Jacoba van Beierenhof 29, 2215 JK Voorhout, Netherlands",52.2229429,4.485687,1,2024-04-29 14:30:00,1
+"Albert Heijn, Baron van Hövellplein 2, 5261 GH Vught, Netherlands",51.6577906,5.3001949,1,2024-04-29 14:30:00,1
+"Albert Heijn, Koningin Wilhelminaplein 42, 2741 EB Waddinxveen, Netherlands",52.0495966,4.6523872,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Nobelweg 2A, 6706 GA Wageningen, Netherlands",51.9749762,5.6765833,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Lepelstraat 1, 5446 AG Wanroij, Netherlands",51.6551259,5.820001,1,2024-04-29 14:30:00,1
+"Albert Heijn Jan Linders, Burgemeester de Weichshavenstraat 1, 5861 AX Wanssum, Netherlands",51.5366624,6.0795792,1,2024-04-29 14:30:00,1
+"Albert Heijn, Stadhoudersplein 4, 2241 EB Wassenaar, Netherlands",52.14456,4.4036996,1,2024-04-29 14:30:00,1
+"Boshoverweg 59, 6002 AM Weert, Netherlands",51.2620143,5.686057,1,2024-04-29 14:30:00,1
+"Albert Heijn Heerschap, Muntpassage 49, 6001 GL Weert, Netherlands",51.2549964,5.7049447,1,2024-04-29 14:30:00,1
+"Albert Heijn Heerschap, Oranjeplein 225, 6006 CX Weert, Netherlands",51.243427,5.7078667,1,2024-04-29 14:30:00,1
+"Albert Heijn, Edeseweg 118, 6733 AH Wekerom, Netherlands",52.1123591,5.717059,1,2024-04-29 14:30:00,1
+"Albert Heijn, Dorpsstraat 14, 1693 AG Wervershoof, Netherlands",52.7273446,5.1521577,1,2024-04-29 14:30:00,1
+"Albert Heijn, Anjelierstraat 3, 7641 CD Wierden, Netherlands",52.3611762,6.5964227,1,2024-04-29 14:30:00,1
+"Albert Heijn, Terpstraat 21, 1771 AC Wieringerwerf, Netherlands",52.8524306,5.0232711,1,2024-04-29 14:30:00,1
+"Albert Heijn, Europaplein 85, 6602 GV Wijchen, Netherlands",51.8070032,5.7278094,1,2024-04-29 14:30:00,1
+"Albert Heijn, Beertsterweg 1D, 9672 BE Winschoten, Netherlands",53.1440793,7.0460189,1,2024-04-29 14:30:00,1
+"Albert Heijn, Obergon 2, 9951 HL Winsum, Netherlands",53.3348383,6.5156538,1,2024-04-29 14:30:00,1
+"Albert Heijn, Kerkstraat 15, 1687 AL Wognum, Netherlands",52.6816297,5.0239725,1,2024-04-29 14:30:00,1
+"Albert Heijn, Van Harenstraat 66, 8471 JG Wolvega, Netherlands",52.8751166,5.9971448,1,2024-04-29 14:30:00,1
+"Albert Heijn, Marktplein 9, 1521 HS Wormerveer, Netherlands",52.4945765,4.7856292,1,2024-04-29 14:30:00,1
+"Albert Heijn, Oude Torenstraat 37, 4401 EH Yerseke, Netherlands",51.4914311,4.0493553,1,2024-04-29 14:30:00,1
+"Albert Heijn, Ebbehout 29, 1507 EA Zaandam, Netherlands",52.4385026,4.8126164,1,2024-04-29 14:30:00,1
+"Albert Heijn XL, Vrieschgroenstraat 5, 1503 MC Zaandam, Netherlands",52.4442882,4.8371694,1,2024-04-29 14:30:00,1
+"Gall & Gall, Steenweg 8a, 5301 HL Zaltbommel, Netherlands",51.8119926,5.2412124,1,2024-04-29 14:30:00,1
+"Rijksweg-Noord 28, 4735 TX Zegge, Netherlands",51.5452015,4.5065131,1,2024-04-29 14:30:00,1
+"De Clomp 3104, 3704 KA Zeist, Netherlands",52.0833207,5.2204287,1,2024-04-29 14:30:00,1
+"Albert Heijn, Emmaplein 2, 3701 DA Zeist, Netherlands",52.086752,5.240085,1,2024-04-29 14:30:00,1
+"Albert Heijn, Lange Nobelstraat 28, 4301 HE Zierikzee, Netherlands",51.6517678,3.9204263,1,2024-04-29 14:30:00,1
+"Winkelcentrum De Leyens, Albert Heijn, Broekwegzijde 150, 2725 PE Zoetermeer, Netherlands",52.0712071,4.4944326,1,2024-04-29 14:30:00,1
+"Winkelcentrum Meerzicht, Middelwaard 93, 2716 CW Zoetermeer, Netherlands",52.0564833,4.4691097,1,2024-04-29 14:30:00,1
+"Dunkin', Stadshart, Westwaarts 41, 2711 AD Zoetermeer, Netherlands",52.0610143,4.4868489,1,2024-04-29 14:30:00,1
+"Albert Heijn, Polsbroek 77, 7201 BX Zutphen, Netherlands",52.13985,6.2027381,1,2024-04-29 14:30:00,1
+"Albert Heijn, Dorpsstraat 200, 1689 GH Hoorn, Netherlands",52.6683947,5.0753174,1,2024-04-29 14:30:00,1
+"Albert Heijn, Hollandse cirkel 36, 1689 XE Hoorn, Netherlands",52.6713012,5.0916548,1,2024-04-29 14:30:00,1
+"Albert Heijn, Hof van Holland 30, 3332 EH Zwijndrecht, Netherlands",51.8229936,4.6526132,1,2024-04-29 14:30:00,1
+"Albert Heijn, Katwolderplein 1, 8011 BT Zwolle, Netherlands",52.5136356,6.0860734,1,2024-04-29 14:30:00,1
+"Dirk, Plantageweg 31, 2951 GN Alblasserdam, Netherlands",51.8625565,4.6620742,1,2024-04-29 14:30:00,1
+"Dirk, Binnenhof, 7608 KJ Almelo, Netherlands",52.3788855,6.6763007,1,2024-04-29 14:30:00,1
+"Dirk, Wezelstraat 2, 1338 BG Almere, Netherlands",52.3861676,5.2695227,1,2024-04-29 14:30:00,1
+"Dirk, Korte Promenade, 1315 HN Almere, Netherlands",52.37103,5.2168624,1,2024-04-29 14:30:00,1
+"Dirk, Wibra, Groningerstraat 166, 3812 EG Amersfoort, Netherlands",52.1582684,5.3786149,1,2024-04-29 14:30:00,1
+"Dirk, Kostverlorenhof, 1183 HK Amstelveen, Netherlands",52.3129749,4.8772639,1,2024-04-29 14:30:00,1
+"Dirk, Bilderdijkstraat 126-H 1053 KZ Amsterdam",52.37403,4.88969,1,2024-04-29 14:30:00,1
+"Dirk, Sierplein 6, 1065 LM Amsterdam, Netherlands",52.3557885,4.8260223,1,2024-04-29 14:30:00,1
+"Dirk, Mercatorplein, Mercatorplein 10-H, 1057 CB Amsterdam, Netherlands",52.369482,4.8517204,1,2024-04-29 14:30:00,1
+"Dirk, Tussenmeer 1A 1068 EX Amsterdam",52.3585777,4.8022317,1,2024-04-29 14:30:00,1
+"Dirk, Meeuwenlaan 76, Amsterdam, Netherlands",52.3850097,4.9180316,1,2024-04-29 14:30:00,1
+"Dirk, Sloterkade 110-127, Amsterdam, Netherlands",52.3522224,4.8524708,1,2024-04-29 14:30:00,1
+"Dirk, Trekpleister, Marie Heinekenplein 25, 1072 MH Amsterdam, Netherlands",52.3573376,4.8921278,1,2024-04-29 14:30:00,1
+"Dirk, Bos en Lommerplein 1, 1055 AD Amsterdam, Netherlands",52.3779627,4.8475802,1,2024-04-29 14:30:00,1
+"Dirk, Trekpleister, Europaboulevard 19, 1079 PC Amsterdam, Netherlands",52.3394788,4.8927971,1,2024-04-29 14:30:00,1
+"Dirk, Tweede Hugo de Grootstraat, 1052 EC Amsterdam, Netherlands",52.3741547,4.8747924,1,2024-04-29 14:30:00,1
+"Dirk, Warmoesstraat 157, 1012 JC Amsterdam, Netherlands",52.3733918,4.8953654,1,2024-04-29 14:30:00,1
+"Dirk, t Fort, Dirk, Linie 313, 7325 DS Apeldoorn, Netherlands",52.2165013,6.0039689,1,2024-04-29 14:30:00,1
+"Dirk, Kruidvat, Kanaal Noord 17, 7311 PK Apeldoorn, Netherlands",52.2105487,5.975731,1,2024-04-29 14:30:00,1
+"Dirk, Triade, 9401 CT Assen, Netherlands",52.9975618,6.5603876,1,2024-04-29 14:30:00,1
+"Dirk, Muziekplein 5, 2992 GH Barendrecht, Netherlands",51.854168,4.522746,1,2024-04-29 14:30:00,1
+"Dirk, Noordgeest 14-18 4614 KT Bergen op Zoom",51.495,4.29167,1,2024-04-29 14:30:00,1
+"Dirk, Amsteldiep, 2904 EH Capelle aan den IJssel, Netherlands",51.9361875,4.6029477,1,2024-04-29 14:30:00,1
+"Dirk, Hessenweg 88, 3731 JL De Bilt, Netherlands",52.1086162,5.1806542,1,2024-04-29 14:30:00,1
+"Dirk, Kortestraat 5, 7491 AX Delden, Netherlands",52.2619383,6.7130727,1,2024-04-29 14:30:00,1
+"Dirk, Troelstralaan 77-85, 2624 ET Delft, Netherlands",51.9972169,4.3509566,1,2024-04-29 14:30:00,1
+"Dirk, Winkelcentrum Leidschenveen, Trekpleister, Simon Carmiggelthof 258, 2492 JN The Hague, Netherlands",52.0650074,4.402373,1,2024-04-29 14:30:00,1
+"Dirk, Torenstraat 132A, 2513 BW The Hague, Netherlands",52.0779827,4.304985,1,2024-04-29 14:30:00,1
+"Dirk, Broederenplein 5, 7411 RL Deventer, Netherlands",52.2548368,6.1563518,1,2024-04-29 14:30:00,1
+"Dirk, Dreef 150, 7414 EJ Deventer, Netherlands",52.2740423,6.1522392,1,2024-04-29 14:30:00,1
+"Dirk, Brouwersdijk 30, 3314 GR Dordrecht, Netherlands",51.8031908,4.6584482,1,2024-04-29 14:30:00,1
+"Dirk, Cornelis de Wittstraat 84, 3311 GD Dordrecht, Netherlands",51.8106463,4.6688355,1,2024-04-29 14:30:00,1
+"Dirk, Promenade en Kaden, Dirk, De Marke 51, 9203 DV Drachten, Netherlands",53.1044093,6.100525,1,2024-04-29 14:30:00,1
+"Dirk, Willinkplein 38, 7811 DD Emmen, Netherlands",52.7815293,6.8928393,1,2024-04-29 14:30:00,1
+"Dirk, Oogstplein 26, 7545 HP Enschede, Netherlands",52.2121967,6.8649856,1,2024-04-29 14:30:00,1
+"Dirk, Rijnstraat 84, 7523 GH Enschede, Netherlands",52.2394572,6.8926299,1,2024-04-29 14:30:00,1
+"Dirk, Schoonhout 115, 4872 MC Etten-Leur, Netherlands",51.5748718,4.6525783,1,2024-04-29 14:30:00,1
+"Dirk, Molenvang 8, 4876 BW Etten-Leur, Netherlands",51.5670784,4.6364286,1,2024-04-29 14:30:00,1
+"Dirk, Beukenhof 1, 4462 EN Goes, Netherlands",51.4930535,3.8931754,1,2024-04-29 14:30:00,1
+"Dirk, Knardijk West 10, 3841 LA Harderwijk, Netherlands",52.3524166,5.6329876,1,2024-04-29 14:30:00,1
+"Dirk, Den Bogerd 24, 3371 AM Hardinxveld-Giessendam, Netherlands",51.8263498,4.8329399,1,2024-04-29 14:30:00,1
+"Dirk, Sophiapromenade 78, 3344 PM Hendrik-Ido-Ambacht, Netherlands",51.8348655,4.6456982,1,2024-04-29 14:30:00,1
+"Dirk, Straatsburg 14, 7559 NM Hengelo, Netherlands",52.2949099,6.8060484,1,2024-04-29 14:30:00,1
+"Dirk, Markenburg 97, 2135 DS Hoofddorp, Netherlands",52.3016516,4.6644327,1,2024-04-29 14:30:00,1
+"Dirk, Centrum, Burgemeester van Stamplein, 2132 TS Hoofddorp, Netherlands",52.3006835,4.6940162,1,2024-04-29 14:30:00,1
+"Dirk, Aalburgplein 63, 2134 DM Hoofddorp, Netherlands",52.3063678,4.6394831,1,2024-04-29 14:30:00,1
+"Dirk, Trekpleister, Akkerwinde 3, 3191 RA Hoogvliet, Netherlands",51.8596579,4.3751807,1,2024-04-29 14:30:00,1
+"Dirk, Binnenban 265, 3191 CG Hoogvliet, Netherlands",51.8654364,4.3563246,1,2024-04-29 14:30:00,1
+"Dirk, Kruidvat, Visserijkade 2, 2225 TV Katwijk, Netherlands",52.2047068,4.407512,1,2024-04-29 14:30:00,1
+"Dirk, Asterstraat 146, 2223 VL Katwijk, Netherlands",52.186162,4.4219224,1,2024-04-29 14:30:00,1
+"Dirk, Raadhuisplein 87, 2922 AJ Krimpen aan den IJssel, Netherlands",51.91468,4.5882508,1,2024-04-29 14:30:00,1
+"Dirk, Trekpleister, Langegracht 3, 2312 NV Leiden, Netherlands",52.1630804,4.490518,1,2024-04-29 14:30:00,1
+"Dirk, Stevensbloem 173, 2331 JC Leiden, Netherlands",52.1516737,4.4524826,1,2024-04-29 14:30:00,1
+"Dirk, De Kopermolen, Kopermolen 2, 2317 PB Leiden, Netherlands",52.1762129,4.5062095,1,2024-04-29 14:30:00,1
+"Dirk, Winkelhof 58, 2353 TV Leiderdorp, Netherlands",52.162823,4.5315314,1,2024-04-29 14:30:00,1
+"Dirk, Burgemeester Sweenslaan 15f, 2262 BN Leidschendam, Netherlands",52.0907022,4.3908177,1,2024-04-29 14:30:00,1
+"Dirk, Maximaplein 90, 3832 JS Leusden, Netherlands",52.1184205,5.4090731,1,2024-04-29 14:30:00,1
+"Dirk, Heereweg 246, 2161 BR Lisse, Netherlands",52.2590668,4.5529595,1,2024-04-29 14:30:00,1
+"Dirk, Maarssen, Stichtse Vecht, Netherlands",52.13917,5.04167,1,2024-04-29 14:30:00,1
+"Dirk, Bisonspoor 1116, 3605 KN Maarssen, Netherlands",52.1343968,5.0292111,1,2024-04-29 14:30:00,1
+"Dirk, Grotestraat 8, 7475 AX Markelo, Netherlands",52.2353044,6.4942401,1,2024-04-29 14:30:00,1
+"Dirk, De Tuinen 66, 2671 NX Naaldwijk, Netherlands",51.9927543,4.2055555,1,2024-04-29 14:30:00,1
+"Dirk, Nieuw-Vennep, Haarlemmermeer, Netherlands",52.26417,4.63056,1,2024-04-29 14:30:00,1
+"Dirk, Markt 54, 3431 LB Nieuwegein, Netherlands",52.0278595,5.0815295,1,2024-04-29 14:30:00,1
+"Dirk, Raadhuisstraat 9, 2201 MA Noordwijk, Netherlands",52.2348637,4.4473162,1,2024-04-29 14:30:00,1
+"Dirk, Dorpsringweg 2, 2211 ED Noordwijk, Netherlands",52.2627159,4.4937546,1,2024-04-29 14:30:00,1
+"Dirk van den Broek, Hannie Schaftplein 1, 1511 VT Oostzaan, Netherlands",52.441549,4.8758403,1,2024-04-29 14:30:00,1
+"Dirk, Vierwiekenplein, 3262 AN Oud-Beijerland, Netherlands",51.8274609,4.4102693,1,2024-04-29 14:30:00,1
+"Dirk, Oud Gastel, Halderberge, Netherlands",51.58667,4.45972,1,2024-04-29 14:30:00,1
+"Dirk, De Meerkreuk, Trekpleister, Meerkreuk 4, 2377 VA Oude Wetering, Netherlands",52.2065781,4.643597,1,2024-04-29 14:30:00,1
+"Dirk, Professor Mulderslaan 11, 4731 BR Oudenbosch, Netherlands",51.5887772,4.544132,1,2024-04-29 14:30:00,1
+"Dirk, Ackershof 79, 2641 BL Pijnacker, Netherlands",52.0186302,4.4309244,1,2024-04-29 14:30:00,1
+"Dirk, John F. Kennedyplein 33, 1443 EA Purmerend, Netherlands",52.5090534,4.9696502,1,2024-04-29 14:30:00,1
+"Dirk, Molenhof 10, 8102 EX Raalte, Netherlands",52.3868501,6.2765467,1,2024-04-29 14:30:00,1
+"Dirk, Trekpleister, Vechtstraat 1A, 2987 CX Ridderkerk, Netherlands",51.8932992,4.5801814,1,2024-04-29 14:30:00,1
+"Dirk, Hogepad 1-60, 7462 TA Rijssen, Netherlands",52.3065375,6.5182019,1,2024-04-29 14:30:00,1
+"Dirk, Laan van Henegouwen 170, 4701 CP Roosendaal, Netherlands",51.5261697,4.4602658,1,2024-04-29 14:30:00,1
+"Dirk, Queens Casino, 1e Middellandstraat 115-119, 3021 BD Rotterdam, Netherlands",51.9186286,4.459677,1,2024-04-29 14:30:00,1
+"Dirk, Pinkstraat 6, 3028 XX Rotterdam, Netherlands",51.9180951,4.4180579,1,2024-04-29 14:30:00,1
+"Dirk, Walenburgerweg, 3039 AJ Rotterdam, Netherlands",51.9266259,4.4629272,1,2024-04-29 14:30:00,1
+"Dirk, Goudsesingel, 3031 EJ Rotterdam, Netherlands",51.9246459,4.4875729,1,2024-04-29 14:30:00,1
+"Dirk, Bergweg 91, 3037 ED Rotterdam, Netherlands",51.9386434,4.4792884,1,2024-04-29 14:30:00,1
+"Dirk, Jan Steenstraat, 3042 AL Rotterdam, Netherlands",51.9362404,4.4286602,1,2024-04-29 14:30:00,1
+"Dirk, Hellevoetstraat, 3081 NP Rotterdam, Netherlands",51.8954913,4.4869957,1,2024-04-29 14:30:00,1
+"Dirk, Schiedamseweg 204, 3025 AJ Rotterdam, Netherlands",51.9112209,4.4390386,1,2024-04-29 14:30:00,1
+"Dirk, Prinsenplein 50, 3078 GX Rotterdam, Netherlands",51.8911394,4.5521412,1,2024-04-29 14:30:00,1
+"Dirk, Keizerswaard 58, 3078 AM Rotterdam, Netherlands",51.8867666,4.5484052,1,2024-04-29 14:30:00,1
+"Dirk, Dirk van der Broek, Plein 1953 31, 3086 ED Rotterdam, Netherlands",51.8741565,4.4684437,1,2024-04-29 14:30:00,1
+"Dirk, Binnenrotte 77A, 3011 HB Rotterdam, Netherlands",51.9232625,4.4839043,1,2024-04-29 14:30:00,1
+"Dirk, Nieuwe Binnenweg 24-30, 3015 BA Rotterdam, Netherlands",51.9164072,4.4706905,1,2024-04-29 14:30:00,1
+"Dirk, Zwart Janstraat 41A, 3035 AL Rotterdam, Netherlands",51.9331022,4.4790897,1,2024-04-29 14:30:00,1
+"Dirk, Wasbeekerlaan 63, 2171 AE Sassenheim, Netherlands",52.2164613,4.5143882,1,2024-04-29 14:30:00,1
+"Dirk, Trekpleister, Broersveld 68, 3111 LJ Schiedam, Netherlands",51.9156738,4.4012863,1,2024-04-29 14:30:00,1
+"Dirk, Laan van Bol'Es 13, 3122 AE Schiedam, Netherlands",51.9282844,4.3726893,1,2024-04-29 14:30:00,1
+"Dirk, Trekpleister, Fazantplein 3, 3362 BA Sliedrecht, Netherlands",51.8232502,4.7905462,1,2024-04-29 14:30:00,1
+"Dirk, Dirck III, Rozemarijndonk 33, 3206 PM Spijkenisse, Netherlands",51.8283975,4.3267345,1,2024-04-29 14:30:00,1
+"Dirk, Damstraat 27, 3201 DA Spijkenisse, Netherlands",51.8511346,4.3317966,1,2024-04-29 14:30:00,1
+"Dirk, Dorpsstraat 14, 4711 NG St. Willebrord, Netherlands",51.5456267,4.5920915,1,2024-04-29 14:30:00,1
+"Dirk, Essenlaan 2, 2461 DH Ter Aar, Netherlands",52.1666125,4.7083998,1,2024-04-29 14:30:00,1
+"Dirk, Zambesidreef 181, 3564 CB Utrecht, Netherlands",52.1206873,5.1094347,1,2024-04-29 14:30:00,1
+"Dirk, Winkelcentrum Overvecht, Dirk, Roelantdreef 265, 3562 KK Utrecht, Netherlands",52.1139578,5.1100403,1,2024-04-29 14:30:00,1
+"Dirk, Vasco da Gamalaan 1-5, 3526 ER Utrecht, Netherlands",52.0663137,5.0977731,1,2024-04-29 14:30:00,1
+"Dirk, Gedempte Biersloot 7, 3131 HJ Vlaardingen, Netherlands",51.911977,4.3427889,1,2024-04-29 14:30:00,1
+"Dirk, Doctor Wiardi Beckmansingel 3, 3132 CL Vlaardingen, Netherlands",51.9103111,4.3179322,1,2024-04-29 14:30:00,1
+"Dirk, Trekpleister, Hindersteinlaan 2, 3451 EZ Vleuten, Netherlands",52.1062867,5.0130845,1,2024-04-29 14:30:00,1
+"Dirk, Hyacintenstraat 14, 1131 HW Volendam, Netherlands",52.5001332,5.0744249,1,2024-04-29 14:30:00,1
+"Dirk, Koningin Julianalaan 4, 2251 EA Voorschoten, Netherlands",52.1247678,4.4449301,1,2024-04-29 14:30:00,1
+"Dirk, Promenade 5, 2741 NL Waddinxveen, Netherlands",52.0414915,4.6508829,1,2024-04-29 14:30:00,1
+"Dirk, Bakker van Maanen, Starrenburglaan 47, 2241 NB Wassenaar, Netherlands",52.1478352,4.4010137,1,2024-04-29 14:30:00,1
+"Dirk, Behouden Haven 7, 1506 VA Zaandam, Netherlands",52.4430698,4.8198504,1,2024-04-29 14:30:00,1
+"Dirk, Molenstraat 1, 4761 CJ Zevenbergen, Netherlands",51.6444243,4.6056673,1,2024-04-29 14:30:00,1
+"Dirk, Schepenenveld 46, 2722 BR Zoetermeer, Netherlands",52.0575959,4.5077423,1,2024-04-29 14:30:00,1
+"Dirk, Dennenlaan 19, 1161 CK Zwanenburg, Netherlands",52.3798516,4.7515327,1,2024-04-29 14:30:00,1
+"Jumbo, Ophelialaan 124, 1431 HN Aalsmeer, Netherlands",52.264417,4.7624334,1,2024-04-29 14:30:00,1
+"Jumbo, Hortensialaan 2, 5701 WN Helmond, Netherlands",51.4817706,5.6753278,1,2024-04-29 14:30:00,1
+"Jumbo, Admiraal de Ruyterstraat 10, 7681 AS Vroomshoop, Netherlands",52.458193,6.563718,1,2024-04-29 14:30:00,1
+"Jumbo, Peurssensstraat 21, 4527 BK Aardenburg, Netherlands",51.275006,3.4446015,1,2024-04-29 14:30:00,1
+"Jumbo Muiderwaard, Muiderwaard 416, 1824 XT Alkmaar, Netherlands",52.645601,4.7494922,1,2024-04-29 14:30:00,1
+"Jumbo, J. Naberstraat, Somervaart, 7421 ET Deventer, Netherlands",52.2426117,6.2247813,1,2024-04-29 14:30:00,1
+"Jumbo, Paardenmarkt 2, 2611 PA Delft, Netherlands",52.0164048,4.3593596,1,2024-04-29 14:30:00,1
+"Jumbo, Bornerbroeksestraat 79, 7601 BD Almelo, Netherlands",52.3498138,6.6605431,1,2024-04-29 14:30:00,1
+"Jumbo, Geinplein, 1316 GK Almere, Netherlands",52.3856189,5.2238598,1,2024-04-29 14:30:00,1
+"Jumbo, Buitenmere, Detroitpad 1, 1334 KB Almere, Netherlands",52.3953936,5.2749483,1,2024-04-29 14:30:00,1
+"Jumbo, Jaagmeent 250, 1356 AZ Almere, Netherlands",52.3366939,5.2318837,1,2024-04-29 14:30:00,1
