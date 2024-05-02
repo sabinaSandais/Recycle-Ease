@@ -12,7 +12,10 @@ const MapComponent = () => {
   useEffect(() => {
     if (!mapRef.current) {
       const mapInstance = L.map("map").setView([52.3737, 4.8963], 13);
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {}).addTo(mapInstance);
+      L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {},
+      ).addTo(mapInstance);
       mapRef.current = mapInstance;
       setIsLoading(false);
     }
@@ -27,14 +30,13 @@ const MapComponent = () => {
   const handleLocationError = (error) => {
     setError(error.message);
     setIsLoading(false);
-    console.error("Error getting user location:", error);
   };
 
   const showUserLocation = (position) => {
     if (!mapRef.current) return;
 
     const { latitude, longitude } = position.coords;
-    
+
     mapRef.current.setView([latitude, longitude], 14);
     setIsLoading(false);
   };
@@ -44,12 +46,11 @@ const MapComponent = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         showUserLocation,
-        handleLocationError
+        handleLocationError,
       );
     } else {
       setError("Geolocation is not supported by this browser.");
       setIsLoading(false);
-      console.error("Geolocation is not supported by this browser.");
     }
   }, []);
 
