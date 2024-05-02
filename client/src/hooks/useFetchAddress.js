@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const useFetchAddress = () => {
   const [error, setError] = useState(null);
-  const apiUrl =` https://nominatim.openstreetmap.org/search?format=json&q=`;
+  const apiUrl = " https://nominatim.openstreetmap.org/search?format=json&q=";
 
   const fetchAddress = async (inputValue) => {
     try {
