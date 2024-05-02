@@ -2,6 +2,7 @@
   position: relative;
   width: 500px;
   margin: 20px auto;
+  z-index: 1000;
 }
 
 .address-search input {
