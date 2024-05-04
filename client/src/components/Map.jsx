@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import AddressSearch from "./SearchBar";
+import { useLocation } from "./LocationContext";
 import "./Map.css";
 
 const MapComponent = () => {
   const mapRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { selectedLocation, setLocation } = useLocation();
 
   useEffect(() => {
     if (!mapRef.current) {
@@ -41,7 +43,14 @@ const MapComponent = () => {
     setIsLoading(false);
   };
 
-  // Ask user for their location when the component mounts
+  useEffect(() => {
+    if (selectedLocation) {
+      const { lat, lon } = selectedLocation;
+      mapRef.current.setView([lat, lon], 14);
+      setLocation(null);
+    }
+  }, [selectedLocation]);
+
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
