@@ -1,38 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SearchBar.css";
 import useFetchAddress from "../hooks/useFetchAddress";
+import { useLocation } from "./LocationContext";
 
 const AddressSearch = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const [selectedLocation, setSelectedLocation] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  const { setLocation, selectedLocation } = useLocation();
   const { fetchAddress } = useFetchAddress();
 
-  const handleSearch = async (event) => {
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      if (query.length > 2 && !selectedLocation) {
+        setIsLoading(true);
+        try {
+          const data = await fetchAddress(query);
+          setResults(data);
+        } catch (error) {
+          setError(error.message);
+        } finally {
+          setIsLoading(false);
+        }
+      }
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [query, fetchAddress]);
+
+  const handleSearch = (event) => {
     const inputValue = event.target.value;
     setQuery(inputValue);
     setResults([]);
-    setSelectedLocation(null);
     setError(null);
-
-    if (inputValue.length > 2) {
-      setIsLoading(true);
-      try {
-        const data = await fetchAddress(inputValue);
-        setResults(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    }
   };
 
   const handleSelect = (result) => {
-    setSelectedLocation(result);
+    setLocation(result);
     setQuery(result.display_name);
     setResults([]);
   };
@@ -56,15 +61,6 @@ const AddressSearch = () => {
             </li>
           ))}
         </ul>
-      )}
-      {selectedLocation && (
-        <div className="location-info">
-          <p>Selected Location:</p>
-          <p>{selectedLocation.display_name}</p>
-          <p>
-            Coordinates: {selectedLocation.lat}, {selectedLocation.lon}
-          </p>
-        </div>
       )}
     </div>
   );
