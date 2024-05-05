@@ -4,14 +4,41 @@ import "leaflet/dist/leaflet.css";
 import AddressSearch from "./SearchBar";
 import { useLocation } from "./LocationContext";
 import "./Map.css";
+import useFetch from "../hooks/useFetch.js";
+import MachineDetail from "./MachineDetail.jsx";
+
 
 const MapComponent = () => {
   const mapRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { selectedLocation, setLocation } = useLocation();
+  const [markers, setMarkers] = useState([]);
+  const [selectedMachine, setSelectedMachine] = useState(null);
+  const [isPinClicked, setIsPinClicked] = useState(false);
 
+  const { error: machinesError, performFetch: fetchMachines } =
+   useFetch("/machines", (response) => {
+    if (machinesError) {
+      setError(machinesError);
+      setIsLoading(false);
+      return;
+    }
+    setMarkers([]);
+    response.result.forEach(machine => {
+      const { lat, lon } = machine.location;
+      let iconUrl = machine.state === 1 ? "/Map_pin_icon_green.svg" : "/map-marker.svg";
+      let icon = L.icon({ iconUrl });
+      const marker = L.marker([lat, lon], { icon }).addTo(mapRef.current);
+      marker.on("click", () => {
+        setSelectedMachine(machine); 
+        handleIsPinClicked();
+      });
+      setMarkers(prevMarkers => [...prevMarkers, marker]);
+    });
+  });
   useEffect(() => {
+    fetchMachines();
     if (!mapRef.current) {
       const mapInstance = L.map("map").setView([52.3737, 4.8963], 13);
       L.tileLayer(
@@ -28,6 +55,15 @@ const MapComponent = () => {
       }
     };
   }, []);
+
+  const handleIsPinClicked = () => {
+      setIsPinClicked(true);
+  }
+
+  const handleCloseMachineDetail = () => {
+    setSelectedMachine(null);
+    setIsPinClicked(false);
+  };
 
   const handleLocationError = (error) => {
     setError(error.message);
@@ -63,12 +99,21 @@ const MapComponent = () => {
     }
   }, []);
 
+
+
   return (
     <div>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       <div id="map" className="map-container">
         <AddressSearch />
+        {selectedMachine && (
+          <MachineDetail 
+            content={selectedMachine} 
+            onClose={handleCloseMachineDetail} 
+            className={isPinClicked ? "pin-clicked" : ""}
+          />
+        )}
       </div>
     </div>
   );
