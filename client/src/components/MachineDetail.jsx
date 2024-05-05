@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types"; 
-import './MachineDetail.css';
+import "./MachineDetail.css";
 
 const MachineDetail = ({ content, onClose , className}) => {
-  const statusClassName = content.status === 1 ? 'open' : 'closed';
+  const statusClassName = content.status === 1 ? "open" : "closed";
   return (
     <div className={`custom-popup ${className}`}>
       <button className="close-btn" onClick={onClose}>X</button>

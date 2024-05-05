@@ -13,7 +13,6 @@ const MapComponent = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { selectedLocation, setLocation } = useLocation();
-  const [markers, setMarkers] = useState([]);
   const [selectedMachine, setSelectedMachine] = useState(null);
   const [isPinClicked, setIsPinClicked] = useState(false);
 
@@ -24,7 +23,6 @@ const MapComponent = () => {
       setIsLoading(false);
       return;
     }
-    setMarkers([]);
     response.result.forEach(machine => {
       const { lat, lon } = machine.location;
       let iconUrl = machine.state === 1 ? "/Map_pin_icon_green.svg" : "/map-marker.svg";
@@ -34,7 +32,6 @@ const MapComponent = () => {
         setSelectedMachine(machine); 
         handleIsPinClicked();
       });
-      setMarkers(prevMarkers => [...prevMarkers, marker]);
     });
   });
   useEffect(() => {
