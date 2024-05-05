@@ -7,7 +7,6 @@ import "./Map.css";
 import useFetch from "../hooks/useFetch.js";
 import MachineDetail from "./MachineDetail.jsx";
 
-
 const MapComponent = () => {
   const mapRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,24 +15,27 @@ const MapComponent = () => {
   const [selectedMachine, setSelectedMachine] = useState(null);
   const [isPinClicked, setIsPinClicked] = useState(false);
 
-  const { error: machinesError, performFetch: fetchMachines } =
-   useFetch("/machines", (response) => {
-    if (machinesError) {
-      setError(machinesError);
-      setIsLoading(false);
-      return;
-    }
-    response.result.forEach(machine => {
-      const { lat, lon } = machine.location;
-      let iconUrl = machine.state === 1 ? "/Map_pin_icon_green.svg" : "/map-marker.svg";
-      let icon = L.icon({ iconUrl });
-      const marker = L.marker([lat, lon], { icon }).addTo(mapRef.current);
-      marker.on("click", () => {
-        setSelectedMachine(machine); 
-        handleIsPinClicked();
+  const { error: machinesError, performFetch: fetchMachines } = useFetch(
+    "/machines",
+    (response) => {
+      if (machinesError) {
+        setError(machinesError);
+        setIsLoading(false);
+        return;
+      }
+      response.result.forEach((machine) => {
+        const { lat, lon } = machine.location;
+        let iconUrl =
+          machine.state === 1 ? "/Map_pin_icon_green.svg" : "/map-marker.svg";
+        let icon = L.icon({ iconUrl });
+        const marker = L.marker([lat, lon], { icon }).addTo(mapRef.current);
+        marker.on("click", () => {
+          setSelectedMachine(machine);
+          handleIsPinClicked();
+        });
       });
-    });
-  });
+    },
+  );
   useEffect(() => {
     fetchMachines();
     if (!mapRef.current) {
@@ -54,8 +56,8 @@ const MapComponent = () => {
   }, []);
 
   const handleIsPinClicked = () => {
-      setIsPinClicked(true);
-  }
+    setIsPinClicked(true);
+  };
 
   const handleCloseMachineDetail = () => {
     setSelectedMachine(null);
@@ -96,8 +98,6 @@ const MapComponent = () => {
     }
   }, []);
 
-
-
   return (
     <div>
       {isLoading && <p>Loading...</p>}
@@ -105,9 +105,9 @@ const MapComponent = () => {
       <div id="map" className="map-container">
         <AddressSearch />
         {selectedMachine && (
-          <MachineDetail 
-            content={selectedMachine} 
-            onClose={handleCloseMachineDetail} 
+          <MachineDetail
+            content={selectedMachine}
+            onClose={handleCloseMachineDetail}
             className={isPinClicked ? "pin-clicked" : ""}
           />
         )}

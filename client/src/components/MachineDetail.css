@@ -4,13 +4,13 @@
   flex-direction: column;
   position: absolute;
   top: 0;
-  left: -100%; 
+  left: -100%;
   width: 25%;
   height: 100%;
   padding: 10px;
   background-color: white;
   border-right: 1px solid #ccc;
-  transition: left 0.5s ease-in-out; 
+  transition: left 0.5s ease-in-out;
   overflow-y: auto;
 }
 
@@ -27,21 +27,19 @@
   margin-top: 10px;
 }
 .custom-popup.pin-clicked {
- 
   left: 0;
 }
 
-.closed{
+.closed {
   color: red;
 }
-.open{
+.open {
   color: green;
-
 }
-.machine-detail{
-list-style: none;
-padding: 0;
+.machine-detail {
+  list-style: none;
+  padding: 0;
 }
-.machine-detail li{
+.machine-detail li {
   margin-bottom: 10px;
 }
