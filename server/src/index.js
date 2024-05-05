@@ -14,7 +14,11 @@ import testRouter from "./testRouter.js";
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:8080",
+    origin: [
+      "http://localhost:8080", // For development
+      "https://c46-group-a-f3ebdee28d59.herokuapp.com/", // For production
+    ],
+    methods: ["GET", "POST"],
   },
 });
 
