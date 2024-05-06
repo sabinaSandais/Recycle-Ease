@@ -1,0 +1,17 @@
+.navbar {
+  background-color: rgb(0, 0, 0);
+  padding: 7px;
+}
+
+.navbar-items {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
