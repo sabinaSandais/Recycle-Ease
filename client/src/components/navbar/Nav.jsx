@@ -4,8 +4,8 @@ import "./nav.css";
 
 //components
 import UserFavicon from "../users/userFavicon/UserFavicon";
-import Login from "../users/login/login";
-import SignUp from "../users/signup/SignUp";
+import SignUp from "../users/signUp/SignUpComponent";
+import Login from "../users/logIn/LogInComponent";
 
 import TEST_ID from "../Nav.testid";
 
