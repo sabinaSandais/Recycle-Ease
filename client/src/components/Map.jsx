@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import AddressSearch from "./SearchBar";
-import { useLocation } from "./LocationContext";
+import AddressSearch from "./SearchBar.jsx";
+import { useLocation } from "./LocationContext.jsx";
 import "./Map.css";
 import useFetch from "../hooks/useFetch.js";
 import MachineDetail from "./MachineDetail.jsx";
+import greenPin from "./assits/Map_pin_icon_green.svg";
+import redPin from "./assits/map-marker.svg";
 
 const MapComponent = () => {
   const mapRef = useRef(null);
@@ -25,9 +27,8 @@ const MapComponent = () => {
       }
       response.result.forEach((machine) => {
         const { lat, lon } = machine.location;
-        let iconUrl =
-          machine.state === 1 ? "/Map_pin_icon_green.svg" : "/map-marker.svg";
-        let icon = L.icon({ iconUrl });
+        let iconUrl = machine.status === 1 ? greenPin : redPin;
+        let icon = L.icon({ iconUrl, iconSize: [25, 41] });
         const marker = L.marker([lat, lon], { icon }).addTo(mapRef.current);
         marker.on("click", () => {
           setSelectedMachine(machine);
