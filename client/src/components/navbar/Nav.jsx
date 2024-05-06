@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import "./nav.css";
 
 //components
-import UserFavicon from "../users/userFavicon/UserFavicon";
-import SignUp from "../users/signUp/SignUpComponent";
-import Login from "../users/logIn/LogInComponent";
+import UserFavicon from "../userFavicon/UserFavicon";
+import SignUp from "../signUp/SignUpComponent";
+import Login from "../logIn/LogInComponent";
 
 import TEST_ID from "../Nav.testid";
 
