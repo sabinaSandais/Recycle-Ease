@@ -16,7 +16,6 @@ const io = new Server(server, {
   cors: {
     origin: [
       "http://localhost:8080", // For development
-      "http://localhost:8081", // For development
       "https://c46-group-a-f3ebdee28d59.herokuapp.com/", // For production
     ],
     methods: ["GET", "POST"],
@@ -26,7 +25,6 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   logInfo(`New user connected with id: ${socket.id}`);
   io.emit("newUser", socket.id);
-  socket.emit("soketemit", "this is from server");
 
   socket.on("disconnect", () => {
     logInfo(`A user disconnected with id: ${socket.id} `);
