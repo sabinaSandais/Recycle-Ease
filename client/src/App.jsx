@@ -26,6 +26,9 @@ const App = () => {
       socket.off("disconnect", onDisconnect);
     };
   }, []);
+  socket.on("statusChange", (data) => {
+    logInfo(data);
+  });
 
   useEffect(() => {
     logInfo(`Socket ID: ${socketId}`);
