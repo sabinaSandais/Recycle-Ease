@@ -6,8 +6,8 @@ import { useLocation } from "./LocationContext.jsx";
 import "./Map.css";
 import useFetch from "../hooks/useFetch.js";
 import MachineDetail from "./MachineDetail.jsx";
-import greenPin from "./assits/Map_pin_icon_green.svg";
-import redPin from "./assits/map-marker.svg";
+import greenPin from "./assets/Map_pin_icon_green.svg";
+import redPin from "./assets/map-marker.svg";
 
 const MapComponent = () => {
   const mapRef = useRef(null);
