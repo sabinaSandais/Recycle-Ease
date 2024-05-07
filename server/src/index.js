@@ -51,8 +51,8 @@ const startServer = async () => {
       const status = updateDescription.updatedFields.status;
       const timeStamp = new Date(wallTime).toISOString();
       io.emit("statusChange", { MachineId, status, timeStamp });
-      console.log(
-        `Machine ${MachineId} changed status to ${status} at ${timeStamp}`
+      logInfo(
+        `Machine ${MachineId} changed status to ${status} at ${timeStamp}`,
       );
     });
     server.listen(port, () => {
@@ -70,13 +70,13 @@ const startServer = async () => {
  */
 if (process.env.NODE_ENV === "production") {
   app.use(
-    express.static(new URL("../../client/dist", import.meta.url).pathname)
+    express.static(new URL("../../client/dist", import.meta.url).pathname),
   );
   // Redirect * requests to give the client data
   app.get("*", (req, res) =>
     res.sendFile(
-      new URL("../../client/dist/index.html", import.meta.url).pathname
-    )
+      new URL("../../client/dist/index.html", import.meta.url).pathname,
+    ),
   );
 }
 
