@@ -4,9 +4,15 @@ import { socket } from "./socket";
 import Home from "./pages/Home/Home";
 import { logInfo } from "../../server/src/util/logging";
 
+const machineData = {
+  machineId: "",
+  status: "",
+  timeStamp: "",
+};
 const App = () => {
   const [socketId, setSocketId] = useState(null);
   const [socketConnected, setSocketConnected] = useState(false);
+  const [statusChange, setStatusChange] = useState(machineData);
 
   useEffect(() => {
     function onConnect() {
@@ -26,14 +32,32 @@ const App = () => {
       socket.off("disconnect", onDisconnect);
     };
   }, []);
-  socket.on("statusChange", (data) => {
-    logInfo(data);
-  });
 
   useEffect(() => {
+    function onStatusChange(data) {
+      const { machineId, status, timeStamp } = data;
+
+      setStatusChange((prevState) => ({
+        ...prevState,
+        machineId,
+        status,
+        timeStamp,
+      }));
+    }
+
+    socket.on("statusChange", onStatusChange);
+
+    return () => {
+      socket.off("statusChange", onStatusChange);
+    };
+  }, [statusChange]);
+
+  useEffect(() => {
+    const { machineId, status, timeStamp } = statusChange;
     logInfo(`Socket ID: ${socketId}`);
     logInfo(`Socket connected: ${socketConnected}`);
-  }, [socketId, socketConnected]);
+    logInfo(`Status change: ${machineId} - ${status} - ${timeStamp}`);
+  }, [socketId, socketConnected, statusChange]);
 
   return (
     <>

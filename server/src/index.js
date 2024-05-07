@@ -45,12 +45,12 @@ const startServer = async () => {
     const changeStream = Machine.watch();
     changeStream.on("change", (change) => {
       const { documentKey, updateDescription, wallTime } = change;
-      const MachineId = documentKey._id.toString();
+      const machineId = documentKey._id.toString();
       const status = updateDescription.updatedFields.status;
       const timeStamp = new Date(wallTime).toISOString();
-      io.emit("statusChange", { MachineId, status, timeStamp });
+      io.emit("statusChange", { machineId, status, timeStamp });
       logInfo(
-        `Machine ${MachineId} changed status to ${status} at ${timeStamp}`,
+        `Machine ${machineId} changed status to ${status} at ${timeStamp}`,
       );
     });
     server.listen(port, () => {
