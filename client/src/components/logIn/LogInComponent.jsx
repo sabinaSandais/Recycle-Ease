@@ -6,7 +6,7 @@ import Notification from "../notification/Notification";
 
 import "./login.css";
 import { logInfo } from "../../../../server/src/util/logging";
-function LogInComponent({ showLoginForm, setShowLoginForm }) {
+function LogInComponent({ showLoginForm }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -74,7 +74,6 @@ function LogInComponent({ showLoginForm, setShowLoginForm }) {
 
 LogInComponent.propTypes = {
   showLoginForm: PropTypes.bool,
-  setShowLoginForm: PropTypes.func,
 };
 
 export default LogInComponent;
