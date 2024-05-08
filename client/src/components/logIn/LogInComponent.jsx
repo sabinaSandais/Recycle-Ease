@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 
 import useFetch from "../../hooks/useFetch";
 import PropTypes from "prop-types";
+import Notification from "../notification/Notification";
 
 import "./login.css";
 import { logInfo } from "../../../../server/src/util/logging";
-function LogInComponent({ showLoginForm }) {
+function LogInComponent({ showLoginForm, setShowLoginForm }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -31,15 +32,18 @@ function LogInComponent({ showLoginForm }) {
   let statusComponent = null;
   if (error != null) {
     if (error.error) {
-      statusComponent = <div>{error.error}</div>;
+      statusComponent = <Notification message={error.error} type="error" />;
     }
     if (error.token && error.token !== undefined) {
-      logInfo("Token received: ", error.token);
-      localStorage.setItem("UserToken", error.token);
-      statusComponent = <div>Logged in successfully</div>;
+      logInfo(`User token: ${error.token}`);
+      localStorage.setItem("user_token", error.token);
+      localStorage.setItem("user_name", error.name);
+      statusComponent = (
+        <Notification message="Login successful" type="success" />
+      );
     }
   } else if (isLoading) {
-    statusComponent = <div>Logging in....</div>;
+    statusComponent = <Notification message="Logging in..." type="success" />;
   }
 
   return showLoginForm && showLoginForm === true ? (
@@ -70,6 +74,7 @@ function LogInComponent({ showLoginForm }) {
 
 LogInComponent.propTypes = {
   showLoginForm: PropTypes.bool,
+  setShowLoginForm: PropTypes.func,
 };
 
 export default LogInComponent;

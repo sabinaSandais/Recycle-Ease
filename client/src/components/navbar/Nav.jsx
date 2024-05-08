@@ -64,8 +64,14 @@ const Nav = () => {
           <UserFavicon />
         </ul>
       </div>
-      <Login showLoginForm={showLoginForm} />
-      <SignUp showSignUpForm={showSignUpForm} />
+      <Login
+        showLoginForm={showLoginForm}
+        setShowLoginForm={setShowLoginForm}
+      />
+      <SignUp
+        showSignUpForm={showSignUpForm}
+        setShowSignUpForm={setShowSignUpForm}
+      />
     </>
   );
 };

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
 import PropTypes from "prop-types";
 import { logInfo } from "../../../../server/src/util/logging";
+import Notification from "../notification/Notification";
 import "./signUp.css";
 
-function SignUpComponent({ showSignUpForm }) {
+function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,6 +15,7 @@ function SignUpComponent({ showSignUpForm }) {
     setEmail("");
     setPassword("");
     logInfo("User created successfully");
+    setShowSignUpForm(false);
   };
 
   const { isLoading, error, performFetch, cancelFetch } = useFetch(
@@ -38,11 +40,11 @@ function SignUpComponent({ showSignUpForm }) {
 
   let statusComponent = null;
   if (error != null) {
-    statusComponent = (
-      <div>Error while trying to create user: {error.toString()}</div>
-    );
+    statusComponent = <Notification message={error.toString()} type="error" />;
   } else if (isLoading) {
-    statusComponent = <div>Creating user....</div>;
+    statusComponent = (
+      <Notification message="Creating User..." type="success" />
+    );
   }
 
   return showSignUpForm && showSignUpForm === true ? (
@@ -81,6 +83,7 @@ function SignUpComponent({ showSignUpForm }) {
 
 SignUpComponent.propTypes = {
   showSignUpForm: PropTypes.bool,
+  setShowSignUpForm: PropTypes.func,
 };
 
 export default SignUpComponent;
