@@ -3,8 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { socket } from "./socket";
 import Home from "./pages/Home/Home";
 import { logInfo } from "../../server/src/util/logging";
-import { useStatusChange } from "./components/MachineContext";
-
+import { useStatusChange } from "./components/StatusChangeContext";
 
 const App = () => {
   const [socketId, setSocketId] = useState(null);
