@@ -68,12 +68,7 @@ const useFetch = (route, onReceived) => {
       if (jsonResult.success === true) {
         onReceived(jsonResult);
       } else {
-        setError(
-          jsonResult.msg ||
-            `The result from our API did not have an error message. Received: ${JSON.stringify(
-              jsonResult,
-            )}`,
-        );
+        setError(jsonResult.msg || jsonResult);
       }
 
       setIsLoading(false);
