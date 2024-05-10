@@ -16,7 +16,8 @@ const io = new Server(server, {
   cors: {
     origin: [
       "http://localhost:8080", // For development
-      "https://c46-group-a-f3ebdee28d59.herokuapp.com/", // For production
+      process.env.HEROKU_APP_DEFAULT_DOMAIN_NAME, // For branches
+      "https://c46groupa.hackyourfuture.tech", // For production
     ],
     methods: ["GET", "POST"],
   },
