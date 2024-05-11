@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./MachineDetail.css";
+import ReviewForm from "./ReviewSubmit";
 
 const MachineDetail = ({ content, onClose, className }) => {
   const statusClassName = content.status === 1 ? "open" : "closed";
@@ -15,6 +16,10 @@ const MachineDetail = ({ content, onClose, className }) => {
           <li className={statusClassName}>
             {content.status === 1 ? "open" : "closed"}
           </li>
+          <div>
+            {/* here we can check if the user is logged in to render this form */}
+          <ReviewForm machineId={content._id} />
+          </div>
         </ul>
       </div>
     </div>
