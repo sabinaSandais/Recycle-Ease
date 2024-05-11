@@ -1,0 +1,22 @@
+.review-item {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.stars {
+  margin-bottom: 10px;
+}
+
+.star {
+  font-size: 20px;
+  color: #ccc;
+}
+
+.star.filled {
+  color: gold;
+}
+
+.comment {
+  font-size: 16px;
+}
