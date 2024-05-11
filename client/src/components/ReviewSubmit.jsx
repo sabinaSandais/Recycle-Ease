@@ -5,10 +5,10 @@ import "./ReviewSubmit.css";
 import useFetch from "../hooks/useFetch";
 import PropTypes from "prop-types";
 
-// here we need the user id to submit the review the user id 
-// should be provided by the context 
+// here we need the user id to submit the review the user id
+// should be provided by the context
 
-const ReviewForm = ({machineId}) => {
+const ReviewForm = ({ machineId }) => {
   const [rating, setRating] = useState(1);
   const [hoverRating, setHoverRating] = useState(1);
   const [hoveredWord, setHoveredWord] = useState("Awful");
@@ -31,18 +31,18 @@ const ReviewForm = ({machineId}) => {
 
   const handleSubmit = async () => {
     try {
-      const review = { rating, comment };
+      const review = { rating, comment, machineId };
       await performFetch({
         method: "POST",
         body: JSON.stringify(review),
       });
-      
+
       setRating(1);
       setHoverRating(1);
       setHoveredWord("Awful");
       setComment("");
     } catch (error) {
-     return error;
+      return error;
     }
   };
 
@@ -64,16 +64,26 @@ const ReviewForm = ({machineId}) => {
   };
 
   return (
-    <form onSubmit={(event) => { event.preventDefault(); handleSubmit(); }} className="form-container">
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        handleSubmit();
+      }}
+      className="form-container"
+    >
       <div className="rating-stars">
         <label>
           <div>
-            Rating: 
+            Rating:
             {[1, 2, 3, 4, 5].map((value) => (
               <FontAwesomeIcon
                 key={value}
                 icon={faStar}
-                className={value <= (hoverRating || rating) ? "star-filled" : "star-empty"}
+                className={
+                  value <= (hoverRating || rating)
+                    ? "star-filled"
+                    : "star-empty"
+                }
                 onClick={() => handleRatingChange(value)}
                 onMouseEnter={() => handleHoverRatingChange(value)}
                 onMouseLeave={() => handleHoverRatingChange(rating)}
@@ -88,7 +98,11 @@ const ReviewForm = ({machineId}) => {
       <div className="comment">
         <label>
           Comment:
-          <textarea value={comment} onChange={handleCommentChange} className="comment-txt"/>
+          <textarea
+            value={comment}
+            onChange={handleCommentChange}
+            className="comment-txt"
+          />
         </label>
       </div>
       <button type="submit" className="review-btn" disabled={isLoading}>

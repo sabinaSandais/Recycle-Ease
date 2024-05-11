@@ -45,7 +45,7 @@ const MachineDetail = ({ content, onClose, className }) => {
           </ul>
         </div>
         <div className="review-form">
-        <ReviewForm machineId={content._id} />
+          <ReviewForm machineId={content._id} />
         </div>
         <div className="reviews">
           <h2>Reviews</h2>

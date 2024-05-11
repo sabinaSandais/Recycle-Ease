@@ -1,4 +1,3 @@
-
 .star-filled {
   color: gold;
 }
@@ -7,7 +6,7 @@
   color: #ccc;
 }
 
-.rating-stars{
+.rating-stars {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,29 +14,29 @@
   font-size: 1.5em;
   width: 100%;
 }
-.rating-stars label{
+.rating-stars label {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
- 
+
   width: 100%;
 }
-.rating-word{
+.rating-word {
   font-size: 18px;
   width: 100%;
   margin-left: 20px;
 }
-.comment{
+.comment {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.comment label{
+.comment label {
   font-size: 20px;
   font-weight: bold;
 }
-.comment-txt{
+.comment-txt {
   width: 100%;
   height: 50px;
   font-size: 20px;
@@ -46,7 +45,7 @@
   border: none;
   background-color: #ccc;
 }
-.review-btn{
+.review-btn {
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
@@ -57,7 +56,7 @@
   color: white;
   cursor: pointer;
 }
-.form-container{
+.form-container {
   width: 90%;
   display: flex;
   flex-direction: column;
