@@ -6,7 +6,7 @@ import useFetch from "../hooks/useFetch";
 import PropTypes from "prop-types";
 
 // here we need the user id to submit the review the user id 
-// should be provided by the is loggin context 
+// should be provided by the context 
 
 const ReviewForm = ({machineId}) => {
   const [rating, setRating] = useState(1);
@@ -42,7 +42,7 @@ const ReviewForm = ({machineId}) => {
       setHoveredWord("Awful");
       setComment("");
     } catch (error) {
-      console.error("Error submitting review", error);
+     return error;
     }
   };
 
