@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import useFetch from "../../hooks/useFetch";
 import PropTypes from "prop-types";
 import Notification from "../notification/Notification";
 
 import "./login.css";
-import { logInfo } from "../../../../server/src/util/logging";
+
+import { userContext } from "../../context/userContext";
 function LogInComponent({ showLoginForm }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+
+  const { setIsLoggedIn, setUser, isLoggedIn } = useContext(userContext);
 
   const { isLoading, error, performFetch, cancelFetch } =
     useFetch("/user/login");
@@ -16,6 +19,20 @@ function LogInComponent({ showLoginForm }) {
   useEffect(() => {
     return cancelFetch;
   }, []);
+
+  useEffect(() => {
+    if (error && error.token) {
+      setIsLoggedIn(true);
+      setUser({ name: error.name, token: error.token, id: error.id });
+    }
+  }, [error]);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setName("");
+      setPassword("");
+    }
+  }, [isLoggedIn]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,9 +52,6 @@ function LogInComponent({ showLoginForm }) {
       statusComponent = <Notification message={error.error} type="error" />;
     }
     if (error.token && error.token !== undefined) {
-      logInfo(`User token: ${error.token}`);
-      localStorage.setItem("user_token", error.token);
-      localStorage.setItem("user_name", error.name);
       statusComponent = (
         <Notification message="Login successful" type="success" />
       );
