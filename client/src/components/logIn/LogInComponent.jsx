@@ -2,16 +2,17 @@ import React, { useEffect, useState, useContext } from "react";
 
 import useFetch from "../../hooks/useFetch";
 import PropTypes from "prop-types";
-import Notification from "../notification/Notification";
 
 import "./login.css";
 
 import { userContext } from "../../context/userContext";
+import { infoContext } from "../../context/infoContext";
 function LogInComponent({ showLoginForm }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
   const { setIsLoggedIn, setUser, isLoggedIn } = useContext(userContext);
+  const { setInfo } = useContext(infoContext);
 
   const { isLoading, error, performFetch, cancelFetch } =
     useFetch("/user/login");
@@ -24,6 +25,16 @@ function LogInComponent({ showLoginForm }) {
     if (error && error.token) {
       setIsLoggedIn(true);
       setUser({ name: error.name, token: error.token, id: error.id });
+    }
+    if (error != null) {
+      if (error.error) {
+        setInfo({ message: error.error, type: "error" });
+      }
+      if (error.token && error.token !== undefined) {
+        setInfo({ message: "Login successful", type: "success" });
+      }
+    } else if (isLoading) {
+      setInfo({ message: "Logging in...", type: "success" });
     }
   }, [error]);
 
@@ -46,20 +57,6 @@ function LogInComponent({ showLoginForm }) {
     });
   };
 
-  let statusComponent = null;
-  if (error != null) {
-    if (error.error) {
-      statusComponent = <Notification message={error.error} type="error" />;
-    }
-    if (error.token && error.token !== undefined) {
-      statusComponent = (
-        <Notification message="Login successful" type="success" />
-      );
-    }
-  } else if (isLoading) {
-    statusComponent = <Notification message="Logging in..." type="success" />;
-  }
-
   return showLoginForm && showLoginForm === true ? (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
@@ -81,7 +78,6 @@ function LogInComponent({ showLoginForm }) {
         />
         <button type="submit">Login</button>
       </form>
-      {statusComponent}
     </div>
   ) : null;
 }

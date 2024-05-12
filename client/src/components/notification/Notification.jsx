@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import { infoContext } from "../../context/infoContext";
 import "./notification.css";
 
 function Notification({ message = "Notification", type = "success" }) {
-  return (
+  const { showNotification } = useContext(infoContext);
+
+  return showNotification ? (
     <div className={`notification ${type}`}>
       <div className="notification-body">
         <span>{message}</span>
       </div>
     </div>
+  ) : (
+    <></>
   );
 }
 

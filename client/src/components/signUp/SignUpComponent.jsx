@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import useFetch from "../../hooks/useFetch";
 import PropTypes from "prop-types";
-import { logInfo } from "../../../../server/src/util/logging";
-import Notification from "../notification/Notification";
 import "./signUp.css";
 
+import { infoContext } from "../../context/infoContext";
 function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setInfo } = useContext(infoContext);
 
   const onSuccess = () => {
     setName("");
     setEmail("");
     setPassword("");
-    logInfo("User created successfully");
+    setInfo({ message: "User created successfully", type: "success" });
     setShowSignUpForm(false);
   };
 
@@ -27,6 +27,14 @@ function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
     return cancelFetch;
   }, []);
 
+  useEffect(() => {
+    if (error != null) {
+      setInfo({ message: error.toString(), type: "error" });
+    } else if (isLoading) {
+      setInfo({ message: "Creating User...", type: "success" });
+    }
+  }, [error]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     performFetch({
@@ -37,15 +45,6 @@ function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
       body: JSON.stringify({ user: { name, email, password } }),
     });
   };
-
-  let statusComponent = null;
-  if (error != null) {
-    statusComponent = <Notification message={error.toString()} type="error" />;
-  } else if (isLoading) {
-    statusComponent = (
-      <Notification message="Creating User..." type="success" />
-    );
-  }
 
   return showSignUpForm && showSignUpForm === true ? (
     <div className="signUp-container">
@@ -76,7 +75,6 @@ function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
         />
         <button type="submit">Sign Up</button>
       </form>
-      {statusComponent}
     </div>
   ) : null;
 }
