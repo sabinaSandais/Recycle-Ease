@@ -12,7 +12,6 @@ import { logInfo, logError } from "../../../../server/src/util/logging";
 
 function Demo() {
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [machines, setMachines] = useState([]);
 
   const { error: machinesError, performFetch: fetchMachines } = useFetch(
@@ -21,7 +20,6 @@ function Demo() {
       setMachines(response.result);
       setIsLoading(false);
       if (machinesError) {
-        setError(machinesError);
         logError(machinesError);
         return;
       }
