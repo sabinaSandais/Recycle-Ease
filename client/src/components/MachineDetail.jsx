@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 import "./MachineDetail.css";
 import ReviewItem from "./ReviewItem";
+import ReviewForm from "./ReviewSubmit";
 
 const MachineDetail = ({ content, onClose, className }) => {
   const statusClassName = content.status === 1 ? "open" : "closed";
@@ -42,6 +43,9 @@ const MachineDetail = ({ content, onClose, className }) => {
               {content.status === 1 ? "open" : "closed"}
             </li>
           </ul>
+        </div>
+        <div className="review-form">
+          <ReviewForm machineId={content._id} />
         </div>
         <div className="reviews">
           <h2>Reviews</h2>
