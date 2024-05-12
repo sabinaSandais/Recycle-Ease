@@ -3,10 +3,12 @@ import { Routes, Route } from "react-router-dom";
 import { socket } from "./socket";
 import Home from "./pages/Home/Home";
 import { logInfo } from "../../server/src/util/logging";
+import { useStatusChange } from "./components/StatusChangeContext";
 
 const App = () => {
   const [socketId, setSocketId] = useState(null);
   const [socketConnected, setSocketConnected] = useState(false);
+  const { statusChange, onStatusChange } = useStatusChange();
 
   useEffect(() => {
     function onConnect() {
@@ -28,9 +30,19 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    socket.on("statusChange", onStatusChange);
+
+    return () => {
+      socket.off("statusChange", onStatusChange);
+    };
+  }, [statusChange]);
+
+  useEffect(() => {
+    const { machineId, status, timeStamp } = statusChange;
     logInfo(`Socket ID: ${socketId}`);
     logInfo(`Socket connected: ${socketConnected}`);
-  }, [socketId, socketConnected]);
+    logInfo(`Status change: ${machineId} - ${status} - ${timeStamp}`);
+  }, [socketId, socketConnected, statusChange]);
 
   return (
     <>
