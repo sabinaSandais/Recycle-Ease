@@ -41,7 +41,9 @@ function Demo() {
             <div key={machine._id} className="machine_card">
               <div className="machine_card__header">
                 <h3 className="machine_card_number">{index + 1} </h3>
-                <h3 className="machine_card__id">{machine._id.slice(-5)}</h3>
+                <h3 className="machine_card__id">
+                  ID: {machine._id.slice(-5)}
+                </h3>
               </div>
               <div className="machine_card__body">
                 <p className="machine_card__address">{machine.address}</p>
