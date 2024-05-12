@@ -1,0 +1,37 @@
+.notification {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: white;
+  font-size: 1.2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.5s;
+}
+
+.notification-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@keyframes slideIn {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+.notification.success {
+  background-color: #4caf50;
+}
+
+.notification.error {
+  background-color: #f44336;
+}
