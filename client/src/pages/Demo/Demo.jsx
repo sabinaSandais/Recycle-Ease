@@ -13,6 +13,7 @@ import { logInfo, logError } from "../../../../server/src/util/logging";
 function Demo() {
   const [isLoading, setIsLoading] = useState(true);
   const [machines, setMachines] = useState([]);
+  const [machineId, setMachineId] = useState(null);
 
   const { error: machinesError, performFetch: fetchMachines } = useFetch(
     "/machines",
@@ -26,9 +27,33 @@ function Demo() {
     },
   );
 
+  const { error: machineError, performFetch: updateMachineStatus } = useFetch(
+    `/machines/${machineId}`,
+    () => {
+      if (machineError) {
+        logError(machineError);
+        return;
+      }
+    },
+  );
+
   useEffect(() => {
     fetchMachines();
   }, []);
+
+  useEffect(() => {
+    if (machineId !== null) {
+      logInfo(`Machine ${machineId} status changed`);
+      updateMachineStatus({
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({}),
+      });
+      setMachineId(null);
+    }
+  }, [machineId]);
 
   return (
     <>
@@ -54,10 +79,7 @@ function Demo() {
                     type="checkbox"
                     defaultChecked={machine.status == 1}
                     onClick={() => {
-                      //update the status of the machine
-                      logInfo(
-                        `Machine ${machine._id} status changed to ${machine.status === 1 ? 0 : 1}`,
-                      );
+                      setMachineId(machine._id);
                     }}
                   />
                   <span className="slider round"></span>
