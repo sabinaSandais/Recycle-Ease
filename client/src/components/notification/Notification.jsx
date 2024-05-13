@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { infoContext } from "../../context/infoContext";
+import { useApplicationContext } from "../../context/applicationContext";
 import "./notification.css";
 
 function Notification({ message = "Notification", type = "success" }) {
-  const { showNotification } = useContext(infoContext);
-
+  const { showNotification } = useApplicationContext();
   return showNotification ? (
     <div className={`notification ${type}`}>
       <div className="notification-body">

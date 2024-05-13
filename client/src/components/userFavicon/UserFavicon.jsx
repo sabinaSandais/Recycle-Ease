@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./userFavicon.css";
 
-import { userContext } from "../../context/userContext";
+import { useApplicationContext } from "../../context/applicationContext";
 
 function UserFavicon() {
-  const { user, isLoggedIn } = useContext(userContext);
+  const { user, isLoggedIn } = useApplicationContext();
   return isLoggedIn ? (
     <li className="userFavicon">
       <a href="#" className="userFavicon-link">
