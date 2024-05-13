@@ -56,3 +56,25 @@
   font-size: 20px;
   font-weight: bold;
 }
+.favorite-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+.favorite-icon-container{
+  align-self: flex-start;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.favorite-icon.filled {
+  fill: #ff0000; /* Change color as needed */
+}
+
+.favorite-icon:hover {
+  fill: #ff0000; /* Change hover color as needed */
+}

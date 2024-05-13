@@ -4,6 +4,9 @@ import useFetch from "../hooks/useFetch";
 import "./MachineDetail.css";
 import ReviewItem from "./ReviewItem";
 import ReviewForm from "./ReviewSubmit";
+import { useFavoriteContext } from "./FavoriteContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const MachineDetail = ({ content, onClose, className }) => {
   const statusClassName = content.status === 1 ? "open" : "closed";
@@ -13,6 +16,8 @@ const MachineDetail = ({ content, onClose, className }) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const { favoriteMachines, addFavoriteMachine, removeFavoriteMachine } = useFavoriteContext(); 
 
   const { error: ReviewError, performFetch: fetchReviews } = useFetch(
     `/reviews/${content._id}`,
@@ -50,12 +55,30 @@ const MachineDetail = ({ content, onClose, className }) => {
   const handleReviewSubmit = (newReview) => {
     setReviews((prevReviews) => [...prevReviews, newReview]);
   };
-
+  
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      removeFavoriteMachine(userId, content._id);
+    } else {
+      addFavoriteMachine(userId, content._id);
+    }
+  };
+  
   return (
     <div className={`custom-popup ${className}`}>
       <button className="close-btn" onClick={onClose}>
         X
       </button>
+      <div className="favorite-icon-container">
+          {isLoggedIn && (
+            <button className="favorite-btn" onClick={toggleFavorite}>
+              <FontAwesomeIcon
+                icon={faHeart}
+                className={`favorite-icon ${isFavorite ? "filled" : ""}`}
+              />
+            </button>
+          )}
+        </div>
       <div className="content">
         <div className="details">
           <ul className="machine-detail">
