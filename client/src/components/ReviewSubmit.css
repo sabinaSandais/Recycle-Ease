@@ -5,6 +5,10 @@
 .star-empty {
   color: #ccc;
 }
+.rating-stars .star-filled,
+.rating-stars .star-empty {
+  cursor: pointer;
+}
 
 .rating-stars {
   display: flex;

@@ -1,17 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./ReviewItem.css";
-const ReviewItem = ({ score, comment }) => {
+
+const ReviewItem = ({ stars, comment }) => {
   const renderStars = () => {
-    const stars = [];
+    const starsArray = [];
+    const starsValue = stars;
     for (let i = 0; i < 5; i++) {
-      stars.push(
-        <span key={i} className={`star ${i < score ? "filled" : ""}`}>
+      starsArray.push(
+        <span key={i} className={`star ${i < starsValue ? "filled" : "empty"}`}>
           ☆
         </span>,
       );
     }
-    return stars;
+    return starsArray;
   };
 
   return (
@@ -23,7 +25,7 @@ const ReviewItem = ({ score, comment }) => {
 };
 
 ReviewItem.propTypes = {
-  score: PropTypes.number.isRequired,
+  stars: PropTypes.number,
   comment: PropTypes.string.isRequired,
 };
 

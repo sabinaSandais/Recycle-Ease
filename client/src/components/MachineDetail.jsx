@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 import "./MachineDetail.css";
 import ReviewItem from "./ReviewItem";
@@ -12,6 +11,7 @@ const MachineDetail = ({ content, onClose, className }) => {
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const { error: ReviewError, performFetch: fetchReviews } = useFetch(
     `/reviews/${content._id}`,
@@ -27,8 +27,18 @@ const MachineDetail = ({ content, onClose, className }) => {
   );
 
   useEffect(() => {
-    fetchReviews();
+    const token = localStorage.getItem("user_token");
+    setIsLoggedIn(token !== null);
   }, []);
+
+  useEffect(() => {
+    setReviews([]);
+    fetchReviews();
+  }, [content]);
+
+  const handleReviewSubmit = (newReview) => {
+    setReviews((prevReviews) => [...prevReviews, newReview]);
+  };
 
   return (
     <div className={`custom-popup ${className}`}>
@@ -45,20 +55,28 @@ const MachineDetail = ({ content, onClose, className }) => {
           </ul>
         </div>
         <div className="review-form">
-          <ReviewForm machineId={content._id} />
+          {isLoggedIn ? (
+            <ReviewForm
+              machineId={content._id}
+              onReviewSubmit={handleReviewSubmit}
+            />
+          ) : (
+            <div>Please log in to submit a review.</div>
+          )}
         </div>
         <div className="reviews">
           <h2>Reviews</h2>
           {isLoading && <div>Loading...</div>}
           {error && <div>{error}</div>}
-
-          {reviews.map((review) => (
-            <ReviewItem
-              key={review._id}
-              score={review.stars}
-              comment={review.comment}
-            />
-          ))}
+          {reviews &&
+            reviews.length > 0 &&
+            reviews.map((review, index) => (
+              <ReviewItem
+                key={index}
+                stars={review.stars}
+                comment={review.comment}
+              />
+            ))}
         </div>
       </div>
     </div>
