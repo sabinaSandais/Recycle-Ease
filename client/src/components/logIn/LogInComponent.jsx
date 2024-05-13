@@ -1,21 +1,81 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import useFetch from "../../hooks/useFetch";
 import PropTypes from "prop-types";
-import Notification from "../notification/Notification";
 
 import "./login.css";
+
 import { logInfo } from "../../../../server/src/util/logging";
+
+import { userContext } from "../../context/userContext";
+import { infoContext } from "../../context/infoContext";
 function LogInComponent({ showLoginForm }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [apiResponse, setApiResponse] = useState({});
 
-  const { isLoading, error, performFetch, cancelFetch } =
-    useFetch("/user/login");
+  const { setIsLoggedIn, setUser, isLoggedIn, user } = useContext(userContext);
+  const { setInfo } = useContext(infoContext);
+
+  const { isLoading, error, performFetch, cancelFetch } = useFetch(
+    "/user/login",
+    (response) => {
+      setApiResponse(response);
+    },
+  );
 
   useEffect(() => {
     return cancelFetch;
   }, []);
+
+  useEffect(() => {
+    if (error !== null) {
+      if (error.error) {
+        setInfo({ message: error.error, type: "error" });
+      }
+    }
+    if (isLoading) {
+      setInfo({ message: "Logging in...", type: "success" });
+    }
+  }, [error]);
+
+  useEffect(() => {
+    if (apiResponse.success === true) {
+      setIsLoggedIn(true);
+      setUser({
+        name: apiResponse.result.name,
+        token: apiResponse.result.token,
+        id: apiResponse.result.userId,
+      });
+      setInfo({ message: "Login successful", type: "success" });
+    }
+
+    if (isLoading) {
+      setInfo({ message: "Logging in...", type: "success" });
+    }
+  }, [apiResponse]);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setName("");
+      setPassword("");
+    }
+
+    logInfo(`User loggedIn state: ${isLoggedIn}`);
+    if (user.token !== "" && user.name !== "") {
+      localStorage.setItem("user_token", user.token);
+      localStorage.setItem("user_name", user.name);
+    }
+
+    if (!isLoggedIn) {
+      setUser({ name: "", token: "", id: "" });
+      localStorage.removeItem("user_token");
+      localStorage.removeItem("user_name");
+    }
+
+    logInfo(`User logged in: ${isLoggedIn}`);
+    logInfo(`User: ${user.name} `);
+  }, [isLoggedIn]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,23 +88,6 @@ function LogInComponent({ showLoginForm }) {
       body: JSON.stringify({ name, password }),
     });
   };
-
-  let statusComponent = null;
-  if (error != null) {
-    if (error.error) {
-      statusComponent = <Notification message={error.error} type="error" />;
-    }
-    if (error.token && error.token !== undefined) {
-      logInfo(`User token: ${error.token}`);
-      localStorage.setItem("user_token", error.token);
-      localStorage.setItem("user_name", error.name);
-      statusComponent = (
-        <Notification message="Login successful" type="success" />
-      );
-    }
-  } else if (isLoading) {
-    statusComponent = <Notification message="Logging in..." type="success" />;
-  }
 
   return showLoginForm && showLoginForm === true ? (
     <div className="login-container">
@@ -67,7 +110,6 @@ function LogInComponent({ showLoginForm }) {
         />
         <button type="submit">Login</button>
       </form>
-      {statusComponent}
     </div>
   ) : null;
 }

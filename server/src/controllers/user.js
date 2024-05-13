@@ -7,22 +7,6 @@ import jwt from "jsonwebtoken";
 
 const secret = "test";
 
-/******************* GET USERS ******************
- *  Get all users from the database
- * */
-
-export const getUsers = async (req, res) => {
-  try {
-    const users = await User.find();
-    res.status(200).json({ success: true, result: users });
-  } catch (error) {
-    logError(error);
-    res
-      .status(500)
-      .json({ success: false, msg: "Unable to get users, try again later" });
-  }
-};
-
 /******************* CREATE USER ******************
  *
  * Creating a new user by providing the name, email and password
@@ -68,29 +52,6 @@ export const createUser = async (req, res) => {
   }
 };
 
-/******************* DELETE USER ******************
- * Delete a user from the database
- * */
-
-export const deleteUser = async (req, res) => {
-  try {
-    const { id } = req.params;
-
-    const user = await User.findByIdAndDelete(id);
-
-    if (user == null) {
-      res.status(404).json({ success: false, msg: "User not found" });
-    }
-
-    res.status(200).json({ success: true, user });
-  } catch (error) {
-    logError(error);
-    res
-      .status(500)
-      .json({ success: false, msg: "Unable to delete user, try again later" });
-  }
-};
-
 // user login function to authenticate user and generate token for user
 
 /******************* LOGIN ******************
@@ -129,5 +90,8 @@ export const login = async (req, res) => {
     expiresIn: "1h",
   });
 
-  res.status(200).json({ token: token, userId: user._id, name: user.name });
+  res.status(200).json({
+    success: true,
+    result: { token: token, userId: user._id, name: user.name },
+  });
 };
