@@ -7,6 +7,7 @@ import "./demo.css";
 //components
 import Nav from "../../components/navbar/Nav";
 import MachineCard from "../../components/machineCard/MachineCard.jsx";
+import Switch from "../../components/switch/Switch.jsx";
 
 //utils
 import { logInfo, logError } from "../../../../server/src/util/logging";
@@ -38,6 +39,32 @@ function Demo() {
     },
   );
 
+  const { error: allMachinesOffError, performFetch: turnOffAllMachines } =
+    useFetch("/machines/turnOffAll", () => {
+      if (allMachinesOffError) {
+        logError(allMachinesOffError);
+        return;
+      }
+    });
+
+  const { error: allMachinesOnError, performFetch: turnOnAllMachines } =
+    useFetch("/machines/turnOnAll", () => {
+      if (allMachinesOnError) {
+        logError(allMachinesOnError);
+        return;
+      }
+    });
+
+  const { error: toggleHalfError, performFetch: toggleHalfMachines } = useFetch(
+    "/machines/toggleHalf",
+    () => {
+      if (toggleHalfError) {
+        logError(toggleHalfError);
+        return;
+      }
+    },
+  );
+
   useEffect(() => {
     fetchMachines();
   }, []);
@@ -63,6 +90,37 @@ function Demo() {
         <div>Loading...</div>
       ) : (
         <div className="machines_container">
+          <div className="machines_header">
+            <div className="machine_automation">
+              <p>Close All Machine</p>
+              <Switch
+                defaultStatus={0}
+                clickAction={() => {
+                  turnOffAllMachines();
+                }}
+              />
+            </div>
+
+            <div className="machine_automation">
+              <p>Open All Machine</p>
+              <Switch
+                defaultStatus={1}
+                clickAction={() => {
+                  turnOnAllMachines();
+                }}
+              />
+            </div>
+
+            <div className="machine_automation">
+              <p>Toggle Half Machine</p>
+              <Switch
+                defaultStatus={0}
+                clickAction={() => {
+                  toggleHalfMachines();
+                }}
+              />
+            </div>
+          </div>
           {machines.map((machine, index) => (
             <MachineCard
               key={machine._id}

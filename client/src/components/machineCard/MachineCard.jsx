@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./machineCard.css";
 
+import Switch from "../switch/Switch";
+
 function MachineCard({ machine, index, setMachineId }) {
   return (
     <div className="machine_card">
@@ -13,16 +15,12 @@ function MachineCard({ machine, index, setMachineId }) {
         <p className="machine_card__address">{machine.address}</p>
       </div>
       <div className="machine_card__footer">
-        <label className="switch">
-          <input
-            type="checkbox"
-            defaultChecked={machine.status == 1}
-            onClick={() => {
-              setMachineId(machine._id);
-            }}
-          />
-          <span className="slider round"></span>
-        </label>
+        <Switch
+          defaultStatus={machine.status}
+          clickAction={() => {
+            setMachineId(machine._id);
+          }}
+        />
       </div>
     </div>
   );
