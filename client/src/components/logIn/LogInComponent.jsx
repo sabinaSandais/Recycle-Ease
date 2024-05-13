@@ -5,13 +5,15 @@ import PropTypes from "prop-types";
 
 import "./login.css";
 
+import { logInfo } from "../../../../server/src/util/logging";
+
 import { userContext } from "../../context/userContext";
 import { infoContext } from "../../context/infoContext";
 function LogInComponent({ showLoginForm }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setIsLoggedIn, setUser, isLoggedIn } = useContext(userContext);
+  const { setIsLoggedIn, setUser, isLoggedIn, user } = useContext(userContext);
   const { setInfo } = useContext(infoContext);
 
   const { isLoading, error, performFetch, cancelFetch } =
@@ -43,6 +45,21 @@ function LogInComponent({ showLoginForm }) {
       setName("");
       setPassword("");
     }
+
+    logInfo(`User loggedIn state: ${isLoggedIn}`);
+    if (user.token !== "" && user.name !== "") {
+      localStorage.setItem("user_token", user.token);
+      localStorage.setItem("user_name", user.name);
+    }
+
+    if (!isLoggedIn) {
+      setUser({ name: "", token: "", id: "" });
+      localStorage.removeItem("user_token");
+      localStorage.removeItem("user_name");
+    }
+
+    logInfo(`User logged in: ${isLoggedIn}`);
+    logInfo(`User: ${user.name} `);
   }, [isLoggedIn]);
 
   const handleSubmit = (e) => {
