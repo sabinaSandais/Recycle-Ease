@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
 
@@ -6,12 +6,21 @@ import "./nav.css";
 import UserFavicon from "../userFavicon/UserFavicon";
 import SignUp from "../signUp/SignUpComponent";
 import Login from "../logIn/LogInComponent";
+import { userContext } from "../../context/userContext";
 
 import TEST_ID from "../Nav.testid";
 
 const Nav = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showSignUpForm, setShowSignUpForm] = useState(false);
+  const { isLoggedIn, setIsLoggedIn } = useContext(userContext);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setShowLoginForm(false);
+      setShowSignUpForm(false);
+    }
+  }, [isLoggedIn]);
 
   return (
     <>
@@ -36,7 +45,7 @@ const Nav = () => {
             </Link>
           </li>
           <li
-            className="navbar-item login-btn"
+            className={"navbar-item login-btn" + (isLoggedIn ? " hide" : "")}
             onClick={() => {
               if (showSignUpForm) {
                 setShowSignUpForm(!showSignUpForm);
@@ -49,7 +58,7 @@ const Nav = () => {
             </a>
           </li>
           <li
-            className="navbar-item signUp-btn"
+            className={"navbar-item signUp-btn" + (isLoggedIn ? " hide" : "")}
             onClick={() => {
               if (showLoginForm) {
                 setShowLoginForm(!showLoginForm);
@@ -59,6 +68,16 @@ const Nav = () => {
           >
             <a href="#" className="navbar-link">
               Sign Up
+            </a>
+          </li>
+          <li
+            className={"navbar-item logOut-btn" + (!isLoggedIn ? " hide" : "")}
+            onClick={() => {
+              setIsLoggedIn(false);
+            }}
+          >
+            <a href="#" className="navbar-link">
+              Log Out
             </a>
           </li>
           <UserFavicon />

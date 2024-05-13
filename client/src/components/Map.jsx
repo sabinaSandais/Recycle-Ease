@@ -20,6 +20,7 @@ const MapComponent = () => {
   const { error: machinesError, performFetch: fetchMachines } = useFetch(
     "/machines",
     (response) => {
+      // logInfo(`Machines response: ${response.} Map.jsx`);
       if (machinesError) {
         setError(machinesError);
         setIsLoading(false);

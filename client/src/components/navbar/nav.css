@@ -21,7 +21,8 @@
 }
 
 .login-btn,
-.signUp-btn {
+.signUp-btn,
+.logOut-btn {
   color: white;
   border: none;
   padding: 10px 20px;
@@ -31,14 +32,21 @@
 }
 
 .login-btn:hover,
-.signUp-btn:hover {
+.signUp-btn:hover,
+.logOut-btn:hover {
   opacity: 0.8;
 }
 
-.login-btn {
+.login-btn,
+.logOut-btn {
   background-color: rgb(0, 128, 0);
 }
 
 .signUp-btn {
   background-color: rgb(197, 2, 2);
+}
+
+/* hide the login and signup buttons when the user is logged in */
+.hide {
+  display: none;
 }

@@ -9,7 +9,7 @@ import app from "./app.js";
 import { logInfo, logError } from "./util/logging.js";
 import connectDB from "./db/connectDB.js";
 import testRouter from "./testRouter.js";
-
+import Machine from "./models/Machine.js";
 // Create a server
 const server = createServer(app);
 const io = new Server(server, {
@@ -25,6 +25,7 @@ const io = new Server(server, {
 
 io.on("connection", (socket) => {
   logInfo(`New user connected with id: ${socket.id}`);
+  io.emit("newUser", socket.id);
 
   socket.on("disconnect", () => {
     logInfo(`A user disconnected with id: ${socket.id} `);
@@ -42,6 +43,17 @@ if (port == null) {
 const startServer = async () => {
   try {
     await connectDB();
+    const changeStream = Machine.watch();
+    changeStream.on("change", (change) => {
+      const { documentKey, updateDescription, wallTime } = change;
+      const machineId = documentKey._id.toString();
+      const status = updateDescription.updatedFields.status;
+      const timeStamp = new Date(wallTime).toISOString();
+      io.emit("statusChange", { machineId, status, timeStamp });
+      logInfo(
+        `Machine ${machineId} changed status to ${status} at ${timeStamp}`,
+      );
+    });
     server.listen(port, () => {
       logInfo(`Server started on port ${port}`);
     });
