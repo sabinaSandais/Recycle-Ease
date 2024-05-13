@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { socket } from "./socket";
 import Home from "./pages/Home/Home";
+import Demo from "./pages/Demo/Demo";
 import { logInfo } from "../../server/src/util/logging";
 import { useStatusChange } from "./components/StatusChangeContext";
+
+import "./app.css";
 
 const App = () => {
   const [socketId, setSocketId] = useState(null);
@@ -48,6 +51,7 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/demo" element={<Demo />} />
       </Routes>
     </>
   );

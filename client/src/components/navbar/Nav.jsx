@@ -37,11 +37,11 @@ const Nav = () => {
           </li>
           <li className="navbar-item">
             <Link
-              to="/user"
+              to="/demo"
               data-testid={TEST_ID.linkToUsers}
               className="navbar-link"
             >
-              Users
+              Demo
             </Link>
           </li>
           <li
