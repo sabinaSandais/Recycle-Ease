@@ -2,48 +2,55 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./ReviewSubmit.css";
-import useFetch from "../hooks/useFetch";
 import PropTypes from "prop-types";
+import useFetch from "../hooks/useFetch";
 
-// here we need the user id to submit the review the user id
-// should be provided by the context
-
-const ReviewForm = ({ machineId }) => {
-  const [rating, setRating] = useState(1);
-  const [hoverRating, setHoverRating] = useState(1);
+const ReviewForm = ({ machineId, onReviewSubmit }) => {
+  const [stars, setStars] = useState(1);
+  const [hoverStars, setHoverStars] = useState(1);
   const [hoveredWord, setHoveredWord] = useState("Awful");
   const [comment, setComment] = useState("");
-  const { isLoading, error, performFetch } = useFetch("/reviews", handleSubmit);
 
-  const handleRatingChange = (ratingValue) => {
-    setRating(ratingValue);
-    setHoveredWord(getRatingWord(ratingValue));
+  const handleReceived = () => {
+    onReviewSubmit({ stars, comment, machineId });
+    setStars(1);
+    setHoverStars(1);
+    setHoveredWord("Awful");
+    setComment("");
+  };
+  const { isLoading, error, performFetch } = useFetch(
+    `/reviews/${machineId}`,
+    handleReceived,
+  );
+
+  const handleStarsChange = (starsValue) => {
+    setStars(starsValue);
+    setHoveredWord(getRatingWord(starsValue));
   };
 
-  const handleHoverRatingChange = (ratingValue) => {
-    setHoverRating(ratingValue);
-    setHoveredWord(getRatingWord(ratingValue));
+  const handleHoverStarsChange = (starsValue) => {
+    setHoverStars(starsValue);
+    setHoveredWord(getRatingWord(starsValue));
   };
 
   const handleCommentChange = (event) => {
     setComment(event.target.value);
   };
 
-  const handleSubmit = async () => {
-    try {
-      const review = { rating, comment, machineId };
-      await performFetch({
-        method: "POST",
-        body: JSON.stringify(review),
-      });
-
-      setRating(1);
-      setHoverRating(1);
-      setHoveredWord("Awful");
-      setComment("");
-    } catch (error) {
-      return error;
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!stars || !comment) {
+      alert("Please provide a star rating and comment.");
+      return;
     }
+    const review = { stars, comment, machineId };
+    performFetch({
+      method: "POST",
+      body: JSON.stringify(review),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   };
 
   const getRatingWord = (value) => {
@@ -64,41 +71,28 @@ const ReviewForm = ({ machineId }) => {
   };
 
   return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        handleSubmit();
-      }}
-      className="form-container"
-    >
-      <div className="rating-stars">
-        <label>
-          <div>
-            Rating:
-            {[1, 2, 3, 4, 5].map((value) => (
-              <FontAwesomeIcon
-                key={value}
-                icon={faStar}
-                className={
-                  value <= (hoverRating || rating)
-                    ? "star-filled"
-                    : "star-empty"
-                }
-                onClick={() => handleRatingChange(value)}
-                onMouseEnter={() => handleHoverRatingChange(value)}
-                onMouseLeave={() => handleHoverRatingChange(rating)}
-              />
-            ))}
-          </div>
-          <div>
-            <span className="rating-word">{hoveredWord}</span>
-          </div>
-        </label>
+    <form onSubmit={handleSubmit} className="form-container">
+      <div className="rating-stars" aria-label="Rating">
+        {[1, 2, 3, 4, 5].map((value) => (
+          <FontAwesomeIcon
+            key={value}
+            icon={faStar}
+            className={
+              value <= (hoverStars || stars) ? "star-filled" : "star-empty"
+            }
+            onClick={() => handleStarsChange(value)}
+            onMouseEnter={() => handleHoverStarsChange(value)}
+            onMouseLeave={() => handleHoverStarsChange(stars)}
+          />
+        ))}
       </div>
+      <p className="rating-word">{hoveredWord}</p>
       <div className="comment">
-        <label>
+        <label htmlFor="comment">
           Comment:
           <textarea
+            id="comment"
+            name="comment"
             value={comment}
             onChange={handleCommentChange}
             className="comment-txt"
@@ -114,6 +108,8 @@ const ReviewForm = ({ machineId }) => {
 };
 
 ReviewForm.propTypes = {
-  machineId: PropTypes.number.isRequired,
+  machineId: PropTypes.string.isRequired,
+  onReviewSubmit: PropTypes.func.isRequired,
 };
+
 export default ReviewForm;
