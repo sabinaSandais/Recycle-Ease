@@ -9,6 +9,7 @@ const MachineDetail = ({ content, onClose, className }) => {
   const statusClassName = content.status === 1 ? "open" : "closed";
 
   const [reviews, setReviews] = useState([]);
+  const [averageScore, setAverageScore] = useState(0);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,6 +37,16 @@ const MachineDetail = ({ content, onClose, className }) => {
     fetchReviews();
   }, [content]);
 
+  useEffect(() => {
+    if (reviews.length > 0) {
+      const totalStars = reviews.reduce((acc, review) => acc + review.stars, 0);
+      const avgScore = totalStars / reviews.length;
+      setAverageScore(avgScore);
+    } else {
+      setAverageScore(0);
+    }
+  }, [reviews]);
+
   const handleReviewSubmit = (newReview) => {
     setReviews((prevReviews) => [...prevReviews, newReview]);
   };
@@ -48,10 +59,11 @@ const MachineDetail = ({ content, onClose, className }) => {
       <div className="content">
         <div className="details">
           <ul className="machine-detail">
-            <li>{content.address}</li>
+            <li className="name">{content.address}</li>
             <li className={statusClassName}>
               {content.status === 1 ? "open" : "closed"}
             </li>
+            <li className="score"> Score: {averageScore.toFixed(1)}/5 </li>
           </ul>
         </div>
         <div className="review-form">
