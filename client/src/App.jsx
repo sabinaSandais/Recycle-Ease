@@ -6,7 +6,7 @@ import Demo from "./pages/Demo/Demo";
 import { logInfo } from "../../server/src/util/logging";
 import { useStatusChange } from "./components/StatusChangeContext";
 
-import "./App.css";
+import "./app.css";
 
 const App = () => {
   const [socketId, setSocketId] = useState(null);
