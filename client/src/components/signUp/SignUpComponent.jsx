@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
 import PropTypes from "prop-types";
 import "./signUp.css";
 
-import { infoContext } from "../../context/infoContext";
+import { useApplicationContext } from "../../context/applicationContext";
 function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setInfo } = useContext(infoContext);
-
+  const { setInfo } = useApplicationContext();
   const onSuccess = () => {
     setName("");
     setEmail("");
