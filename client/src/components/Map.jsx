@@ -15,16 +15,9 @@ const MapComponent = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { selectedLocation, setLocation } = useLocation();
-  const {
-    setMarkers,
-    setMachines,
-    setMapRefCurrent,
-    setSelectedMachine,
-    isPinClicked,
-    setIsPinClicked,
-    selectedMachine,
-    handleIsPinClicked,
-  } = useMachine();
+  const [selectedMachine, setSelectedMachine] = useState(null);
+  const [isPinClicked, setIsPinClicked] = useState(false);
+  const { setMarkers, setMachines } = useMachine();
 
   const { error: machinesError, performFetch: fetchMachines } = useFetch(
     "/machines",
@@ -62,7 +55,6 @@ const MapComponent = () => {
         {},
       ).addTo(mapInstance);
       mapRef.current = mapInstance;
-      setMapRefCurrent(mapRef.current);
       setIsLoading(false);
     }
 
@@ -72,6 +64,10 @@ const MapComponent = () => {
       }
     };
   }, []);
+
+  const handleIsPinClicked = () => {
+    setIsPinClicked(true);
+  };
 
   const handleCloseMachineDetail = () => {
     setSelectedMachine(null);
