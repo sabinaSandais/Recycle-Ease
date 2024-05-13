@@ -39,6 +39,10 @@ const ReviewForm = ({ machineId, onReviewSubmit }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!stars || !comment) {
+      alert("Please provide a star rating and comment.");
+      return;
+    }
     const review = { stars, comment, machineId };
     performFetch({
       method: "POST",
