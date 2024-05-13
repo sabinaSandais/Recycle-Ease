@@ -7,11 +7,11 @@ const statusChangeData = {
   timeStamp: "",
 };
 
-const StatusChangeContext = createContext();
+const MachineContext = createContext();
 
-export const useStatusChange = () => useContext(StatusChangeContext);
+export const useMachine = () => useContext(MachineContext);
 
-export const StatusChangeProvider = ({ children }) => {
+export const MachineProvider = ({ children }) => {
   const [statusChange, setStatusChange] = useState(statusChangeData);
 
   const onStatusChange = (data) => {
@@ -27,11 +27,11 @@ export const StatusChangeProvider = ({ children }) => {
 
   return (
     // Step 3: Provide the status change state to all children
-    <StatusChangeContext.Provider value={{ statusChange, onStatusChange }}>
+    <MachineContext.Provider value={{ statusChange, onStatusChange }}>
       {children}
-    </StatusChangeContext.Provider>
+    </MachineContext.Provider>
   );
 };
-StatusChangeProvider.propTypes = {
+MachineProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };

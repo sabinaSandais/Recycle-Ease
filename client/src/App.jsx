@@ -4,14 +4,14 @@ import { socket } from "./socket";
 import Home from "./pages/Home/Home";
 import Demo from "./pages/Demo/Demo";
 import { logInfo } from "../../server/src/util/logging";
-import { useStatusChange } from "./components/StatusChangeContext";
+import { useMachine } from "./components/MachineContext";
 
 import "./app.css";
 
 const App = () => {
   const [socketId, setSocketId] = useState(null);
   const [socketConnected, setSocketConnected] = useState(false);
-  const { statusChange, onStatusChange } = useStatusChange();
+  const { statusChange, onStatusChange } = useMachine();
 
   useEffect(() => {
     function onConnect() {
