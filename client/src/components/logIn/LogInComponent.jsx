@@ -12,33 +12,48 @@ import { infoContext } from "../../context/infoContext";
 function LogInComponent({ showLoginForm }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [apiResponse, setApiResponse] = useState({});
 
   const { setIsLoggedIn, setUser, isLoggedIn, user } = useContext(userContext);
   const { setInfo } = useContext(infoContext);
 
-  const { isLoading, error, performFetch, cancelFetch } =
-    useFetch("/user/login");
+  const { isLoading, error, performFetch, cancelFetch } = useFetch(
+    "/user/login",
+    (response) => {
+      setApiResponse(response);
+    },
+  );
 
   useEffect(() => {
     return cancelFetch;
   }, []);
 
   useEffect(() => {
-    if (error && error.token) {
-      setIsLoggedIn(true);
-      setUser({ name: error.name, token: error.token, id: error.id });
-    }
-    if (error != null) {
+    if (error !== null) {
       if (error.error) {
         setInfo({ message: error.error, type: "error" });
       }
-      if (error.token && error.token !== undefined) {
-        setInfo({ message: "Login successful", type: "success" });
-      }
-    } else if (isLoading) {
+    }
+    if (isLoading) {
       setInfo({ message: "Logging in...", type: "success" });
     }
   }, [error]);
+
+  useEffect(() => {
+    if (apiResponse.success === true) {
+      setIsLoggedIn(true);
+      setUser({
+        name: apiResponse.result.name,
+        token: apiResponse.result.token,
+        id: apiResponse.result.userId,
+      });
+      setInfo({ message: "Login successful", type: "success" });
+    }
+
+    if (isLoading) {
+      setInfo({ message: "Logging in...", type: "success" });
+    }
+  }, [apiResponse]);
 
   useEffect(() => {
     if (isLoggedIn) {
