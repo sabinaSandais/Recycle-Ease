@@ -3,6 +3,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import AddressSearch from "./SearchBar.jsx";
 import { useLocation } from "./LocationContext.jsx";
+import { useMachine } from "./MachineContext.jsx";
 import "./Map.css";
 import useFetch from "../hooks/useFetch.js";
 import MachineDetail from "./MachineDetail.jsx";
@@ -14,8 +15,16 @@ const MapComponent = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { selectedLocation, setLocation } = useLocation();
-  const [selectedMachine, setSelectedMachine] = useState(null);
-  const [isPinClicked, setIsPinClicked] = useState(false);
+  const {
+    setMarkers,
+    setMachines,
+    setMapRefCurrent,
+    setSelectedMachine,
+    isPinClicked,
+    setIsPinClicked,
+    selectedMachine,
+    handleIsPinClicked,
+  } = useMachine();
 
   const { error: machinesError, performFetch: fetchMachines } = useFetch(
     "/machines",
@@ -26,16 +35,22 @@ const MapComponent = () => {
         setIsLoading(false);
         return;
       }
+      let markers = [];
+      const machines = response.result;
+      setMachines(machines);
       response.result.forEach((machine) => {
         const { lat, lon } = machine.location;
         let iconUrl = machine.status === 1 ? greenPin : redPin;
         let icon = L.icon({ iconUrl, iconSize: [25, 41] });
         const marker = L.marker([lat, lon], { icon }).addTo(mapRef.current);
+        marker.machineId = machine._id;
         marker.on("click", () => {
           setSelectedMachine(machine);
           handleIsPinClicked();
         });
+        markers.push(marker);
       });
+      setMarkers(markers);
     },
   );
   useEffect(() => {
@@ -47,6 +62,7 @@ const MapComponent = () => {
         {},
       ).addTo(mapInstance);
       mapRef.current = mapInstance;
+      setMapRefCurrent(mapRef.current);
       setIsLoading(false);
     }
 
@@ -56,10 +72,6 @@ const MapComponent = () => {
       }
     };
   }, []);
-
-  const handleIsPinClicked = () => {
-    setIsPinClicked(true);
-  };
 
   const handleCloseMachineDetail = () => {
     setSelectedMachine(null);
