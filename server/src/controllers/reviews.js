@@ -11,6 +11,10 @@ export const createReview = async (req, res) => {
       user: userId,
     });
     await review.save();
+    const reviews = await Review.find({ machine: machineId });
+    const machine = await Machine.findById(machineId);
+    machine.score = averageScore(reviews);
+    await machine.save();
     res
       .status(201)
       .json({ success: true, message: "Review created successfully" });
