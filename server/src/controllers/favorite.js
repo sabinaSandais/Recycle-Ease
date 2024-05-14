@@ -48,7 +48,8 @@ export const saveFavorite = async (req, res) => {
 };
 
 export const deleteFavorite = async (req, res) => {
-  const { userId, machineId } = req.params;
+  const { userId } = req.params;
+  const { machineId } = req.body;
 
   try {
     const user = await User.findById(userId);

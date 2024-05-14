@@ -11,5 +11,5 @@ favoriteRouter.get("/:userId", getFavorite);
 
 favoriteRouter.post("/:userId", saveFavorite);
 
-favoriteRouter.delete("/:userId/:machineId", deleteFavorite);
+favoriteRouter.delete("/:userId", deleteFavorite);
 export default favoriteRouter;
