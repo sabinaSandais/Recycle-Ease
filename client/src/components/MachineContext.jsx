@@ -1,6 +1,5 @@
 import React, { useState, createContext, useContext, useEffect } from "react";
 import PropTypes from "prop-types";
-import { logInfo } from "../../../server/src/util/logging";
 import greenPin from "./assets/Map_pin_icon_green.svg";
 import redPin from "./assets/map-marker.svg";
 import L from "leaflet";
@@ -47,7 +46,6 @@ export const MachineProvider = ({ children }) => {
       }
     });
     setMachines(newMachines);
-    logInfo(machines);
     setStatusChange((prevState) => ({
       ...prevState,
       machineId,
