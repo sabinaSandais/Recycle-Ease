@@ -6,6 +6,7 @@ import "./nav.css";
 import UserFavicon from "../userFavicon/UserFavicon";
 import SignUp from "../signUp/SignUpComponent";
 import Login from "../logIn/LogInComponent";
+import Favorites from "../../pages/Favorites/Favorites";
 import { useApplicationContext } from "../../context/applicationContext";
 
 import TEST_ID from "../Nav.testid";
@@ -44,6 +45,15 @@ const Nav = () => {
               Demo
             </Link>
           </li>
+          <li className={"navbar-item" + (isLoggedIn ? "" : " hide") }>
+            <Link
+              to="/favorites"
+              data-testid={TEST_ID.linkToFavorites}
+              className="navbar-link"
+            >
+              Favorites
+            </Link>
+          </li>
           <li
             className={"navbar-item login-btn" + (isLoggedIn ? " hide" : "")}
             onClick={() => {
@@ -80,6 +90,7 @@ const Nav = () => {
               Log Out
             </a>
           </li>
+          
           <UserFavicon />
         </ul>
       </div>

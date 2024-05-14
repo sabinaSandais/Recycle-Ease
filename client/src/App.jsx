@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import Demo from "./pages/Demo/Demo";
 import { logInfo } from "../../server/src/util/logging";
 import { useStatusChange } from "./components/StatusChangeContext";
+import Favorites from "./pages/Favorites/Favorites";
 
 import "./app.css";
 
@@ -52,6 +53,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/demo" element={<Demo />} />
+        <Route path= "/favorites" element={<Favorites />} />
       </Routes>
     </>
   );

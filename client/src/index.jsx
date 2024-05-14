@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { StatusChangeProvider } from "./components/StatusChangeContext";
 import { ApplicationContextProvider } from "./context/applicationContext";
+import { FavoriteProvider } from "./components/FavoriteContext";
 
 import AppWrapper from "./AppWrapper";
 import App from "./App";
@@ -11,9 +12,11 @@ const root = createRoot(container);
 root.render(
   <AppWrapper>
     <ApplicationContextProvider>
+      <FavoriteProvider>
       <StatusChangeProvider>
         <App />
       </StatusChangeProvider>
+      </FavoriteProvider>
     </ApplicationContextProvider>
   </AppWrapper>,
 );

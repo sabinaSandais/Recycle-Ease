@@ -56,25 +56,40 @@
   font-size: 20px;
   font-weight: bold;
 }
-.favorite-icon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  transition: fill 0.3s ease;
-}
-.favorite-icon-container{
-  align-self: flex-start;
+.favorite-btn{
   background-color: transparent;
   border: none;
   cursor: pointer;
   font-size: 16px;
-  color: #333;
+padding: 3px ;
+
+}
+.favorite-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: color 0.1s ease;
+}
+.favorite-icon-container{
+  align-self: flex-start;
+  background-color: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  
 }
 
 .favorite-icon.filled {
-  fill: #ff0000; /* Change color as needed */
+  color: #ff0000; 
+  background-color: none;
 }
 
 .favorite-icon:hover {
-  fill: #ff0000; /* Change hover color as needed */
+  fill: #ff0000; 
+}
+.top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
 }
