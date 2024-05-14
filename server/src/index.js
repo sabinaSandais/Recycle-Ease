@@ -45,24 +45,11 @@ const startServer = async () => {
     await connectDB();
     const changeStream = Machine.watch();
     changeStream.on("change", (change) => {
-      let batchChanges = [];
-      batchChanges.push(change);
-      let intervalId;
-      intervalId = setInterval(() => {
-        if (batchChanges.length > 0) {
-          batchChanges.forEach((change) => {
-            const { documentKey, updateDescription, wallTime } = change;
-            const machineId = documentKey._id.toString();
-            const status = updateDescription.updatedFields.status;
-            const timeStamp = new Date(wallTime).toISOString();
-            io.emit("statusChange", { machineId, status, timeStamp });
-          });
-        }
-      }, 100);
-      setTimeout(() => {
-        clearInterval(intervalId);
-        batchChanges = [];
-      }, 20000);
+      const { documentKey, updateDescription, wallTime } = change;
+      const machineId = documentKey._id.toString();
+      const status = updateDescription.updatedFields.status;
+      const timeStamp = new Date(wallTime).toISOString();
+      io.emit("statusChange", { machineId, status, timeStamp });
     });
     server.listen(port, () => {
       logInfo(`Server started on port ${port}`);
