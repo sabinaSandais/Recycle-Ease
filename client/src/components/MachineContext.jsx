@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import { logInfo } from "../../../server/src/util/logging";
 import greenPin from "./assets/Map_pin_icon_green.svg";
@@ -21,32 +21,33 @@ export const MachineProvider = ({ children }) => {
   const [markers, setMarkers] = useState([]);
 
   const replaceMarker = (machineId) => {
-    const updatedMarkers = markers.map((marker) => {
+    markers.forEach((marker) => {
       if (marker.machineId === machineId) {
-        const machine = machines.find((machine) => machine._id === machineId);
-        if (machine) {
-          const iconUrl = machine.status === 1 ? greenPin : redPin;
-          const updatedIcon = L.icon({ iconUrl, iconSize: [25, 41] });
-          logInfo("updatedIcon", updatedIcon);
-          return {
-            ...marker,
-            options: { ...marker.options, icon: updatedIcon },
-          };
-        } else {
-          logInfo("Machine not found");
-          return marker;
-        }
-      } else {
-        return marker;
+        marker.setIcon(
+          L.icon({
+            iconUrl: statusChange.status === 1 ? greenPin : redPin,
+            iconSize: [25, 41],
+          }),
+        );
       }
     });
-    setMarkers(updatedMarkers);
   };
+
+  useEffect(() => {
+    replaceMarker(statusChange.machineId);
+  }, [machines]);
 
   const onStatusChange = (data) => {
     const { machineId, status, timeStamp } = data;
-    logInfo("onStatusChange", machineId);
-    replaceMarker(machineId);
+    const newMachines = [...machines];
+    newMachines.forEach((machine) => {
+      if (machine._id === machineId) {
+        machine.status = status;
+        machine.status_update_time = timeStamp;
+      }
+    });
+    setMachines(newMachines);
+    logInfo(machines);
     setStatusChange((prevState) => ({
       ...prevState,
       machineId,
