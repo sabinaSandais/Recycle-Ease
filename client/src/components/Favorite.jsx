@@ -5,6 +5,7 @@ import useFetch from "../hooks/useFetch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import "./Favorite.css";
+import StarRating from "./StarRating";
 
 const Favorite = () => {
   const { favoriteMachines, setFavoriteMachines } = useFavoriteContext();
@@ -68,6 +69,7 @@ const Favorite = () => {
             <div className="status">
               {machine.status === 1 ? "Open" : "Closed"}
             </div>
+            <StarRating rating={machine.score} />
             <div className="button">
               <button
                 onClick={() => {

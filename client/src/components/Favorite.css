@@ -1,13 +1,13 @@
 .favorite-container {
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 100px auto;
   padding: 20px;
 }
 
 .favorite-li {
   display: grid;
-  grid-template-columns: 70% 15% 15%;
+  grid-template-columns: 70% 10% 15% 5%;
   justify-content: center;
   align-items: center;
   padding: 0px 0;
@@ -27,6 +27,26 @@
   padding: 10px;
   text-align: center;
 }
+.star-rating {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  color: rgb(123, 123, 9);
+  outline: black;
+}
+
+.star-rating.red {
+  color: red;
+}
+
+.star-rating.green {
+  color: green;
+}
+
+.star-rating.orange {
+  color: orange;
+}
+
 
 .favorite-li button {
   background: none;
