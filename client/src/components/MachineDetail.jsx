@@ -5,8 +5,8 @@ import "./MachineDetail.css";
 import ReviewItem from "./ReviewItem";
 import ReviewForm from "./ReviewSubmit";
 import { useFavoriteContext } from "./FavoriteContext";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useApplicationContext } from "../context/applicationContext";
 import { logInfo } from "../../../server/src/util/logging";
 

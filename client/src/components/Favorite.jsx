@@ -2,9 +2,9 @@ import { useApplicationContext } from "../context/applicationContext";
 import React, { useEffect, useState } from "react";
 import { useFavoriteContext } from "./FavoriteContext";
 import useFetch from "../hooks/useFetch";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import './Favorite.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import "./Favorite.css";
 
 const Favorite = () => {
   const { favoriteMachines, setFavoriteMachines } = useFavoriteContext();
