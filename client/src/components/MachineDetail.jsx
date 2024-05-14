@@ -10,32 +10,35 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useApplicationContext } from "../context/applicationContext";
 import { logInfo } from "../../../server/src/util/logging";
 
-
-
 const MachineDetail = ({ content, onClose, className }) => {
-
   const useToggleFavorite = (userId, machineId) => {
     const { performFetch: addFavorite } = useFetch(`/favorite/${userId}`);
     const { performFetch: removeFavorite } = useFetch(`/favorite/${userId}`);
-  
+
     const toggleFavorite = async (isFavorite, setFavoriteMachines) => {
       try {
         if (isFavorite) {
-          await removeFavorite({ method: "DELETE", body: JSON.stringify({ machineId })});
-          setFavoriteMachines(prevMachines => prevMachines.filter(id => id !== machineId));
+          await removeFavorite({
+            method: "DELETE",
+            body: JSON.stringify({ machineId }),
+          });
+          setFavoriteMachines((prevMachines) =>
+            prevMachines.filter((id) => id !== machineId),
+          );
         } else {
-          await addFavorite({ method: "POST", body: JSON.stringify({ machineId }) });
-          setFavoriteMachines(prevMachines => [...prevMachines, content]);
+          await addFavorite({
+            method: "POST",
+            body: JSON.stringify({ machineId }),
+          });
+          setFavoriteMachines((prevMachines) => [...prevMachines, content]);
         }
       } catch (error) {
         logInfo("Error toggling favorite", error);
       }
     };
-  
+
     return toggleFavorite;
   };
-
-
 
   const statusClassName = content.status === 1 ? "open" : "closed";
 
@@ -48,31 +51,32 @@ const MachineDetail = ({ content, onClose, className }) => {
 
   const { user } = useApplicationContext();
   const userId = user.id;
-  const { favoriteMachines, setFavoriteMachines } = useFavoriteContext();
-  
+  const { setFavoriteMachines } = useFavoriteContext();
+
   const toggleFavorite = useToggleFavorite(userId, content._id);
 
   const handleFavoriteClick = () => {
     toggleFavorite(isFavorite, setFavoriteMachines);
-    setIsFavorite(prevIsFavorite => !prevIsFavorite);
+    setIsFavorite((prevIsFavorite) => !prevIsFavorite);
   };
-  const {
-    performFetch: getFavoriteMachines, error: favoriteError, isLoading: favoriteLoading
-  } = useFetch(`/favorite/${userId}`, (response) => {
-    if(response.success){
-    setFavoriteMachines(response.machines);
-    setIsLoading(false);
-    setIsFavorite(response.machines.some(machine => machine._id === content._id))
-  }
-  if(favoriteError)
-    setError(favoriteError);
-    setIsLoading(false);
-  } );
+  const { performFetch: getFavoriteMachines, error: favoriteError } = useFetch(
+    `/favorite/${userId}`,
+    (response) => {
+      if (response.success) {
+        setFavoriteMachines(response.machines);
+        setIsLoading(false);
+        setIsFavorite(
+          response.machines.some((machine) => machine._id === content._id),
+        );
+      }
+      if (favoriteError) setError(favoriteError);
+      setIsLoading(false);
+    },
+  );
 
   useEffect(() => {
     getFavoriteMachines();
   }, [content]);
-
 
   const { error: reviewError, performFetch: fetchReviews } = useFetch(
     `/reviews/${content._id}`,
@@ -116,7 +120,9 @@ const MachineDetail = ({ content, onClose, className }) => {
               <FontAwesomeIcon
                 icon={faHeart}
                 className={`favorite-icon ${isFavorite ? "filled" : ""}`}
-                title={isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+                title={
+                  isFavorite ? "Remove from Favorites" : "Add to Favorites"
+                }
               />
             </button>
           )}
@@ -139,7 +145,9 @@ const MachineDetail = ({ content, onClose, className }) => {
           {isLoggedIn ? (
             <ReviewForm
               machineId={content._id}
-              onReviewSubmit={(newReview) => setReviews(prevReviews => [...prevReviews, newReview])}
+              onReviewSubmit={(newReview) =>
+                setReviews((prevReviews) => [...prevReviews, newReview])
+              }
             />
           ) : (
             <div>Please log in to submit a review.</div>

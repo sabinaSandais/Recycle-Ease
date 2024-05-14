@@ -4,10 +4,6 @@ const FavoriteContext = createContext();
 export const useFavoriteContext = () => useContext(FavoriteContext);
 export const FavoriteProvider = ({ children }) => {
   const [favoriteMachines, setFavoriteMachines] = useState([]);
-  
- 
-
-
 
   return (
     <FavoriteContext.Provider

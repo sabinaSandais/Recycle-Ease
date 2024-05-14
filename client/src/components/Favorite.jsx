@@ -12,76 +12,76 @@ const Favorite = () => {
   const userId = user.id;
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  
 
-  const { performFetch: getFavoriteMachines, error: favoriteError } = useFetch(`/favorite/${userId}`, (response) => {
-    if (response.success) {
-      setFavoriteMachines(response.machines);
-      setIsLoading(false);
-    }
-    if (favoriteError) {
-      setError(favoriteError);
-      setIsLoading(false);
-    }
-  });
+  const { performFetch: getFavoriteMachines, error: favoriteError } = useFetch(
+    `/favorite/${userId}`,
+    (response) => {
+      if (response.success) {
+        setFavoriteMachines(response.machines);
+        setIsLoading(false);
+      }
+      if (favoriteError) {
+        setError(favoriteError);
+        setIsLoading(false);
+      }
+    },
+  );
 
-  const { performFetch: deleteFavoriteFetch } = useFetch(`/favorite/${userId}`, (response) => {
-    if (response.success) {
-      getFavoriteMachines();
-    }
-    if (response.error) {
-      setError(response.error);
-      setIsLoading(false);
-    }
-  });
-
+  const { performFetch: deleteFavoriteFetch } = useFetch(
+    `/favorite/${userId}`,
+    (response) => {
+      if (response.success) {
+        getFavoriteMachines();
+      }
+      if (response.error) {
+        setError(response.error);
+        setIsLoading(false);
+      }
+    },
+  );
 
   const deleteFavorite = async (machineId) => {
     try {
-      await deleteFavoriteFetch({ method: "DELETE" , body: JSON.stringify({ machineId })});
+      await deleteFavoriteFetch({
+        method: "DELETE",
+        body: JSON.stringify({ machineId }),
+      });
     } catch (error) {
       setError(error);
     }
   };
 
- 
-
-
-  
-
   useEffect(() => {
     getFavoriteMachines();
   }, [userId]);
 
-  return (
-    isLoading ? <div>Loading...</div> :
-    error ? <div>Error: {error}</div> :
+  return isLoading ? (
+    <div>Loading...</div>
+  ) : error ? (
+    <div>Error: {error}</div>
+  ) : (
     <div className="favorite-container">
       <div className="favorite-ul">
         {favoriteMachines.map((machine) => (
           <div key={machine._id} className="favorite-li">
-            <div className="machine-address">
-            {machine.address}
-            </div>
+            <div className="machine-address">{machine.address}</div>
             <div className="status">
-            {machine.status === 1 ? "Open" : "Closed"}
+              {machine.status === 1 ? "Open" : "Closed"}
             </div>
             <div className="button">
-            <button onClick={() =>{
-
-               
-                deleteFavorite(machine._id)
-               
-               }}>
-              <FontAwesomeIcon icon={faTrashAlt} />
-            </button>
+              <button
+                onClick={() => {
+                  deleteFavorite(machine._id);
+                }}
+              >
+                <FontAwesomeIcon icon={faTrashAlt} />
+              </button>
             </div>
           </div>
         ))}
-     </div>
+      </div>
     </div>
   );
-
-}
+};
 
 export default Favorite;

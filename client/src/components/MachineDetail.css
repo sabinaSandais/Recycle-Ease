@@ -56,13 +56,12 @@
   font-size: 20px;
   font-weight: bold;
 }
-.favorite-btn{
+.favorite-btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
   font-size: 16px;
-padding: 3px ;
-
+  padding: 3px;
 }
 .favorite-icon {
   width: 24px;
@@ -70,26 +69,24 @@ padding: 3px ;
   cursor: pointer;
   transition: color 0.1s ease;
 }
-.favorite-icon-container{
+.favorite-icon-container {
   align-self: flex-start;
   background-color: none;
   border: none;
   cursor: pointer;
   font-size: 16px;
-  
 }
 
 .favorite-icon.filled {
-  color: #ff0000; 
+  color: #ff0000;
   background-color: none;
 }
 
 .favorite-icon:hover {
-  fill: #ff0000; 
+  fill: #ff0000;
 }
-.top{
+.top {
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
 }

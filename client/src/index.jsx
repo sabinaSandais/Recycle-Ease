@@ -13,9 +13,9 @@ root.render(
   <AppWrapper>
     <ApplicationContextProvider>
       <FavoriteProvider>
-      <StatusChangeProvider>
-        <App />
-      </StatusChangeProvider>
+        <StatusChangeProvider>
+          <App />
+        </StatusChangeProvider>
       </FavoriteProvider>
     </ApplicationContextProvider>
   </AppWrapper>,
