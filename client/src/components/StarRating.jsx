@@ -1,12 +1,11 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
-import { faStarHalfAlt as halfStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
+import { faStarHalfAlt as halfStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
 import PropTypes from "prop-types";
 
 const StarRating = ({ rating }) => {
-
   const clampedRating = Math.max(0, Math.min(5, rating));
 
   const filledStars = Math.floor(clampedRating);
@@ -26,13 +25,13 @@ const StarRating = ({ rating }) => {
     stars.push(<FontAwesomeIcon key={i} icon={regularStar} />);
   }
 
-  let colorClass = '';
+  let colorClass = "";
   if (rating < 2.5) {
-    colorClass = 'red';
+    colorClass = "red";
   } else if (rating < 3.5) {
-    colorClass = 'orange';
+    colorClass = "orange";
   } else {
-    colorClass = 'green';
+    colorClass = "green";
   }
 
   return <div className={`star-rating ${colorClass}`}>{stars}</div>;
