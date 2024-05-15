@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { StatusChangeProvider } from "./components/StatusChangeContext";
 import { ApplicationContextProvider } from "./context/applicationContext";
+import { MachineProvider } from "./components/MachineContext";
 
 import AppWrapper from "./AppWrapper";
 import App from "./App";
@@ -11,9 +11,9 @@ const root = createRoot(container);
 root.render(
   <AppWrapper>
     <ApplicationContextProvider>
-      <StatusChangeProvider>
+      <MachineProvider>
         <App />
-      </StatusChangeProvider>
+      </MachineProvider>
     </ApplicationContextProvider>
   </AppWrapper>,
 );
