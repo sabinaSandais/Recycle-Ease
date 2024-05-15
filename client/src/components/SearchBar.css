@@ -1,16 +1,16 @@
 .address-search {
   position: relative;
-  width: 500px;
-  margin: 20px auto;
+  width: 400px;
+  margin: 10px;
+  margin-right: 400px;
   z-index: 1000;
 }
 
 .address-search input {
   width: 100%;
-  padding: 8px;
   box-sizing: border-box;
   border-radius: 24px;
-  padding: 20px 10px;
+  padding: 15px 15px;
 }
 
 .results {

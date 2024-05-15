@@ -1,5 +1,6 @@
 import React from "react";
 import MapComponent from "../../components/Map";
+import SearchBar from "../../components/SearchBar";
 import { LocationProvider } from "../../components/LocationContext";
 import TEST_ID from "./Home.testid";
 import Nav from "../../components/navbar/Nav";
@@ -16,9 +17,11 @@ const Home = () => {
       ) : (
         <></>
       )}
-      <Nav />
+
       <LocationProvider>
+        <Nav />
         <MapComponent />
+        <SearchBar />
       </LocationProvider>
     </div>
   );
