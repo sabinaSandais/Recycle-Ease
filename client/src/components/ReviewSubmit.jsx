@@ -99,7 +99,7 @@ const ReviewForm = ({ machineId, onReviewSubmit }) => {
           />
         </label>
       </div>
-      <button type="submit" className="review-btn" disabled={isLoading}>
+      <button type="submit" className="submit-btn" disabled={isLoading}>
         {isLoading ? "Loading..." : "Submit"}
       </button>
       {error && <p className="error-msg">{error.toString()}</p>}
