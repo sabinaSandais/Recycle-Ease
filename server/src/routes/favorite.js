@@ -4,12 +4,13 @@ import {
   saveFavorite,
   deleteFavorite,
 } from "../controllers/favorite.js";
+import auth from "../util/auth.js";
 
 const favoriteRouter = express.Router();
 
-favoriteRouter.get("/:userId", getFavorite);
+favoriteRouter.get("/", auth, getFavorite);
 
-favoriteRouter.post("/:userId", saveFavorite);
+favoriteRouter.post("/", auth, saveFavorite);
 
-favoriteRouter.delete("/:userId", deleteFavorite);
+favoriteRouter.delete("/", auth, deleteFavorite);
 export default favoriteRouter;

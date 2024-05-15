@@ -3,16 +3,16 @@ import Machine from "../models/Machine.js";
 import { logError } from "../util/logging.js";
 
 export const getFavorite = async (req, res) => {
-  const { userId } = req.params;
+  const userId = req.id;
 
   try {
-    const user = await User.findById(userId).populate("favorite");
+    const user = await User.findById(userId).populate("favorites");
 
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
 
-    const favorites = user.favorite;
+    const favorites = user.favorites;
 
     const machines = await Machine.find({ _id: { $in: favorites } });
 
@@ -24,7 +24,7 @@ export const getFavorite = async (req, res) => {
 };
 
 export const saveFavorite = async (req, res) => {
-  const { userId } = req.params;
+  const userId = req.id;
   const { machineId } = req.body;
 
   try {
@@ -33,7 +33,7 @@ export const saveFavorite = async (req, res) => {
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
-    user.favorite.push(machineId);
+    user.favorites.push(machineId);
     await user.save();
 
     return res
@@ -48,7 +48,7 @@ export const saveFavorite = async (req, res) => {
 };
 
 export const deleteFavorite = async (req, res) => {
-  const { userId } = req.params;
+  const userId = req.id;
   const { machineId } = req.body;
 
   try {
@@ -58,7 +58,7 @@ export const deleteFavorite = async (req, res) => {
       return res.status(404).json({ error: "User not found" });
     }
 
-    user.favorite.pull(machineId);
+    user.favorites.pull(machineId);
     await user.save();
 
     return res
