@@ -10,12 +10,12 @@ import StarRating from "./StarRating";
 const Favorite = () => {
   const { favoriteMachines, setFavoriteMachines } = useFavoriteContext();
   const { user } = useApplicationContext();
-  const userId = user.id;
+  const token = user.token;
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   const { performFetch: getFavoriteMachines, error: favoriteError } = useFetch(
-    `/favorite/${userId}`,
+    "/favorite",
     (response) => {
       if (response.success) {
         setFavoriteMachines(response.machines);
@@ -29,10 +29,10 @@ const Favorite = () => {
   );
 
   const { performFetch: deleteFavoriteFetch } = useFetch(
-    `/favorite/${userId}`,
+    "/favorite",
     (response) => {
       if (response.success) {
-        getFavoriteMachines();
+        getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
       }
       if (response.error) {
         setError(response.error);
@@ -45,6 +45,10 @@ const Favorite = () => {
     try {
       await deleteFavoriteFetch({
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ machineId }),
       });
     } catch (error) {
@@ -53,8 +57,8 @@ const Favorite = () => {
   };
 
   useEffect(() => {
-    getFavoriteMachines();
-  }, [userId]);
+    getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
+  }, [user.id]);
 
   return isLoading ? (
     <div>Loading...</div>

@@ -11,15 +11,19 @@ import { useApplicationContext } from "../context/applicationContext";
 import { logInfo } from "../../../server/src/util/logging";
 
 const MachineDetail = ({ content, onClose, className }) => {
-  const useToggleFavorite = (userId, machineId) => {
-    const { performFetch: addFavorite } = useFetch(`/favorite/${userId}`);
-    const { performFetch: removeFavorite } = useFetch(`/favorite/${userId}`);
+  const useToggleFavorite = (token, machineId) => {
+    const { performFetch: addFavorite } = useFetch("/favorite");
+    const { performFetch: removeFavorite } = useFetch("/favorite");
 
     const toggleFavorite = async (isFavorite, setFavoriteMachines) => {
       try {
         if (isFavorite) {
           await removeFavorite({
             method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
             body: JSON.stringify({ machineId }),
           });
           setFavoriteMachines((prevMachines) =>
@@ -29,6 +33,10 @@ const MachineDetail = ({ content, onClose, className }) => {
           await addFavorite({
             method: "POST",
             body: JSON.stringify({ machineId }),
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
           });
           setFavoriteMachines((prevMachines) => [...prevMachines, content]);
         }
@@ -50,17 +58,17 @@ const MachineDetail = ({ content, onClose, className }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const { user } = useApplicationContext();
-  const userId = user.id;
+  const token = user.token;
   const { setFavoriteMachines } = useFavoriteContext();
 
-  const toggleFavorite = useToggleFavorite(userId, content._id);
+  const toggleFavorite = useToggleFavorite(token, content._id);
 
   const handleFavoriteClick = () => {
     toggleFavorite(isFavorite, setFavoriteMachines);
     setIsFavorite((prevIsFavorite) => !prevIsFavorite);
   };
   const { performFetch: getFavoriteMachines, error: favoriteError } = useFetch(
-    `/favorite/${userId}`,
+    "/favorite",
     (response) => {
       if (response.success) {
         setFavoriteMachines(response.machines);
@@ -75,7 +83,7 @@ const MachineDetail = ({ content, onClose, className }) => {
   );
 
   useEffect(() => {
-    getFavoriteMachines();
+    getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
   }, [content]);
 
   const { error: reviewError, performFetch: fetchReviews } = useFetch(
