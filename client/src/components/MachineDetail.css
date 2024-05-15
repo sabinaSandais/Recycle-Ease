@@ -3,15 +3,31 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 0;
+  top: 65px;
   left: -100%;
-  width: 25%;
+  width: 26%;
   height: 100%;
   padding: 10px;
   background-color: white;
-  border-right: 1px solid #ccc;
   transition: left 0.5s ease-in-out;
   overflow-y: auto;
+  border: 30px solid;
+  outline: 5px solid #fff;
+  outline-offset: -28px;
+  border-image: linear-gradient(
+    45deg,
+    #000066 0%,
+    #57006b 11%,
+    #8a0067 22%,
+    #b8005f 33%,
+    #db0054 44%,
+    #f63741 56%,
+    #ff692e 67%,
+    #ff9705 78%,
+    #ffb500 89%,
+    #ffea00 100%
+  );
+  border-image-slice: 1;
 }
 
 .close-btn {
@@ -24,7 +40,7 @@
 }
 
 .content {
-  margin-top: 10px;
+  margin-top: 1px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
