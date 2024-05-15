@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
 
@@ -6,14 +6,14 @@ import "./nav.css";
 import UserFavicon from "../userFavicon/UserFavicon";
 import SignUp from "../signUp/SignUpComponent";
 import Login from "../logIn/LogInComponent";
-import { userContext } from "../../context/userContext";
+import { useApplicationContext } from "../../context/applicationContext";
 
 import TEST_ID from "../Nav.testid";
 
 const Nav = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showSignUpForm, setShowSignUpForm] = useState(false);
-  const { isLoggedIn, setIsLoggedIn } = useContext(userContext);
+  const { isLoggedIn, setIsLoggedIn } = useApplicationContext();
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -37,11 +37,11 @@ const Nav = () => {
           </li>
           <li className="navbar-item">
             <Link
-              to="/user"
+              to="/demo"
               data-testid={TEST_ID.linkToUsers}
               className="navbar-link"
             >
-              Users
+              Demo
             </Link>
           </li>
           <li

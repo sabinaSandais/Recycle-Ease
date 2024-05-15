@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 
 import useFetch from "../../hooks/useFetch";
 import PropTypes from "prop-types";
@@ -7,15 +7,14 @@ import "./login.css";
 
 import { logInfo } from "../../../../server/src/util/logging";
 
-import { userContext } from "../../context/userContext";
-import { infoContext } from "../../context/infoContext";
+import { useApplicationContext } from "../../context/applicationContext";
 function LogInComponent({ showLoginForm }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [apiResponse, setApiResponse] = useState({});
 
-  const { setIsLoggedIn, setUser, isLoggedIn, user } = useContext(userContext);
-  const { setInfo } = useContext(infoContext);
+  const { isLoggedIn, setIsLoggedIn, user, setUser, setInfo } =
+    useApplicationContext();
 
   const { isLoading, error, performFetch, cancelFetch } = useFetch(
     "/user/login",

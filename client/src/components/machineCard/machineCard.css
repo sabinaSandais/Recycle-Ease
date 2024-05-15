@@ -1,0 +1,43 @@
+/* for the machine card */
+.machine_card {
+  width: 30%;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+/* for the machine card header */
+.machine_card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+.machine_number {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* for the machine card body */
+
+.machine_card__body {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.machine_card__address {
+  font-size: 1rem;
+  color: #666;
+}
+
+.machine_card__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+}
