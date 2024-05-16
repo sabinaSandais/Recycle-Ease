@@ -3,6 +3,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import AddressSearch from "./SearchBar.jsx";
 import { useLocation } from "./LocationContext.jsx";
+import { useMachine } from "./MachineContext.jsx";
 import "./Map.css";
 import useFetch from "../hooks/useFetch.js";
 import MachineDetail from "./MachineDetail.jsx";
@@ -16,26 +17,32 @@ const MapComponent = () => {
   const { selectedLocation, setLocation } = useLocation();
   const [selectedMachine, setSelectedMachine] = useState(null);
   const [isPinClicked, setIsPinClicked] = useState(false);
+  const { setMarkers, setMachines } = useMachine();
 
   const { error: machinesError, performFetch: fetchMachines } = useFetch(
     "/machines",
     (response) => {
-      // logInfo(`Machines response: ${response.} Map.jsx`);
       if (machinesError) {
         setError(machinesError);
         setIsLoading(false);
         return;
       }
+      let markers = [];
+      const machines = response.result;
+      setMachines(machines);
       response.result.forEach((machine) => {
         const { lat, lon } = machine.location;
         let iconUrl = machine.status === 1 ? greenPin : redPin;
         let icon = L.icon({ iconUrl, iconSize: [25, 41] });
         const marker = L.marker([lat, lon], { icon }).addTo(mapRef.current);
+        marker.machineId = machine._id;
         marker.on("click", () => {
           setSelectedMachine(machine);
           handleIsPinClicked();
         });
+        markers.push(marker);
       });
+      setMarkers(markers);
     },
   );
   useEffect(() => {

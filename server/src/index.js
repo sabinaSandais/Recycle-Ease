@@ -50,9 +50,6 @@ const startServer = async () => {
       const status = updateDescription.updatedFields.status;
       const timeStamp = new Date(wallTime).toISOString();
       io.emit("statusChange", { machineId, status, timeStamp });
-      logInfo(
-        `Machine ${machineId} changed status to ${status} at ${timeStamp}`,
-      );
     });
     server.listen(port, () => {
       logInfo(`Server started on port ${port}`);
