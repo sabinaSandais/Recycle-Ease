@@ -12,9 +12,9 @@ root.render(
   <AppWrapper>
     <ApplicationContextProvider>
       <FavoriteProvider>
-      <MachineProvider>
-        <App />
-      </MachineProvider>
+        <MachineProvider>
+          <App />
+        </MachineProvider>
       </FavoriteProvider>
     </ApplicationContextProvider>
   </AppWrapper>,
