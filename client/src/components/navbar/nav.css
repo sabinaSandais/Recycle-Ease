@@ -3,8 +3,10 @@
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 10000;
   height: 70px;
+  display: flex;
+  padding: 0 40px;
 }
 
 .navbar-items {

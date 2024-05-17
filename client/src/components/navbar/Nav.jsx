@@ -25,10 +25,8 @@ const Nav = () => {
   return (
     <>
       <div className="navbar">
+        <AddressSearch />
         <ul className="navbar-items">
-          <li className="navbar-item search-bar">
-            <AddressSearch />
-          </li>
           <li className="navbar-item">
             <Link
               to="/"
