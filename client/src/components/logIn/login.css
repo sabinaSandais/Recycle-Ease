@@ -40,3 +40,24 @@
   background-color: #ffcc00;
   color: #4d4d4d;
 }
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+
+.close-btn button {
+  color: #4d4d4d;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.close-btn button:hover {
+  background-color: #ffcc00;
+  cursor: pointer;
+}
