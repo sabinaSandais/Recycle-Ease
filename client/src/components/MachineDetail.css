@@ -6,7 +6,7 @@
   top: 70px;
   left: -100%;
   width: 25%;
-  height: 100%;
+  height: calc(100vh - 70px);
   padding: 10px;
   background-color: white;
   transition: left 0.5s ease-in-out;
