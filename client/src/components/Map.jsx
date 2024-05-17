@@ -48,7 +48,11 @@ const MapComponent = () => {
   useEffect(() => {
     fetchMachines();
     if (!mapRef.current) {
-      const mapInstance = L.map("map").setView([52.3737, 4.8963], 13);
+      const mapInstance = L.map("map", {
+        center: [52.3737, 4.8963],
+        zoom: 13,
+        zoomControl: false,
+      });
       L.tileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         {},
@@ -66,11 +70,17 @@ const MapComponent = () => {
 
   const handleIsPinClicked = () => {
     setIsPinClicked(true);
+    if (mapRef.current) {
+      mapRef.current.scrollWheelZoom.disable();
+    }
   };
 
   const handleCloseMachineDetail = () => {
     setSelectedMachine(null);
     setIsPinClicked(false);
+    if (mapRef.current) {
+      mapRef.current.scrollWheelZoom.enable();
+    }
   };
 
   const handleLocationError = (error) => {
