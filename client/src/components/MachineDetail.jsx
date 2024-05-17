@@ -83,6 +83,7 @@ const MachineDetail = ({ content, onClose, className }) => {
   );
 
   useEffect(() => {
+    if (!isLoggedIn) return;
     getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
   }, [content]);
 
