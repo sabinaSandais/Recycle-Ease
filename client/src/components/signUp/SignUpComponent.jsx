@@ -47,6 +47,15 @@ function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
 
   return showSignUpForm && showSignUpForm === true ? (
     <div className="signUp-container">
+      <div className="close-btn">
+        <button
+          onClick={() => {
+            setShowSignUpForm(false);
+          }}
+        >
+          X
+        </button>
+      </div>
       <form className="signUp-form" onSubmit={handleSubmit}>
         <label htmlFor="username">User Name:</label>
         <input
