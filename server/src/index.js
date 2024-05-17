@@ -46,7 +46,8 @@ const startServer = async () => {
     const changeStream = Machine.watch();
     changeStream.on("change", (change) => {
       const { documentKey, updateDescription, wallTime } = change;
-      if (updateDescription.updatedFields.status) {
+      let status = updateDescription.updatedFields?.status;
+      if (status === 1 || status === 0) {
         const machineId = documentKey._id.toString();
         const status = updateDescription.updatedFields.status;
         const timeStamp = new Date(wallTime).toISOString();
