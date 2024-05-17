@@ -78,9 +78,9 @@ const Nav = () => {
               setIsLoggedIn(false);
             }}
           >
-            <a href="#" className="navbar-link">
+            <Link to="/" className="navbar-link">
               Log Out
-            </a>
+            </Link>
           </li>
           <UserFavicon />
         </ul>
