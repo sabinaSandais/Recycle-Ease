@@ -9,9 +9,9 @@ import StarRating from "./StarRating";
 import { useMachine } from "./MachineContext";
 import LoadingSpinner from "./Loading";
 
-
 const Favorite = () => {
-  const { favoriteMachines, setFavoriteMachines, userLocation } = useFavoriteContext();
+  const { favoriteMachines, setFavoriteMachines, userLocation } =
+    useFavoriteContext();
   const { user } = useApplicationContext();
   const token = user.token;
   const [error, setError] = useState(null);
@@ -59,22 +59,17 @@ const Favorite = () => {
     }
   };
 
-   let update = favoriteMachines.some((machine) => machine._id === statusChange.machineId);
+  let update = favoriteMachines.some(
+    (machine) => machine._id === statusChange.machineId,
+  );
   useEffect(() => {
-    
- 
-        getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
-        update = false;
-
-  
+    getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
+    update = false;
   }, [update]);
-  
 
   useEffect(() => {
     getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
   }, [token]);
-  
-  
 
   useEffect(() => {
     if (userLocation && favoriteMachines.length) {
@@ -103,11 +98,12 @@ const Favorite = () => {
         return { ...machine, distance };
       });
 
-      const sorted = favoritesWithDistances.sort((a, b) => a.distance - b.distance);
+      const sorted = favoritesWithDistances.sort(
+        (a, b) => a.distance - b.distance,
+      );
       setSortedFavorites(sorted);
     }
   }, [userLocation, favoriteMachines]);
-
 
   return isLoading ? (
     <LoadingSpinner />
@@ -116,41 +112,41 @@ const Favorite = () => {
   ) : (
     <div className="favorite-container">
       <h1>Favorite Machines</h1>
-  <div className="favorite-ul">
-    
-    <div className="favorite-li-title title-row">
-      <div className="address-title">Address</div>
-      <div className="title">Status</div>
-      <div className="title">Rating</div>
-      <div className="title">Distance</div>
-      
-    </div>
+      <div className="favorite-ul">
+        <div className="favorite-li-title title-row">
+          <div className="address-title">Address</div>
+          <div className="title">Status</div>
+          <div className="title">Rating</div>
+          <div className="title">Distance</div>
+        </div>
 
-   
-    {sortedFavorites.map((machine) => (
-      <div key={machine._id} className="favorite-li">
-        <div className="machine-address">{machine.address}</div>
-        <div className="status">
-          
-          <div className={machine.status === 1 ? "Open" : "Closed"}></div>
-          
-          <div>{machine.status === 1 ? "Open" : "Closed"}</div>
-        </div>
-        <StarRating rating={machine.score} />
-        <div className="distance">{machine.distance ? `${machine.distance.toFixed(2)} km`  : "Location disabled"}</div>
-        <div className="button">
-          <button
-            onClick={() => {
-              deleteFavorite(machine._id);
-            }}
-          >
-            <FontAwesomeIcon icon={faTrashAlt} />
-          </button>
-        </div>
+        {sortedFavorites.map((machine) => (
+          <div key={machine._id} className="favorite-li">
+            <div className="machine-address">{machine.address}</div>
+            <div className="status">
+              <div className={machine.status === 1 ? "Open" : "Closed"}></div>
+
+              <div>{machine.status === 1 ? "Open" : "Closed"}</div>
+            </div>
+            <StarRating rating={machine.score} />
+            <div className="distance">
+              {machine.distance
+                ? `${machine.distance.toFixed(2)} km`
+                : "Location disabled"}
+            </div>
+            <div className="button">
+              <button
+                onClick={() => {
+                  deleteFavorite(machine._id);
+                }}
+              >
+                <FontAwesomeIcon icon={faTrashAlt} />
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-</div>
+    </div>
   );
 };
 

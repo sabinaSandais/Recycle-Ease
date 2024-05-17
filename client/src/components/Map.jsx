@@ -18,8 +18,7 @@ const MapComponent = () => {
   const [selectedMachine, setSelectedMachine] = useState(null);
   const [isPinClicked, setIsPinClicked] = useState(false);
   const { setMarkers, setMachines } = useMachine();
-  const {setUserLocation} = useFavoriteContext();
-  
+  const { setUserLocation } = useFavoriteContext();
 
   const { error: machinesError, performFetch: fetchMachines } = useFetch(
     "/machines",

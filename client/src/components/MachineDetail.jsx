@@ -86,7 +86,6 @@ const MachineDetail = ({ content, onClose, className }) => {
     getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
   }, [content]);
 
- 
   const [showMoreReviews, setShowMoreReviews] = useState(false);
 
   const { error: ReviewError, performFetch: fetchReviews } = useFetch(
@@ -121,10 +120,6 @@ const MachineDetail = ({ content, onClose, className }) => {
       setAverageScore(0);
     }
   }, [reviews]);
-
-  const handleReviewSubmit = (newReview) => {
-    setReviews((prevReviews) => [newReview, ...prevReviews]);
-  };
 
   const toggleShowMoreReviews = () => {
     setShowMoreReviews(!showMoreReviews);

@@ -4,6 +4,7 @@ import { ApplicationContextProvider } from "./context/applicationContext";
 import { MachineProvider } from "./components/MachineContext";
 import { FavoriteProvider } from "./components/FavoriteContext";
 import AppWrapper from "./AppWrapper";
+import { LocationProvider } from "./components/LocationContext";
 import App from "./App";
 
 const container = document.getElementById("root");
@@ -13,7 +14,9 @@ root.render(
     <ApplicationContextProvider>
       <FavoriteProvider>
         <MachineProvider>
-          <App />
+          <LocationProvider>
+            <App />
+          </LocationProvider>
         </MachineProvider>
       </FavoriteProvider>
     </ApplicationContextProvider>

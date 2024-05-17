@@ -1,15 +1,14 @@
-.loading{
+.loading {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-.error{
+.error {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-
 }
 .favorite-container {
   width: 100%;
@@ -34,7 +33,6 @@
 .favorite-li:hover {
   background-color: #f1eaea;
   transition: background-color 0.3s ease;
-  
 }
 .favorite-li-title {
   display: grid;
@@ -44,10 +42,7 @@
   padding: 0px 0;
 }
 
-
 .machine-address {
-  
-
   padding: 10px;
 }
 .status {
@@ -55,28 +50,24 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  
+
   padding: 10px;
   text-align: center;
 }
 .distance {
-  
   padding: 10px;
   text-align: center;
 }
-.title{
-  
+.title {
   padding: 10px;
   text-align: center;
- font-size: 30px;
+  font-size: 30px;
 }
-.address-title{
-    padding: 10px;
-    font-size: 30px;
-    
+.address-title {
+  padding: 10px;
+  font-size: 30px;
 }
 .button {
-  
   padding: 10px;
   text-align: center;
 }
@@ -86,7 +77,6 @@
 }
 
 .star-rating {
-  
   padding: 10px;
   text-align: center;
   color: rgb(123, 123, 9);
@@ -118,20 +108,19 @@
 .favorite-li button:hover {
   color: red;
 }
-.Open{
+.Open {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #4caf50; 
-  animation: pulse 1s infinite alternate; 
-
+  background-color: #4caf50;
+  animation: pulse 1s infinite alternate;
 }
 .Closed {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #f44336; 
-  animation: redPulse 1s infinite alternate; 
+  background-color: #f44336;
+  animation: redPulse 1s infinite alternate;
 }
 @keyframes pulse {
   0% {
@@ -143,13 +132,13 @@
 }
 @keyframes redPulse {
   0% {
-   background-color: #f8f8f8;
+    background-color: #f8f8f8;
   }
   100% {
     background-color: #f44336;
   }
 }
-@media screen and (max-width: 994px){
+@media screen and (max-width: 994px) {
   .favorite-li {
     display: flex;
     flex-direction: column;
@@ -158,9 +147,8 @@
     text-align: center;
     padding: 0px 0;
     border: 1px solid #150f0f;
-
   }
-  .favorite-li-title{
+  .favorite-li-title {
     display: none;
   }
   .status {
@@ -169,11 +157,10 @@
     width: 100px;
     justify-content: space-between;
     align-items: center;
-    
+
     padding: 10px;
   }
-  h1{
+  h1 {
     background-color: #f1f1f1;
   }
-  
 }
