@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import AddressSearch from "./SearchBar.jsx";
 import { useLocation } from "./LocationContext.jsx";
 import { useMachine } from "./MachineContext.jsx";
 import "./Map.css";
@@ -122,7 +121,6 @@ const MapComponent = () => {
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       <div id="map" className="map-container">
-        <AddressSearch />
         {selectedMachine && (
           <MachineDetail
             content={selectedMachine}

@@ -3,15 +3,16 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 0;
+  top: 70px;
   left: -100%;
   width: 25%;
-  height: 100%;
+  height: calc(100vh - 70px);
   padding: 10px;
   background-color: white;
-  border-right: 1px solid #ccc;
   transition: left 0.5s ease-in-out;
   overflow-y: auto;
+  border: 10px solid rgb(160, 158, 158);
+  border-radius: 5px;
 }
 
 .close-btn {
@@ -24,7 +25,7 @@
 }
 
 .content {
-  margin-top: 10px;
+  margin-top: 1px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -55,4 +56,8 @@
 .score {
   font-size: 20px;
   font-weight: bold;
+}
+.msg {
+  font-size: 18px;
+  color: #333;
 }

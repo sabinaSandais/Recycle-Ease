@@ -13,6 +13,7 @@ const MachineDetail = ({ content, onClose, className }) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showMoreReviews, setShowMoreReviews] = useState(false);
 
   const { error: ReviewError, performFetch: fetchReviews } = useFetch(
     `/reviews/${content._id}`,
@@ -48,7 +49,11 @@ const MachineDetail = ({ content, onClose, className }) => {
   }, [reviews]);
 
   const handleReviewSubmit = (newReview) => {
-    setReviews((prevReviews) => [...prevReviews, newReview]);
+    setReviews((prevReviews) => [newReview, ...prevReviews]);
+  };
+
+  const toggleShowMoreReviews = () => {
+    setShowMoreReviews(!showMoreReviews);
   };
 
   return (
@@ -61,9 +66,9 @@ const MachineDetail = ({ content, onClose, className }) => {
           <ul className="machine-detail">
             <li className="name">{content.address}</li>
             <li className={statusClassName}>
-              {content.status === 1 ? "open" : "closed"}
+              {content.status === 1 ? "Open" : "Closed"}
             </li>
-            <li className="score"> Score: {averageScore.toFixed(1)}/5 </li>
+            <li className="score"> Rating: {averageScore.toFixed(1)}/5 </li>
           </ul>
         </div>
         <div className="review-form">
@@ -73,22 +78,27 @@ const MachineDetail = ({ content, onClose, className }) => {
               onReviewSubmit={handleReviewSubmit}
             />
           ) : (
-            <div>Please log in to submit a review.</div>
+            <div className="msg">Please log in to submit a review.</div>
           )}
         </div>
+
         <div className="reviews">
           <h2>Reviews</h2>
           {isLoading && <div>Loading...</div>}
           {error && <div>{error}</div>}
           {reviews &&
-            reviews.length > 0 &&
-            reviews.map((review, index) => (
-              <ReviewItem
-                key={index}
-                stars={review.stars}
-                comment={review.comment}
-              />
-            ))}
+            reviews
+              .slice(0, showMoreReviews ? reviews.length : 3)
+              .map((review, index) => (
+                <ReviewItem
+                  key={index}
+                  stars={review.stars}
+                  comment={review.comment}
+                />
+              ))}
+          {!showMoreReviews && reviews.length > 3 && (
+            <button onClick={toggleShowMoreReviews}>Read More</button>
+          )}
         </div>
       </div>
     </div>

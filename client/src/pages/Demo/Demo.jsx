@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch.js";
+import { useNavigate } from "react-router-dom";
 
 //styles
 import "./demo.css";
 
 //components
-import Nav from "../../components/navbar/Nav";
+
 import MachineCard from "../../components/machineCard/MachineCard.jsx";
 import Switch from "../../components/switch/Switch.jsx";
 
@@ -16,6 +17,7 @@ function Demo() {
   const [isLoading, setIsLoading] = useState(true);
   const [machines, setMachines] = useState([]);
   const [machineId, setMachineId] = useState(null);
+  const navigate = useNavigate();
 
   const { error: machinesError, performFetch: fetchMachines } = useFetch(
     "/machines",
@@ -83,9 +85,19 @@ function Demo() {
     }
   }, [machineId]);
 
+  const handleBackToHome = () => {
+    // Implement the functionality to navigate back to the home page
+    navigate("/");
+  };
+
   return (
     <>
-      <Nav />
+      <div className="demo-nav">
+        <h1 className="heading">Machines</h1>
+        <button className="btn" onClick={handleBackToHome}>
+          Home
+        </button>
+      </div>
       {isLoading ? (
         <div>Loading...</div>
       ) : (

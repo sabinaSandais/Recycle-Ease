@@ -16,8 +16,9 @@ const Home = () => {
       ) : (
         <></>
       )}
-      <Nav />
+
       <LocationProvider>
+        <Nav />
         <MapComponent />
       </LocationProvider>
     </div>
