@@ -10,6 +10,7 @@ export const createReview = async (req, res) => {
       stars,
       machine: machineId,
       user: userId,
+      created_at: new Date(),
     });
     const savedReview = await review.save();
     await Machine.findByIdAndUpdate(machineId, {
@@ -19,6 +20,7 @@ export const createReview = async (req, res) => {
     res
       .status(201)
       .json({ success: true, message: "Review created successfully" });
+    review;
   } catch (error) {
     logError(error);
     res.status(500).json({ success: false, error: "Internal server error" });

@@ -23,7 +23,11 @@ const MachineDetail = ({ content, onClose, className }) => {
         setIsLoading(false);
         return;
       }
-      setReviews(response.result);
+      const reviewsWithFormattedDate = response.result.map((review) => ({
+        ...review,
+        created_at: new Date(review.created_at).toISOString(),
+      }));
+      setReviews(reviewsWithFormattedDate);
       setIsLoading(false);
     },
   );
@@ -49,6 +53,7 @@ const MachineDetail = ({ content, onClose, className }) => {
   }, [reviews]);
 
   const handleReviewSubmit = (newReview) => {
+    newReview.created_at = new Date(newReview.created_at).toISOString();
     setReviews((prevReviews) => [newReview, ...prevReviews]);
   };
 
@@ -94,6 +99,7 @@ const MachineDetail = ({ content, onClose, className }) => {
                   key={index}
                   stars={review.stars}
                   comment={review.comment}
+                  createdAt={review.created_at}
                 />
               ))}
           {!showMoreReviews && reviews.length > 3 && (
