@@ -38,7 +38,7 @@ const AddressSearch = () => {
 
   const handleSelect = (result) => {
     setLocation(result);
-    setQuery(result.display_name);
+    setQuery("");
     setResults([]);
   };
 

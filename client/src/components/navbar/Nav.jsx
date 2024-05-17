@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
 
-//components
 import UserFavicon from "../userFavicon/UserFavicon";
 import SignUp from "../signUp/SignUpComponent";
 import Login from "../logIn/LogInComponent";
+import AddressSearch from "../SearchBar";
 import { useApplicationContext } from "../../context/applicationContext";
 
 import TEST_ID from "../Nav.testid";
@@ -25,6 +25,7 @@ const Nav = () => {
   return (
     <>
       <div className="navbar">
+        <AddressSearch />
         <ul className="navbar-items">
           <li className="navbar-item">
             <Link
@@ -53,6 +54,7 @@ const Nav = () => {
               Favorites
             </Link>
           </li>
+
           <li
             className={"navbar-item login-btn" + (isLoggedIn ? " hide" : "")}
             onClick={() => {

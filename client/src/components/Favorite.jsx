@@ -9,6 +9,7 @@ import StarRating from "./StarRating";
 import { useMachine } from "./MachineContext";
 import LoadingSpinner from "./Loading";
 
+
 const Favorite = () => {
   const { favoriteMachines, setFavoriteMachines, userLocation } = useFavoriteContext();
   const { user } = useApplicationContext();
