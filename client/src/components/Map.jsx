@@ -8,7 +8,6 @@ import useFetch from "../hooks/useFetch.js";
 import MachineDetail from "./MachineDetail.jsx";
 import greenPin from "./assets/Map_pin_icon_green.svg";
 import redPin from "./assets/map-marker.svg";
-import { useFavoriteContext } from "./FavoriteContext.jsx";
 
 const MapComponent = () => {
   const mapRef = useRef(null);
@@ -18,7 +17,6 @@ const MapComponent = () => {
   const [selectedMachine, setSelectedMachine] = useState(null);
   const [isPinClicked, setIsPinClicked] = useState(false);
   const { setMarkers, setMachines } = useMachine();
-  const { setUserLocation } = useFavoriteContext();
 
   const { error: machinesError, performFetch: fetchMachines } = useFetch(
     "/machines",
@@ -93,7 +91,6 @@ const MapComponent = () => {
     if (!mapRef.current) return;
 
     const { latitude, longitude } = position.coords;
-    setUserLocation({ lat: latitude, lon: longitude });
 
     mapRef.current.setView([latitude, longitude], 14);
     setIsLoading(false);
