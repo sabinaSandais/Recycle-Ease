@@ -45,15 +45,6 @@ const Nav = () => {
               Demo
             </Link>
           </li>
-          <li className={"navbar-item" + (isLoggedIn ? "" : " hide")}>
-            <Link
-              to="/favorites"
-              data-testid={TEST_ID.linkToFavorites}
-              className="navbar-link"
-            >
-              Favorites
-            </Link>
-          </li>
 
           <li
             className={"navbar-item login-btn" + (isLoggedIn ? " hide" : "")}
@@ -91,7 +82,6 @@ const Nav = () => {
               Log Out
             </a>
           </li>
-
           <UserFavicon />
         </ul>
       </div>
