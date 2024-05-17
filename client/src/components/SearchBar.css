@@ -1,8 +1,6 @@
 .address-search {
-  position: relative;
   width: 400px;
   margin: 10px;
-  margin-right: 400px;
   z-index: 1000;
 }
 
@@ -14,7 +12,6 @@
 }
 
 .results {
-  position: absolute;
   width: 100%;
   background: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -23,7 +20,6 @@
   padding: 0;
   max-height: 400px;
   overflow-y: auto;
-  z-index: 1000;
 }
 
 .results li {
