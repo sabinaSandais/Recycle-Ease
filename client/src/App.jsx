@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { socket } from "./socket";
 import Home from "./pages/Home/Home";
 import Demo from "./pages/Demo/Demo";
+import Favorites from "./pages/Favorites/Favorites";
 import { logInfo } from "../../server/src/util/logging";
 import { useMachine } from "./components/MachineContext";
 
@@ -52,6 +53,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/demo" element={<Demo />} />
+        <Route path="/favorites" element={<Favorites/>} />
       </Routes>
     </>
   );
