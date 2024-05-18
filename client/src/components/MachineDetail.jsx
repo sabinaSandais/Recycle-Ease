@@ -12,13 +12,11 @@ import { logInfo } from "../../../server/src/util/logging";
 
 const MachineDetail = ({ content, onClose, className }) => {
   const useToggleFavorite = (token, machineId) => {
-    const { performFetch: addFavorite } = useFetch("/favorite");
-    const { performFetch: removeFavorite } = useFetch("/favorite");
-
+    const { performFetch: Favorite } = useFetch("/favorite");
     const toggleFavorite = async (isFavorite, setFavoriteMachines) => {
       try {
         if (isFavorite) {
-          await removeFavorite({
+          await Favorite({
             method: "DELETE",
             headers: {
               Authorization: `Bearer ${token}`,
@@ -30,7 +28,7 @@ const MachineDetail = ({ content, onClose, className }) => {
             prevMachines.filter((id) => id !== machineId),
           );
         } else {
-          await addFavorite({
+          await Favorite({
             method: "POST",
             body: JSON.stringify({ machineId }),
             headers: {
