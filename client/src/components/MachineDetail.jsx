@@ -78,9 +78,7 @@ const MachineDetail = ({ content, onClose, className }) => {
             </li>
             <li className="score">
               Rating: {averageScore.toFixed(1)}/5
-              <span className="total-reviews">
-                (Total {totalReviews} review/s)
-              </span>
+              <span className="total-reviews">({totalReviews} review/s)</span>
             </li>
           </ul>
         </div>
