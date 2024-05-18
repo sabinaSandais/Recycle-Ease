@@ -8,7 +8,7 @@ import "./login.css";
 import { logInfo } from "../../../../server/src/util/logging";
 
 import { useApplicationContext } from "../../context/applicationContext";
-function LogInComponent({ showLoginForm }) {
+function LogInComponent({ showLoginForm, setShowLoginForm }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [apiResponse, setApiResponse] = useState({});
@@ -90,6 +90,15 @@ function LogInComponent({ showLoginForm }) {
 
   return showLoginForm && showLoginForm === true ? (
     <div className="login-container">
+      <div className="close-btn">
+        <button
+          onClick={() => {
+            setShowLoginForm(false);
+          }}
+        >
+          X
+        </button>
+      </div>
       <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="username">Username:</label>
         <input
@@ -115,6 +124,7 @@ function LogInComponent({ showLoginForm }) {
 
 LogInComponent.propTypes = {
   showLoginForm: PropTypes.bool,
+  setShowLoginForm: PropTypes.func,
 };
 
 export default LogInComponent;

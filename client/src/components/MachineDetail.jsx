@@ -10,7 +10,10 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useApplicationContext } from "../context/applicationContext";
 import { logInfo } from "../../../server/src/util/logging";
 
+
+
 const MachineDetail = ({ content, onClose, className }) => {
+  
   const useToggleFavorite = (token, machineId) => {
     const { performFetch: addFavorite } = useFetch("/favorite");
     const { performFetch: removeFavorite } = useFetch("/favorite");
@@ -104,7 +107,7 @@ const MachineDetail = ({ content, onClose, className }) => {
 
   useEffect(() => {
     const token = localStorage.getItem("user_token");
-    setIsLoggedIn(!!token);
+    setIsLoggedIn(token !== null);
   }, []);
 
   useEffect(() => {
@@ -121,6 +124,10 @@ const MachineDetail = ({ content, onClose, className }) => {
       setAverageScore(0);
     }
   }, [reviews]);
+
+  const handleReviewSubmit = (newReview) => {
+    setReviews((prevReviews) => [newReview, ...prevReviews]);
+  };
 
   const toggleShowMoreReviews = () => {
     setShowMoreReviews(!showMoreReviews);
@@ -160,9 +167,7 @@ const MachineDetail = ({ content, onClose, className }) => {
           {isLoggedIn ? (
             <ReviewForm
               machineId={content._id}
-              onReviewSubmit={(newReview) =>
-                setReviews((prevReviews) => [...prevReviews, newReview])
-              }
+              onReviewSubmit={handleReviewSubmit}
             />
           ) : (
             <div className="msg">Please log in to submit a review.</div>
@@ -186,13 +191,6 @@ const MachineDetail = ({ content, onClose, className }) => {
           {!showMoreReviews && reviews.length > 3 && (
             <button onClick={toggleShowMoreReviews}>Read More</button>
           )}
-          {reviews.map((review, index) => (
-            <ReviewItem
-              key={index}
-              stars={review.stars}
-              comment={review.comment}
-            />
-          ))}
         </div>
       </div>
     </div>
