@@ -90,7 +90,8 @@ async function insertReviewsForMachines(machines) {
       comment: "Great machine!",
       stars: 5,
       machine: machine._id, 
-      user: new mongoose.Types.ObjectId() 
+      user: new mongoose.Types.ObjectId() ,
+      created_at: new Date(),
     }));
 
     const insertedReviews = await Review.insertMany(reviewsData);

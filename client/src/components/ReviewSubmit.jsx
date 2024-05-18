@@ -12,7 +12,12 @@ const ReviewForm = ({ machineId, onReviewSubmit }) => {
   const [comment, setComment] = useState("");
 
   const handleReceived = () => {
-    onReviewSubmit({ stars, comment, machineId });
+    onReviewSubmit({
+      stars,
+      comment,
+      machineId,
+      created_at: new Date().toISOString(),
+    });
     setStars(1);
     setHoverStars(1);
     setHoveredWord("Awful");

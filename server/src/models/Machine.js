@@ -14,7 +14,12 @@ const machineSchema = new mongoose.Schema({
       status_update_time: Date,
     },
   ],
-  reviews: [],
+  reviews: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "reviews",
+    },
+  ],
   image: String,
   score: Number,
 });
