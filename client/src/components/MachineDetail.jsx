@@ -10,10 +10,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useApplicationContext } from "../context/applicationContext";
 import { logInfo } from "../../../server/src/util/logging";
 
-
-
 const MachineDetail = ({ content, onClose, className }) => {
-  
   const useToggleFavorite = (token, machineId) => {
     const { performFetch: addFavorite } = useFetch("/favorite");
     const { performFetch: removeFavorite } = useFetch("/favorite");

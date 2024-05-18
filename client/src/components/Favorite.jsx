@@ -10,7 +10,8 @@ import { useMachine } from "./MachineContext";
 import LoadingSpinner from "./Loading";
 
 const Favorite = () => {
-  const { favoriteMachines, setFavoriteMachines, userLocation } = useFavoriteContext();
+  const { favoriteMachines, setFavoriteMachines, userLocation } =
+    useFavoriteContext();
   const { user } = useApplicationContext();
   const token = user.token;
   const [error, setError] = useState(null);
@@ -18,24 +19,30 @@ const Favorite = () => {
   const [sortedFavorites, setSortedFavorites] = useState([]);
   const { statusChange } = useMachine();
 
-  const { performFetch: getFavoriteMachines, error: favoriteError } = useFetch("/favorite", (response) => {
-    if (response.success) {
-      setFavoriteMachines(response.machines);
-      setIsLoading(false);
-    } else if (favoriteError) {
-      setError(favoriteError);
-      setIsLoading(false);
-    }
-  });
+  const { performFetch: getFavoriteMachines, error: favoriteError } = useFetch(
+    "/favorite",
+    (response) => {
+      if (response.success) {
+        setFavoriteMachines(response.machines);
+        setIsLoading(false);
+      } else if (favoriteError) {
+        setError(favoriteError);
+        setIsLoading(false);
+      }
+    },
+  );
 
-  const { performFetch: deleteFavoriteFetch } = useFetch("/favorite", (response) => {
-    if (response.success) {
-      getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
-    } else if (response.error) {
-      setError(response.error);
-      setIsLoading(false);
-    }
-  });
+  const { performFetch: deleteFavoriteFetch } = useFetch(
+    "/favorite",
+    (response) => {
+      if (response.success) {
+        getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
+      } else if (response.error) {
+        setError(response.error);
+        setIsLoading(false);
+      }
+    },
+  );
 
   const deleteFavorite = async (machineId) => {
     try {
@@ -65,7 +72,10 @@ const Favorite = () => {
         const dLon = toRad(lon1 - lon2);
         const a =
           Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-          Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+          Math.cos(toRad(lat1)) *
+            Math.cos(toRad(lat2)) *
+            Math.sin(dLon / 2) *
+            Math.sin(dLon / 2);
         const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         return R * c; // Distance in km
       };
@@ -80,7 +90,9 @@ const Favorite = () => {
         return { ...machine, distance };
       });
 
-      const sorted = favoritesWithDistances.sort((a, b) => a.distance - b.distance);
+      const sorted = favoritesWithDistances.sort(
+        (a, b) => a.distance - b.distance,
+      );
       setSortedFavorites(sorted);
     } else {
       setSortedFavorites(favoriteMachines);
@@ -113,7 +125,9 @@ const Favorite = () => {
               </div>
               <StarRating rating={machine.score} />
               <div className="distance">
-                {machine.distance ? `${machine.distance.toFixed(2)} km` : "Location disabled"}
+                {machine.distance
+                  ? `${machine.distance.toFixed(2)} km`
+                  : "Location disabled"}
               </div>
               <div className="button">
                 <button

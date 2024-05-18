@@ -16,8 +16,8 @@ root.render(
       <MachineProvider>
         <FavoriteProvider>
           <LocationProvider>
-        <App />
-        </LocationProvider>
+            <App />
+          </LocationProvider>
         </FavoriteProvider>
       </MachineProvider>
     </ApplicationContextProvider>
