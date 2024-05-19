@@ -9,8 +9,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useApplicationContext } from "../context/applicationContext";
 import { logInfo } from "../../../server/src/util/logging";
+import { useMachine } from "./MachineContext";
 
 const MachineDetail = ({ content, onClose, className }) => {
+  const [reviews, setReviews] = useState([]);
+  const [averageScore, setAverageScore] = useState(0);
+  const [totalReviews, setTotalReviews] = useState(0);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [isOpen, setIsOpen] = useState(content.status);
+
+  const { user } = useApplicationContext();
+  const { setFavoriteMachines } = useFavoriteContext();
+  const { statusChange } = useMachine();
+  const token = user.token;
   const useToggleFavorite = (token, machineId) => {
     const { performFetch: Favorite } = useFetch("/favorite");
     const toggleFavorite = async (isFavorite, setFavoriteMachines) => {
@@ -46,19 +60,7 @@ const MachineDetail = ({ content, onClose, className }) => {
     return toggleFavorite;
   };
 
-  const statusClassName = content.status === 1 ? "open" : "closed";
-
-  const [reviews, setReviews] = useState([]);
-  const [averageScore, setAverageScore] = useState(0);
-  const [totalReviews, setTotalReviews] = useState(0);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  const { user } = useApplicationContext();
-  const token = user.token;
-  const { setFavoriteMachines } = useFavoriteContext();
+  const statusClassName = isOpen === 1 ? "open" : "closed";
 
   const toggleFavorite = useToggleFavorite(token, content._id);
 
@@ -135,6 +137,15 @@ const MachineDetail = ({ content, onClose, className }) => {
   const toggleShowMoreReviews = () => {
     setShowMoreReviews(!showMoreReviews);
   };
+  const changeStatus = (machineId, status) => {
+      if (content._id === machineId) {
+      setIsOpen(status);
+  }
+}
+
+  useEffect(() => {
+    changeStatus(statusChange.machineId, statusChange.status);
+  }, [statusChange]);
 
   return (
     <div className={`custom-popup ${className}`}>
@@ -161,7 +172,7 @@ const MachineDetail = ({ content, onClose, className }) => {
           <ul className="machine-detail">
             <li className="name">{content.address}</li>
             <li className={statusClassName}>
-              {content.status === 1 ? "Open" : "Closed"}
+              {isOpen === 1 ? "Open" : "Closed"}
             </li>
             <li className="score">
               Rating: {averageScore.toFixed(1)}/5
