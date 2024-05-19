@@ -52,6 +52,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "leaflet": "^1.9.4",

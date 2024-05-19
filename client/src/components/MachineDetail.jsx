@@ -4,16 +4,90 @@ import useFetch from "../hooks/useFetch";
 import "./MachineDetail.css";
 import ReviewItem from "./ReviewItem";
 import ReviewForm from "./ReviewSubmit";
+import { useFavoriteContext } from "./FavoriteContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { useApplicationContext } from "../context/applicationContext";
+import { logInfo } from "../../../server/src/util/logging";
+import { useMachine } from "./MachineContext";
 
 const MachineDetail = ({ content, onClose, className }) => {
-  const statusClassName = content.status === 1 ? "open" : "closed";
-
   const [reviews, setReviews] = useState([]);
   const [averageScore, setAverageScore] = useState(0);
   const [totalReviews, setTotalReviews] = useState(0);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [isOpen, setIsOpen] = useState(content.status);
+
+  const { user } = useApplicationContext();
+  const { setFavoriteMachines } = useFavoriteContext();
+  const { statusChange } = useMachine();
+  const token = user.token;
+  const useToggleFavorite = (token, machineId) => {
+    const { performFetch: Favorite } = useFetch("/favorite");
+    const toggleFavorite = async (isFavorite, setFavoriteMachines) => {
+      try {
+        if (isFavorite) {
+          await Favorite({
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ machineId }),
+          });
+          setFavoriteMachines((prevMachines) =>
+            prevMachines.filter((id) => id !== machineId),
+          );
+        } else {
+          await Favorite({
+            method: "POST",
+            body: JSON.stringify({ machineId }),
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          });
+          setFavoriteMachines((prevMachines) => [...prevMachines, content]);
+        }
+      } catch (error) {
+        logInfo("Error toggling favorite", error);
+      }
+    };
+
+    return toggleFavorite;
+  };
+
+  const statusClassName = isOpen === 1 ? "open" : "closed";
+
+  const toggleFavorite = useToggleFavorite(token, content._id);
+
+  const handleFavoriteClick = () => {
+    toggleFavorite(isFavorite, setFavoriteMachines);
+    setIsFavorite((prevIsFavorite) => !prevIsFavorite);
+  };
+  const { performFetch: getFavoriteMachines, error: favoriteError } = useFetch(
+    "/favorite",
+    (response) => {
+      if (response.success) {
+        setFavoriteMachines(response.machines);
+        setIsLoading(false);
+        setIsFavorite(
+          response.machines.some((machine) => machine._id === content._id),
+        );
+      }
+      if (favoriteError) setError(favoriteError);
+      setIsLoading(false);
+    },
+  );
+
+  useEffect(() => {
+    if (!isLoggedIn) return;
+    getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
+  }, [content]);
+
   const [showMoreReviews, setShowMoreReviews] = useState(false);
 
   const { error: ReviewError, performFetch: fetchReviews } = useFetch(
@@ -63,18 +137,42 @@ const MachineDetail = ({ content, onClose, className }) => {
   const toggleShowMoreReviews = () => {
     setShowMoreReviews(!showMoreReviews);
   };
+  const changeStatus = (machineId, status) => {
+    if (content._id === machineId) {
+      setIsOpen(status);
+    }
+  };
+
+  useEffect(() => {
+    changeStatus(statusChange.machineId, statusChange.status);
+  }, [statusChange]);
 
   return (
     <div className={`custom-popup ${className}`}>
-      <button className="close-btn" onClick={onClose}>
-        X
-      </button>
+      <div className="top">
+        <div className="favorite-icon-container">
+          {isLoggedIn && (
+            <button className="favorite-btn" onClick={handleFavoriteClick}>
+              <FontAwesomeIcon
+                icon={faHeart}
+                className={`favorite-icon ${isFavorite ? "filled" : ""}`}
+                title={
+                  isFavorite ? "Remove from Favorites" : "Add to Favorites"
+                }
+              />
+            </button>
+          )}
+        </div>
+        <button className="close-btn" onClick={onClose}>
+          X
+        </button>
+      </div>
       <div className="content">
         <div className="details">
           <ul className="machine-detail">
             <li className="name">{content.address}</li>
             <li className={statusClassName}>
-              {content.status === 1 ? "Open" : "Closed"}
+              {isOpen === 1 ? "Open" : "Closed"}
             </li>
             <li className="score">
               Rating: {averageScore.toFixed(1)}/5

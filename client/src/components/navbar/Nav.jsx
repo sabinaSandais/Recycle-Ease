@@ -36,6 +36,15 @@ const Nav = () => {
               Home
             </Link>
           </li>
+          <li className={"navbar-item" + (isLoggedIn ? "" : " hide")}>
+            <Link
+              to="/favorites"
+              data-testid={TEST_ID.linkToHome}
+              className="navbar-link"
+            >
+              Favorites
+            </Link>
+          </li>
           <li className="navbar-item">
             <Link
               to="/demo"

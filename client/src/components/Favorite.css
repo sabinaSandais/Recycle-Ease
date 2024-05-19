@@ -1,0 +1,166 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.favorite-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 20px;
+  font-weight: bold;
+}
+.favorite-container h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.favorite-li {
+  display: grid;
+  grid-template-columns: 65% 10% 10% 10% 5%;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+}
+.favorite-li:hover {
+  background-color: #f1eaea;
+  transition: background-color 0.3s ease;
+}
+.favorite-li-title {
+  display: grid;
+  grid-template-columns: 65% 10% 10% 10% 5%;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0;
+}
+
+.machine-address {
+  padding: 10px;
+}
+.status {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px;
+  text-align: center;
+}
+.distance {
+  padding: 10px;
+  text-align: center;
+}
+.title {
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+.address-title {
+  padding: 10px;
+  font-size: 30px;
+}
+.button {
+  padding: 10px;
+  text-align: center;
+}
+.title-row {
+  background-color: #f1f1f1;
+  font-size: 18px;
+}
+
+.star-rating {
+  padding: 10px;
+  text-align: center;
+  color: rgb(123, 123, 9);
+  outline: black;
+}
+
+.star-rating.red {
+  color: red;
+}
+
+.star-rating.green {
+  color: green;
+}
+
+.star-rating.orange {
+  color: orange;
+}
+
+.favorite-li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.favorite-li button:focus {
+  outline: none;
+}
+
+.favorite-li button:hover {
+  color: red;
+}
+.Open {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  animation: pulse 1s infinite alternate;
+}
+.Closed {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #f44336;
+  animation: redPulse 1s infinite alternate;
+}
+@keyframes pulse {
+  0% {
+    background-color: #f5f7f5;
+  }
+  100% {
+    background-color: #4caf50;
+  }
+}
+@keyframes redPulse {
+  0% {
+    background-color: #f8f8f8;
+  }
+  100% {
+    background-color: #f44336;
+  }
+}
+@media screen and (max-width: 994px) {
+  .favorite-li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 0;
+    border: 1px solid #150f0f;
+  }
+  .favorite-li-title {
+    display: none;
+  }
+  .status {
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+  }
+  h1 {
+    background-color: #f1f1f1;
+  }
+}
