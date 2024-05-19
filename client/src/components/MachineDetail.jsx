@@ -138,10 +138,10 @@ const MachineDetail = ({ content, onClose, className }) => {
     setShowMoreReviews(!showMoreReviews);
   };
   const changeStatus = (machineId, status) => {
-      if (content._id === machineId) {
+    if (content._id === machineId) {
       setIsOpen(status);
-  }
-}
+    }
+  };
 
   useEffect(() => {
     changeStatus(statusChange.machineId, statusChange.status);
