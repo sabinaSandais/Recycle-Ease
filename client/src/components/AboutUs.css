@@ -1,0 +1,189 @@
+.banner {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+}
+
+.container {
+  padding: 20px;
+  margin: 0 100px;
+}
+
+.header {
+  background-color: rgb(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+h4,
+h6 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  background-color: #4c4c4c;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+.mainText {
+  text-align: justify;
+  margin: 10px 0;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-indent: 50px;
+}
+
+.feature-card1 {
+  background-color: #d3d3d3;
+  padding: 20px;
+  text-align: center;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.feature-card2 {
+  background-color: #808080;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h6 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+.text {
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-style: oblique;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.grid-item {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+}
+.button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 12px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+@media (max-width: 912px) {
+  .feature-card2 {
+    background-color: #d3d3d3;
+    color: black;
+  }
+}
+@media (max-width: 768px) {
+  .banner {
+    height: 300px;
+  }
+
+  .container {
+    margin: 0 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h4 {
+    font-size: 1.75rem;
+  }
+
+  h6 {
+    font-size: 1.45rem;
+  }
+
+  .mainText {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 200px;
+  }
+
+  .container {
+    padding: 10px;
+    margin: 0 10px;
+  }
+  .feature-card2 {
+    background-color: #808080;
+    color: white;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1.2rem;
+  }
+
+  .mainText {
+    font-size: 16px;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+  .button {
+    background-color: #4caf50;
+    padding: 6px 16px;
+    font-size: 10px;
+    margin: 5px;
+  }
+}

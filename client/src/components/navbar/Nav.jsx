@@ -54,6 +54,9 @@ const Nav = () => {
               Demo
             </Link>
           </li>
+          <Link to="/about" className="navbar-link">
+            About
+          </Link>
 
           <li
             className={"navbar-item login-btn" + (isLoggedIn ? " hide" : "")}
