@@ -66,11 +66,11 @@ function LogInComponent({ showLoginForm, setShowLoginForm }) {
       localStorage.setItem("user_name", user.name);
     }
 
-    if (!isLoggedIn) {
-      setUser({ name: "", token: "", id: "" });
-      localStorage.removeItem("user_token");
-      localStorage.removeItem("user_name");
-    }
+    // if (!isLoggedIn) {
+    //   setUser({ name: "", token: "", id: "" });
+    //   localStorage.removeItem("user_token");
+    //   localStorage.removeItem("user_name");
+    // }
 
     logInfo(`User logged in: ${isLoggedIn}`);
     logInfo(`User: ${user.name} `);
