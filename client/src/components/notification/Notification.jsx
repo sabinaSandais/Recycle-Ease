@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import { useApplicationContext } from "../../context/applicationContext";
 import "./notification.css";
 
-function Notification({ message = "Notification", type = "success" }) {
+function Notification({
+  message = "Notification",
+  type = "notification--success",
+}) {
   const { showNotification } = useApplicationContext();
   return showNotification ? (
     <div className={`notification ${type}`}>

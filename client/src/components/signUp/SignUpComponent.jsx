@@ -13,7 +13,10 @@ function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
     setName("");
     setEmail("");
     setPassword("");
-    setInfo({ message: "User created successfully", type: "success" });
+    setInfo({
+      message: "User created successfully",
+      type: "notification--success",
+    });
     setShowSignUpForm(false);
   };
 
@@ -28,9 +31,9 @@ function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
 
   useEffect(() => {
     if (error != null) {
-      setInfo({ message: error.toString(), type: "error" });
+      setInfo({ message: error.toString(), type: "notification--error" });
     } else if (isLoading) {
-      setInfo({ message: "Creating User...", type: "success" });
+      setInfo({ message: "Creating User...", type: "notification--success" });
     }
   }, [error]);
 

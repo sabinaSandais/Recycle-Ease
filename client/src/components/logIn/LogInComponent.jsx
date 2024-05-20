@@ -30,11 +30,11 @@ function LogInComponent({ showLoginForm, setShowLoginForm }) {
   useEffect(() => {
     if (error !== null) {
       if (error.error) {
-        setInfo({ message: error.error, type: "error" });
+        setInfo({ message: error.error, type: "notification--error" });
       }
     }
     if (isLoading) {
-      setInfo({ message: "Logging in...", type: "success" });
+      setInfo({ message: "Logging in...", type: "notification--success" });
     }
   }, [error]);
 
@@ -46,11 +46,11 @@ function LogInComponent({ showLoginForm, setShowLoginForm }) {
         token: apiResponse.result.token,
         id: apiResponse.result.userId,
       });
-      setInfo({ message: "Login successful", type: "success" });
+      setInfo({ message: "Login successful", type: "notification--success" });
     }
 
     if (isLoading) {
-      setInfo({ message: "Logging in...", type: "success" });
+      setInfo({ message: "Logging in...", type: "notification--success" });
     }
   }, [apiResponse]);
 
