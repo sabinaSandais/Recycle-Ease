@@ -13,7 +13,7 @@ import TEST_ID from "../Nav.testid";
 const Nav = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showSignUpForm, setShowSignUpForm] = useState(false);
-  const { isLoggedIn, setIsLoggedIn } = useApplicationContext();
+  const { isLoggedIn, setIsLoggedIn, setUser } = useApplicationContext();
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -90,6 +90,8 @@ const Nav = () => {
               setIsLoggedIn(false);
               localStorage.removeItem("user_token");
               localStorage.removeItem("user_name");
+              localStorage.removeItem("user_id");
+              setUser({ name: "", token: "", id: "" });
             }}
           >
             <Link to="/" className="navbar-link">

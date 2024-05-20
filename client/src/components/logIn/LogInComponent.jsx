@@ -62,6 +62,7 @@ function LogInComponent({ showLoginForm, setShowLoginForm }) {
 
     logInfo(`User loggedIn state: ${isLoggedIn}`);
     if (user.token !== "" && user.name !== "") {
+      localStorage.setItem("user_id", user.id);
       localStorage.setItem("user_token", user.token);
       localStorage.setItem("user_name", user.name);
     }
