@@ -7,13 +7,14 @@ import Favorites from "./pages/Favorites/Favorites";
 import AboutUs from "../../client/src/components/AboutUs";
 import { logInfo } from "../../server/src/util/logging";
 import { useMachine } from "./components/MachineContext";
-
+import { useApplicationContext } from "./context/applicationContext";
 import "./app.css";
 
 const App = () => {
   const [socketId, setSocketId] = useState(null);
   const [socketConnected, setSocketConnected] = useState(false);
   const { statusChange, onStatusChange } = useMachine();
+  const { setIsLoggedIn } = useApplicationContext();
 
   useEffect(() => {
     function onConnect() {
@@ -23,6 +24,10 @@ const App = () => {
     function onDisconnect() {
       setSocketId(null);
       setSocketConnected(false);
+    }
+
+    if (localStorage.getItem("user_token") !== null) {
+      setIsLoggedIn(true);
     }
 
     socket.on("connect", onConnect);

@@ -88,6 +88,8 @@ const Nav = () => {
             className={"navbar-item logOut-btn" + (!isLoggedIn ? " hide" : "")}
             onClick={() => {
               setIsLoggedIn(false);
+              localStorage.removeItem("user_token");
+              localStorage.removeItem("user_name");
             }}
           >
             <Link to="/" className="navbar-link">
