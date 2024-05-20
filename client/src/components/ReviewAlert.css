@@ -1,0 +1,25 @@
+.custom-alert {
+  color: red;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.custom-alert p {
+  margin: 0 0 20px;
+  font-size: 1.2rem;
+}
+
+.custom-alert button {
+  background: rgb(58, 54, 54);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-alert button:hover {
+  background: #5d6061;
+}
