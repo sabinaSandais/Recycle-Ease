@@ -6,7 +6,7 @@ import ReviewItem from "./ReviewItem";
 import ReviewForm from "./ReviewSubmit";
 import { useFavoriteContext } from "./FavoriteContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faXmark} from "@fortawesome/free-solid-svg-icons";
 import { useApplicationContext } from "../context/applicationContext";
 import { logInfo } from "../../../server/src/util/logging";
 import { useMachine } from "./MachineContext";
@@ -150,9 +150,8 @@ const MachineDetail = ({ content, onClose, className }) => {
   return (
     <div className={`custom-popup ${className}`}>
       <div className="top">
-        <div className="favorite-icon-container">
           {isLoggedIn && (
-            <button className="favorite-btn" onClick={handleFavoriteClick}>
+            <button className="btn-f" onClick={handleFavoriteClick}>
               <FontAwesomeIcon
                 icon={faHeart}
                 className={`favorite-icon ${isFavorite ? "filled" : ""}`}
@@ -162,9 +161,8 @@ const MachineDetail = ({ content, onClose, className }) => {
               />
             </button>
           )}
-        </div>
-        <button className="close-btn" onClick={onClose}>
-          X
+        <button className="btn-c" onClick={onClose}>
+        <FontAwesomeIcon icon={faXmark} className="close-icon" />
         </button>
       </div>
       <div className="content">
@@ -207,7 +205,7 @@ const MachineDetail = ({ content, onClose, className }) => {
                 />
               ))}
           {!showMoreReviews && reviews.length > 3 && (
-            <button onClick={toggleShowMoreReviews}>Read More</button>
+            <button className="read-more" onClick={toggleShowMoreReviews}>Read More</button>
           )}
         </div>
       </div>
