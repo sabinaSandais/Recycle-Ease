@@ -20,11 +20,13 @@ const MachineDetail = ({ content, onClose, className }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isOpen, setIsOpen] = useState(content.status);
+  const [showMoreReviews, setShowMoreReviews] = useState(false);
 
   const { user } = useApplicationContext();
-  const { setFavoriteMachines } = useFavoriteContext();
+  const { favoriteMachines, setFavoriteMachines } = useFavoriteContext();
   const { statusChange } = useMachine();
   const token = user.token;
+
   const useToggleFavorite = (token, machineId) => {
     const { performFetch: Favorite } = useFetch("/favorite");
     const toggleFavorite = async (isFavorite, setFavoriteMachines) => {
@@ -39,8 +41,9 @@ const MachineDetail = ({ content, onClose, className }) => {
             body: JSON.stringify({ machineId }),
           });
           setFavoriteMachines((prevMachines) =>
-            prevMachines.filter((id) => id !== machineId),
+            prevMachines.filter((machine) => machine._id !== machineId),
           );
+          return false;
         } else {
           await Favorite({
             method: "POST",
@@ -51,6 +54,7 @@ const MachineDetail = ({ content, onClose, className }) => {
             },
           });
           setFavoriteMachines((prevMachines) => [...prevMachines, content]);
+          return true;
         }
       } catch (error) {
         logInfo("Error toggling favorite", error);
@@ -61,34 +65,12 @@ const MachineDetail = ({ content, onClose, className }) => {
   };
 
   const statusClassName = isOpen === 1 ? "open" : "closed";
-
   const toggleFavorite = useToggleFavorite(token, content._id);
 
-  const handleFavoriteClick = () => {
-    toggleFavorite(isFavorite, setFavoriteMachines);
-    setIsFavorite((prevIsFavorite) => !prevIsFavorite);
+  const handleFavoriteClick = async () => {
+    const newIsFavorite = await toggleFavorite(isFavorite, setFavoriteMachines);
+    setIsFavorite(newIsFavorite);
   };
-  const { performFetch: getFavoriteMachines, error: favoriteError } = useFetch(
-    "/favorite",
-    (response) => {
-      if (response.success) {
-        setFavoriteMachines(response.machines);
-        setIsLoading(false);
-        setIsFavorite(
-          response.machines.some((machine) => machine._id === content._id),
-        );
-      }
-      if (favoriteError) setError(favoriteError);
-      setIsLoading(false);
-    },
-  );
-
-  useEffect(() => {
-    if (!isLoggedIn) return;
-    getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
-  }, [content]);
-
-  const [showMoreReviews, setShowMoreReviews] = useState(false);
 
   const { error: ReviewError, performFetch: fetchReviews } = useFetch(
     `/reviews/${content._id}`,
@@ -106,6 +88,12 @@ const MachineDetail = ({ content, onClose, className }) => {
       setIsLoading(false);
     },
   );
+
+  useEffect(() => {
+    setIsFavorite(
+      favoriteMachines.some((machine) => machine._id === content._id),
+    );
+  }, [favoriteMachines, content._id]);
 
   useEffect(() => {
     const token = localStorage.getItem("user_token");

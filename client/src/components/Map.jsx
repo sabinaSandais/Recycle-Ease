@@ -9,6 +9,7 @@ import MachineDetail from "./MachineDetail.jsx";
 import { useFavoriteContext } from "./FavoriteContext.jsx";
 import greenPin from "./assets/Map_pin_icon_green.svg";
 import redPin from "./assets/map-marker.svg";
+import { useApplicationContext } from "../context/applicationContext.js";
 
 const MapComponent = () => {
   const mapRef = useRef(null);
@@ -18,7 +19,9 @@ const MapComponent = () => {
   const [selectedMachine, setSelectedMachine] = useState(null);
   const [isPinClicked, setIsPinClicked] = useState(false);
   const { setMarkers, setMachines } = useMachine();
-  const { setUserLocation } = useFavoriteContext();
+  const { setUserLocation, setFavoriteMachines } = useFavoriteContext();
+  const { isLoggedIn, user } = useApplicationContext();
+  const token = user.token;
 
   const { error: machinesError, performFetch: fetchMachines } = useFetch(
     "/machines",
@@ -46,6 +49,23 @@ const MapComponent = () => {
       setMarkers(markers);
     },
   );
+  const { performFetch: getFavoriteMachines, error: favoriteError } = useFetch(
+    "/favorite",
+    (response) => {
+      if (response.success) {
+        setFavoriteMachines(response.machines);
+        setIsLoading(false);
+      }
+      if (favoriteError) setError(favoriteError);
+      setIsLoading(false);
+    },
+  );
+
+  useEffect(() => {
+    if (!isLoggedIn) return;
+    getFavoriteMachines({ headers: { Authorization: `Bearer ${token}` } });
+  }, [isLoggedIn]);
+
   useEffect(() => {
     fetchMachines();
     if (!mapRef.current) {
