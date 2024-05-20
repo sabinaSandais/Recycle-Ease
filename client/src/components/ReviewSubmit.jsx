@@ -4,12 +4,15 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./ReviewSubmit.css";
 import PropTypes from "prop-types";
 import useFetch from "../hooks/useFetch";
+import ReviewAlert from "./ReviewAlert"; // Import the custom alert component
 
 const ReviewForm = ({ machineId, onReviewSubmit }) => {
   const [stars, setStars] = useState(1);
   const [hoverStars, setHoverStars] = useState(1);
   const [hoveredWord, setHoveredWord] = useState("Awful");
   const [comment, setComment] = useState("");
+  const [alertVisible, setAlertVisible] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   const handleReceived = () => {
     onReviewSubmit({
@@ -23,6 +26,7 @@ const ReviewForm = ({ machineId, onReviewSubmit }) => {
     setHoveredWord("Awful");
     setComment("");
   };
+
   const { isLoading, error, performFetch } = useFetch(
     `/reviews/${machineId}`,
     handleReceived,
@@ -44,8 +48,9 @@ const ReviewForm = ({ machineId, onReviewSubmit }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!stars || !comment) {
-      alert("Please provide a star rating and comment.");
+    if (!comment) {
+      setAlertMessage("Please provide a comment.");
+      setAlertVisible(true);
       return;
     }
     const review = { stars, comment, machineId };
@@ -76,39 +81,47 @@ const ReviewForm = ({ machineId, onReviewSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
-      <div className="rating-stars" aria-label="Rating">
-        {[1, 2, 3, 4, 5].map((value) => (
-          <FontAwesomeIcon
-            key={value}
-            icon={faStar}
-            className={
-              value <= (hoverStars || stars) ? "star-filled" : "star-empty"
-            }
-            onClick={() => handleStarsChange(value)}
-            onMouseEnter={() => handleHoverStarsChange(value)}
-            onMouseLeave={() => handleHoverStarsChange(stars)}
-          />
-        ))}
-      </div>
-      <p className="rating-word">{hoveredWord}</p>
-      <div className="comment">
-        <label htmlFor="comment">
-          Comment:
-          <textarea
-            id="comment"
-            name="comment"
-            value={comment}
-            onChange={handleCommentChange}
-            className="comment-txt"
-          />
-        </label>
-      </div>
-      <button type="submit" className="submit-btn" disabled={isLoading}>
-        {isLoading ? "Loading..." : "Submit"}
-      </button>
-      {error && <p className="error-msg">{error.toString()}</p>}
-    </form>
+    <>
+      {alertVisible && (
+        <ReviewAlert
+          message={alertMessage}
+          onClose={() => setAlertVisible(false)}
+        />
+      )}
+      <form onSubmit={handleSubmit} className="form-container">
+        <div className="rating-stars" aria-label="Rating">
+          {[1, 2, 3, 4, 5].map((value) => (
+            <FontAwesomeIcon
+              key={value}
+              icon={faStar}
+              className={
+                value <= (hoverStars || stars) ? "star-filled" : "star-empty"
+              }
+              onClick={() => handleStarsChange(value)}
+              onMouseEnter={() => handleHoverStarsChange(value)}
+              onMouseLeave={() => handleHoverStarsChange(stars)}
+            />
+          ))}
+        </div>
+        <p className="rating-word">{hoveredWord}</p>
+        <div className="comment">
+          <label htmlFor="comment">
+            Comment:
+            <textarea
+              id="comment"
+              name="comment"
+              value={comment}
+              onChange={handleCommentChange}
+              className="comment-txt"
+            />
+          </label>
+        </div>
+        <button type="submit" className="submit-btn" disabled={isLoading}>
+          {isLoading ? "Loading..." : "Submit"}
+        </button>
+        {error && <p className="error-msg">{error.toString()}</p>}
+      </form>
+    </>
   );
 };
 
