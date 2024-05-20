@@ -27,6 +27,10 @@
   }
 }
 
+.notification.error {
+  background-color: #f44336;
+}
+
 .notification--success {
   background-color: #4caf50;
 }
