@@ -115,6 +115,7 @@ const MachineDetail = ({ content, onClose, className }) => {
   useEffect(() => {
     setReviews([]);
     fetchReviews();
+    setIsOpen(content.status);
   }, [content]);
 
   useEffect(() => {
