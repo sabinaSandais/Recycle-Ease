@@ -6,7 +6,7 @@ import ReviewItem from "./ReviewItem";
 import ReviewForm from "./ReviewSubmit";
 import { useFavoriteContext } from "./FavoriteContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faXmark} from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useApplicationContext } from "../context/applicationContext";
 import { logInfo } from "../../../server/src/util/logging";
 import { useMachine } from "./MachineContext";
@@ -150,19 +150,17 @@ const MachineDetail = ({ content, onClose, className }) => {
   return (
     <div className={`custom-popup ${className}`}>
       <div className="top">
-          {isLoggedIn && (
-            <button className="btn-f" onClick={handleFavoriteClick}>
-              <FontAwesomeIcon
-                icon={faHeart}
-                className={`favorite-icon ${isFavorite ? "filled" : ""}`}
-                title={
-                  isFavorite ? "Remove from Favorites" : "Add to Favorites"
-                }
-              />
-            </button>
-          )}
+        {isLoggedIn && (
+          <button className="btn-f" onClick={handleFavoriteClick}>
+            <FontAwesomeIcon
+              icon={faHeart}
+              className={`favorite-icon ${isFavorite ? "filled" : ""}`}
+              title={isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+            />
+          </button>
+        )}
         <button className="btn-c" onClick={onClose}>
-        <FontAwesomeIcon icon={faXmark} className="close-icon" />
+          <FontAwesomeIcon icon={faXmark} className="close-icon" />
         </button>
       </div>
       <div className="content">
@@ -205,7 +203,9 @@ const MachineDetail = ({ content, onClose, className }) => {
                 />
               ))}
           {!showMoreReviews && reviews.length > 3 && (
-            <button className="read-more" onClick={toggleShowMoreReviews}>Read More</button>
+            <button className="read-more" onClick={toggleShowMoreReviews}>
+              Read More
+            </button>
           )}
         </div>
       </div>
