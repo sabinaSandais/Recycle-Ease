@@ -20,7 +20,6 @@ const AboutUs = () => {
         className="banner"
         style={{ backgroundImage: `url(${bannerImage}) ` }}
       >
-        {/* <h2>RecycleEase</h2> */}
       </div>
       <div className="container">
         <h4>Empowering Sustainable Choices with Convenience</h4>
