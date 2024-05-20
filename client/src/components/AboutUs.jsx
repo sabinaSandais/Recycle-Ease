@@ -19,8 +19,7 @@ const AboutUs = () => {
       <div
         className="banner"
         style={{ backgroundImage: `url(${bannerImage}) ` }}
-      >
-      </div>
+      ></div>
       <div className="container">
         <h4>Empowering Sustainable Choices with Convenience</h4>
         <p className="mainText">
