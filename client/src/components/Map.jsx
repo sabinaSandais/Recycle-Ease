@@ -10,6 +10,7 @@ import { useFavoriteContext } from "./FavoriteContext.jsx";
 import greenPin from "./assets/Map_pin_icon_green.svg";
 import redPin from "./assets/map-marker.svg";
 import { useApplicationContext } from "../context/applicationContext.js";
+import { logInfo } from "../../../server/src/util/logging.js";
 
 const MapComponent = () => {
   const mapRef = useRef(null);
@@ -67,8 +68,9 @@ const MapComponent = () => {
   useEffect(() => {
     favoriteMachines.forEach((machine) => {
       if (machine._id === statusChange.machineId) {
+        logInfo(`${machine.address}`);
         setInfo({
-          message: `Machine ${machine._id} status changed to ${statusChange.status}`,
+          message: `${machine.address} is ${statusChange.status === 1 ? "live" : "down"}`,
           type: `${statusChange.status === 1 ? "notification--success" : "notification--error"}`,
         });
         setShowNotification(true);
