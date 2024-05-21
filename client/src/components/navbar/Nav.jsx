@@ -46,17 +46,10 @@ const Nav = () => {
             </Link>
           </li>
           <li className="navbar-item">
-            <Link
-              to="/demo"
-              data-testid={TEST_ID.linkToUsers}
-              className="navbar-link"
-            >
-              Demo
+            <Link to="/about" className="navbar-link">
+              About
             </Link>
           </li>
-          <Link to="/about" className="navbar-link">
-            About
-          </Link>
 
           <li
             className={"navbar-item login-btn" + (isLoggedIn ? " hide" : "")}
