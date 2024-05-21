@@ -18,9 +18,11 @@ const MapComponent = () => {
   const { selectedLocation, setLocation } = useLocation();
   const [selectedMachine, setSelectedMachine] = useState(null);
   const [isPinClicked, setIsPinClicked] = useState(false);
-  const { setMarkers, setMachines } = useMachine();
-  const { setUserLocation, setFavoriteMachines } = useFavoriteContext();
-  const { isLoggedIn, user } = useApplicationContext();
+  const { setMarkers, setMachines, statusChange } = useMachine();
+  const { setUserLocation, setFavoriteMachines, favoriteMachines } =
+    useFavoriteContext();
+  const { isLoggedIn, user, setInfo, setShowNotification } =
+    useApplicationContext();
   const token = user.token;
 
   const { error: machinesError, performFetch: fetchMachines } = useFetch(
@@ -60,6 +62,27 @@ const MapComponent = () => {
       setIsLoading(false);
     },
   );
+
+  // Notification when there is changes in the favorite machines
+  useEffect(() => {
+    favoriteMachines.forEach((machine) => {
+      if (machine._id === statusChange.machineId) {
+        setInfo({
+          message: `Machine ${machine._id} status changed to ${statusChange.status}`,
+          type: `${statusChange.status === 1 ? "success" : "error"}`,
+        });
+        setShowNotification(true);
+
+        const timer = setTimeout(() => {
+          setShowNotification(false);
+        }, 5000);
+
+        return () => {
+          clearTimeout(timer);
+        };
+      }
+    });
+  }, [statusChange]);
 
   useEffect(() => {
     if (!isLoggedIn) return;

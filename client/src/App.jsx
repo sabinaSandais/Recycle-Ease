@@ -14,7 +14,7 @@ const App = () => {
   const [socketId, setSocketId] = useState(null);
   const [socketConnected, setSocketConnected] = useState(false);
   const { statusChange, onStatusChange } = useMachine();
-  const { setIsLoggedIn } = useApplicationContext();
+  const { setIsLoggedIn, setUser } = useApplicationContext();
 
   useEffect(() => {
     function onConnect() {
@@ -28,6 +28,11 @@ const App = () => {
 
     if (localStorage.getItem("user_token") !== null) {
       setIsLoggedIn(true);
+      setUser({
+        name: localStorage.getItem("user_name"),
+        token: localStorage.getItem("user_token"),
+        id: localStorage.getItem("user_id"),
+      });
     }
 
     socket.on("connect", onConnect);
