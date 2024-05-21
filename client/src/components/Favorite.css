@@ -4,6 +4,19 @@
   align-items: center;
   height: 100vh;
 }
+.favorite-h1 {
+  background-color: transparent;
+}
+.button {
+  background-color: transparent !important;
+  border: none;
+  background-color: #cc0b0b;
+  padding: 10px;
+}
+.dlt-icon:hover {
+  scale: 1.5;
+  transition: 0.3s;
+}
 .error {
   display: flex;
   justify-content: center;
@@ -12,7 +25,6 @@
 }
 .favorite-container {
   width: 100%;
-  max-width: 1200px;
   margin: 100px auto;
   padding: 20px;
   font-weight: bold;
@@ -25,7 +37,7 @@
 
 .favorite-li {
   display: grid;
-  grid-template-columns: 65% 10% 10% 10% 5%;
+  grid-template-columns: 60% 10% 15% 10% 5%;
   justify-content: center;
   align-items: center;
   padding: 5px 0;
@@ -36,7 +48,7 @@
 }
 .favorite-li-title {
   display: grid;
-  grid-template-columns: 65% 10% 10% 10% 5%;
+  grid-template-columns: 60% 10% 15% 10% 5%;
   justify-content: center;
   align-items: center;
   padding: 0px 0;
@@ -48,7 +60,7 @@
 .status {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 
   padding: 10px;
@@ -67,17 +79,23 @@
   padding: 10px;
   font-size: 30px;
 }
-.button {
-  padding: 10px;
-  text-align: center;
-}
+
 .title-row {
   background-color: #f1f1f1;
   font-size: 18px;
 }
+.rating {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rating span {
+  margin-left: 4px;
+  font-size: 12px;
+}
 
 .star-rating {
-  padding: 10px;
   text-align: center;
   color: rgb(123, 123, 9);
   outline: black;

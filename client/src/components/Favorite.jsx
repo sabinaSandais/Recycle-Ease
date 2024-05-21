@@ -98,14 +98,13 @@ const Favorite = () => {
       setSortedFavorites(favoriteMachines);
     }
   }, [userLocation, favoriteMachines]);
-
   return isLoading ? (
     <LoadingSpinner />
   ) : error ? (
     <div className="error">Error: {error}</div>
   ) : (
     <div className="favorite-container">
-      <h1>Favorite Machines</h1>
+      <h1 className="favorite-h1">Favorite Machines</h1>
       {sortedFavorites.length === 0 ? (
         <div className="no-favorites">You have no favorite machines</div>
       ) : (
@@ -123,7 +122,16 @@ const Favorite = () => {
                 <div className={machine.status === 1 ? "Open" : "Closed"}></div>
                 <div>{machine.status === 1 ? "Open" : "Closed"}</div>
               </div>
-              <StarRating rating={machine.score} />
+              <div className="rating">
+                <StarRating rating={machine.score} />
+                <span>
+                  (
+                  {machine.reviews.length > 1
+                    ? `${machine.reviews.length} reviews`
+                    : `${machine.reviews.length} review`}
+                  )
+                </span>
+              </div>
               <div className="distance">
                 {machine.distance
                   ? `${machine.distance.toFixed(2)} km`
@@ -135,7 +143,7 @@ const Favorite = () => {
                     deleteFavorite(machine._id);
                   }}
                 >
-                  <FontAwesomeIcon icon={faTrashAlt} />
+                  <FontAwesomeIcon className="dlt-icon" icon={faTrashAlt} />
                 </button>
               </div>
             </div>

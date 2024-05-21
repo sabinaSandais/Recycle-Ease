@@ -16,7 +16,10 @@ export const createReview = async (req, res) => {
     await Machine.findByIdAndUpdate(machineId, {
       $push: { reviews: { $each: [savedReview._id], $position: 0 } },
     });
-
+    const machine = await Machine.findById(machineId).populate("reviews");
+    const updateMachine = await Machine.findById(machineId);
+    updateMachine.score = averageScore(machine.reviews);
+    await updateMachine.save();
     res
       .status(201)
       .json({ success: true, message: "Review created successfully" });
@@ -36,6 +39,9 @@ export const getReviews = async (req, res) => {
         .status(404)
         .json({ success: false, message: "Machine not found" });
     }
+    const updateMachine = await Machine.findById(machineId);
+    updateMachine.score = averageScore(machine.reviews);
+    await updateMachine.save();
     res.status(200).json({ success: true, result: machine.reviews });
   } catch (error) {
     logError(error);
@@ -44,4 +50,9 @@ export const getReviews = async (req, res) => {
       message: "Unable to get reviews, try again later",
     });
   }
+};
+
+const averageScore = (reviews) => {
+  const total = reviews.reduce((acc, review) => acc + review.stars, 0);
+  return (total / reviews.length).toFixed(1);
 };
