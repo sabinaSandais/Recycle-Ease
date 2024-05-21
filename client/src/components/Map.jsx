@@ -69,7 +69,7 @@ const MapComponent = () => {
       if (machine._id === statusChange.machineId) {
         setInfo({
           message: `Machine ${machine._id} status changed to ${statusChange.status}`,
-          type: `${statusChange.status === 1 ? "success" : "error"}`,
+          type: `${statusChange.status === 1 ? "notification--success" : "notification--error"}`,
         });
         setShowNotification(true);
 

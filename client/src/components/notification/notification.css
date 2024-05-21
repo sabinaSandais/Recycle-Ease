@@ -6,7 +6,6 @@
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
-  max-height: fit-content;
   color: white;
   font-size: 1.2em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -32,6 +31,14 @@
   background-color: #f44336;
 }
 
-.notification.success {
+.notification--success {
   background-color: #4caf50;
+}
+
+.notification--warning {
+  background-color: #ff9800;
+}
+
+.notification--error {
+  background-color: #f44336;
 }
