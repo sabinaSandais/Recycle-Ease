@@ -17,12 +17,12 @@ const MachineDetail = ({ content, onClose, className }) => {
   const [totalReviews, setTotalReviews] = useState(0);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isOpen, setIsOpen] = useState(content.status);
   const [showMoreReviews, setShowMoreReviews] = useState(false);
 
-  const { user } = useApplicationContext();
+  const { user, isLoggedIn } = useApplicationContext();
   const { favoriteMachines, setFavoriteMachines } = useFavoriteContext();
   const { statusChange } = useMachine();
   const token = user.token;
@@ -95,10 +95,10 @@ const MachineDetail = ({ content, onClose, className }) => {
     );
   }, [favoriteMachines, content._id]);
 
-  useEffect(() => {
-    const token = localStorage.getItem("user_token");
-    setIsLoggedIn(token !== null);
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("user_token");
+  //   setIsLoggedIn(token !== null);
+  // }, []);
 
   useEffect(() => {
     setReviews([]);
