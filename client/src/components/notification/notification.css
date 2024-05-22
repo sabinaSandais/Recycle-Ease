@@ -1,6 +1,6 @@
 .notification {
   position: absolute;
-  bottom: 0;
+  top: 100px;
   right: 0;
   z-index: 1000;
   padding: 10px;
@@ -20,10 +20,10 @@
 
 @keyframes slideIn {
   from {
-    bottom: -100px;
+    top: -100px;
   }
   to {
-    bottom: 0;
+    top: 100px;
   }
 }
 

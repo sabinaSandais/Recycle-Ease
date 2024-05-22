@@ -68,7 +68,7 @@ const MapComponent = () => {
     favoriteMachines.forEach((machine) => {
       if (machine._id === statusChange.machineId) {
         setInfo({
-          message: `Machine ${machine._id} status changed to ${statusChange.status}`,
+          message: `${machine.address} is ${statusChange.status === 1 ? "live" : "down"}`,
           type: `${statusChange.status === 1 ? "notification--success" : "notification--error"}`,
         });
         setShowNotification(true);
