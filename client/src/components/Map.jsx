@@ -10,6 +10,9 @@ import { useFavoriteContext } from "./FavoriteContext.jsx";
 import greenPin from "./assets/Map_pin_icon_green.svg";
 import redPin from "./assets/map-marker.svg";
 import { useApplicationContext } from "../context/applicationContext.js";
+import { logInfo } from "../../../server/src/util/logging.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 
 const MapComponent = () => {
   const mapRef = useRef(null);
@@ -18,9 +21,14 @@ const MapComponent = () => {
   const { selectedLocation, setLocation } = useLocation();
   const [selectedMachine, setSelectedMachine] = useState(null);
   const [isPinClicked, setIsPinClicked] = useState(false);
+  const [getLocation, setGetLocation] = useState(true);
   const { setMarkers, setMachines, statusChange } = useMachine();
-  const { setUserLocation, setFavoriteMachines, favoriteMachines } =
-    useFavoriteContext();
+  const {
+    setUserLocation,
+    userLocation,
+    setFavoriteMachines,
+    favoriteMachines,
+  } = useFavoriteContext();
   const { isLoggedIn, user, setInfo, setShowNotification } =
     useApplicationContext();
   const token = user.token;
@@ -151,6 +159,7 @@ const MapComponent = () => {
   }, [selectedLocation]);
 
   useEffect(() => {
+    if (!getLocation) return;
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         showUserLocation,
@@ -160,7 +169,8 @@ const MapComponent = () => {
       setError("Geolocation is not supported by this browser.");
       setIsLoading(false);
     }
-  }, []);
+    setGetLocation(false);
+  }, [getLocation]);
 
   return (
     <div>
@@ -172,6 +182,19 @@ const MapComponent = () => {
             content={selectedMachine}
             onClose={handleCloseMachineDetail}
             className={isPinClicked ? "pin-clicked" : ""}
+          />
+        )}
+        {userLocation.lat && userLocation.lon && (
+          <FontAwesomeIcon
+            icon={faLocationArrow}
+            className="center-button"
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              navigator.geolocation
+                ? setGetLocation(true)
+                : logInfo("Geolocation is not supported by this browser.");
+            }}
           />
         )}
       </div>
