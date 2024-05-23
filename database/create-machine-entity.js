@@ -90,7 +90,10 @@ async function insertReviewsForMachines(machines) {
       comment: "Great machine!",
       stars: 5,
       machine: machine._id, 
-      user: new mongoose.Types.ObjectId() ,
+      user: {
+        id: new mongoose.Types.ObjectId(), 
+        name: "Marieke", 
+      },
       created_at: new Date(),
     }));
 

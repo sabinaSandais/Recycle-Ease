@@ -17,7 +17,6 @@ const MachineDetail = ({ content, onClose, className }) => {
   const [totalReviews, setTotalReviews] = useState(0);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isOpen, setIsOpen] = useState(content.status);
   const [showMoreReviews, setShowMoreReviews] = useState(false);
@@ -95,11 +94,6 @@ const MachineDetail = ({ content, onClose, className }) => {
     );
   }, [favoriteMachines, content._id]);
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("user_token");
-  //   setIsLoggedIn(token !== null);
-  // }, []);
-
   useEffect(() => {
     setReviews([]);
     fetchReviews();
@@ -126,6 +120,7 @@ const MachineDetail = ({ content, onClose, className }) => {
   const toggleShowMoreReviews = () => {
     setShowMoreReviews(!showMoreReviews);
   };
+
   const changeStatus = (machineId, status) => {
     if (content._id === machineId) {
       setIsOpen(status);
@@ -170,6 +165,7 @@ const MachineDetail = ({ content, onClose, className }) => {
             <ReviewForm
               machineId={content._id}
               onReviewSubmit={handleReviewSubmit}
+              user={user}
             />
           ) : (
             <div className="msg">Please log in to submit a review.</div>
@@ -189,6 +185,7 @@ const MachineDetail = ({ content, onClose, className }) => {
                   stars={review.stars}
                   comment={review.comment}
                   createdAt={review.created_at}
+                  userName={review.user ? review.user.name : "Anonymous"}
                 />
               ))}
           {!showMoreReviews && reviews.length > 3 && (

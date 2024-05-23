@@ -4,9 +4,9 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./ReviewSubmit.css";
 import PropTypes from "prop-types";
 import useFetch from "../hooks/useFetch";
-import ReviewAlert from "./ReviewAlert"; // Import the custom alert component
+import ReviewAlert from "./ReviewAlert";
 
-const ReviewForm = ({ machineId, onReviewSubmit }) => {
+const ReviewForm = ({ machineId, onReviewSubmit, user }) => {
   const [stars, setStars] = useState(1);
   const [hoverStars, setHoverStars] = useState(1);
   const [hoveredWord, setHoveredWord] = useState("Awful");
@@ -20,6 +20,7 @@ const ReviewForm = ({ machineId, onReviewSubmit }) => {
       comment,
       machineId,
       created_at: new Date().toISOString(),
+      user: { name: user.name, id: user.id },
     });
     setStars(1);
     setHoverStars(1);
@@ -48,12 +49,19 @@ const ReviewForm = ({ machineId, onReviewSubmit }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (!comment) {
       setAlertMessage("Please provide a comment.");
       setAlertVisible(true);
       return;
     }
-    const review = { stars, comment, machineId };
+    const review = {
+      stars,
+      comment,
+      machineId,
+      userId: user.id,
+      userName: user.name,
+    };
     performFetch({
       method: "POST",
       body: JSON.stringify(review),
@@ -128,6 +136,10 @@ const ReviewForm = ({ machineId, onReviewSubmit }) => {
 ReviewForm.propTypes = {
   machineId: PropTypes.string.isRequired,
   onReviewSubmit: PropTypes.func.isRequired,
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ReviewForm;
