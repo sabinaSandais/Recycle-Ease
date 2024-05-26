@@ -8,8 +8,11 @@ const reviewSchema = new mongoose.Schema({
     ref: 'Machine'
   },
   user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    name: String
   },
   created_at: {
     type: Date,

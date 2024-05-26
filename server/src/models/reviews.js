@@ -8,9 +8,13 @@ const reviewsSchema = new mongoose.Schema({
     ref: "machines",
   },
   user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "users",
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "users",
+    },
+    name: String,
   },
+
   created_at: {
     type: Date,
     default: Date.now,

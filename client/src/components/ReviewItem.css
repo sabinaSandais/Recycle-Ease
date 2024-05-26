@@ -10,6 +10,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .stars {
@@ -31,6 +32,10 @@
 }
 
 .comment {
-  font-size: 16px;
+  font-size: 17px;
   font-style: italic;
+  font-weight: 500;
+}
+.user-name {
+  font-size: 15px;
 }

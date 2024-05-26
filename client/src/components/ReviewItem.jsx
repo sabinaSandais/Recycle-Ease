@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ReviewItem.css";
 
-const ReviewItem = ({ stars, comment, createdAt }) => {
+const ReviewItem = ({ stars, comment, createdAt, userName }) => {
   const renderStars = () => {
     const starsArray = [];
     const starsValue = stars;
@@ -28,23 +28,24 @@ const ReviewItem = ({ stars, comment, createdAt }) => {
   };
 
   return (
-    <>
-      <div className="review-item">
-        <div className="flex">
-          <div className="stars">{renderStars()}</div>
-
-          <div className="created-at">{formatDate(createdAt)}</div>
-        </div>
+    <div className="review-item">
+      <div className="flex">
         <div className="comment">{comment}</div>
+        <div className="stars">{renderStars()}</div>
       </div>
-    </>
+      <div className="flex">
+        <div className="user-name"> @{userName}</div>
+        <div className="created-at">{formatDate(createdAt)}</div>
+      </div>
+    </div>
   );
 };
 
 ReviewItem.propTypes = {
-  stars: PropTypes.number,
+  stars: PropTypes.number.isRequired,
   comment: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,
+  userName: PropTypes.string.isRequired,
 };
 
 export default ReviewItem;
