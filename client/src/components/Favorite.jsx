@@ -98,6 +98,14 @@ const Favorite = () => {
       setSortedFavorites(favoriteMachines);
     }
   }, [userLocation, favoriteMachines]);
+  // Hide the address search bar when the component is mounted
+  useEffect(() => {
+    const addressSearchElement = document.querySelector(".address-search");
+    if (addressSearchElement) {
+      addressSearchElement.style.visibility = "hidden";
+    }
+  }, []);
+
   return isLoading ? (
     <LoadingSpinner />
   ) : error ? (
