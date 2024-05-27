@@ -13,6 +13,7 @@ import { useApplicationContext } from "../context/applicationContext.js";
 import { logInfo } from "../../../server/src/util/logging.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
+import LoadingSpinner from "./Loading.jsx";
 
 const MapComponent = () => {
   const mapRef = useRef(null);
@@ -135,9 +136,9 @@ const MapComponent = () => {
     }
   };
 
-  const handleLocationError = (error) => {
-    setError(error.message);
+  const handleLocationError = () => {
     setIsLoading(false);
+    return;
   };
 
   const showUserLocation = (position) => {
@@ -174,7 +175,7 @@ const MapComponent = () => {
 
   return (
     <div>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <LoadingSpinner />}
       {error && <p>Error: {error}</p>}
       <div id="map" className="map-container">
         {selectedMachine && (
