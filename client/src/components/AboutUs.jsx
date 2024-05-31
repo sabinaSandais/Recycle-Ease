@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutUs.css";
-import bannerImage from "./assets/Banner.jpg";
+import bannerImage from "./assets/Banner.jpeg";
 import { useEffect } from "react";
 const AboutUs = () => {
   useEffect(() => {
@@ -10,11 +10,8 @@ const AboutUs = () => {
 
   return (
     <div className="about">
-      <div
-        className="banner"
-        style={{ backgroundImage: `url(${bannerImage}) ` }}
-      ></div>
       <div className="container">
+        <img src={bannerImage} alt="banner" className="banner" />
         <h4>Empowering Sustainable Choices with Convenience</h4>
         <p className="mainText">
           Welcome to <strong>RecycleEase</strong>, where technology meets
