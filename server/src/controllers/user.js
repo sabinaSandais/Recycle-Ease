@@ -74,7 +74,7 @@ export const login = async (req, res) => {
   const isUserExist = await User.findOne({ name: name });
 
   if (!isUserExist) {
-    res.status(400).json({ error: "User does not exist" });
+    res.status(400).json({ error: "Username or password is incorrect" });
     return;
   }
 
@@ -82,7 +82,7 @@ export const login = async (req, res) => {
   const passwordCorrect = await bcrypt.compare(password, user.password);
 
   if (!passwordCorrect) {
-    res.status(400).json({ error: "Password is incorrect" });
+    res.status(400).json({ error: "Username or password is incorrect" });
     return;
   }
 
