@@ -1,21 +1,15 @@
 import React from "react";
 import "./AboutUs.css";
 import bannerImage from "./assets/Banner.jpg";
-import { useNavigate } from "react-router-dom";
-
+import { useEffect } from "react";
 const AboutUs = () => {
-  const navigate = useNavigate();
-  const handleBackToHome = () => {
-    navigate("/");
-  };
+  useEffect(() => {
+    const searchItem = document.querySelector(".address-search");
+    if (searchItem) searchItem.style.visibility = "hidden";
+  }, []);
+
   return (
-    <div>
-      <div className="header">
-        <h1>RecycleEase</h1>
-        <button className="button" onClick={handleBackToHome}>
-          Home
-        </button>
-      </div>
+    <div className="about">
       <div
         className="banner"
         style={{ backgroundImage: `url(${bannerImage}) ` }}

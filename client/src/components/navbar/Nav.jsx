@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
-
 import UserFavicon from "../userFavicon/UserFavicon";
 import SignUp from "../signUp/SignUpComponent";
 import Login from "../logIn/LogInComponent";
@@ -25,7 +24,14 @@ const Nav = () => {
   return (
     <>
       <div className="navbar">
-        <AddressSearch />
+        <div className="navbar-logo">
+          <h1 className="logo">
+            <span>R</span>ecycle<span>E</span>ase
+          </h1>
+
+          <AddressSearch />
+        </div>
+
         <ul className="navbar-items">
           <li className="navbar-item">
             <Link
