@@ -4,7 +4,7 @@ import { socket } from "./socket";
 import Home from "./pages/Home/Home";
 import Demo from "./pages/Demo/Demo";
 import Favorites from "./pages/Favorites/Favorites";
-import AboutUs from "../../client/src/components/AboutUs";
+import About from "./pages/About/About";
 import { logInfo } from "../../server/src/util/logging";
 import { useMachine } from "./components/MachineContext";
 import { useApplicationContext } from "./context/applicationContext";
@@ -65,7 +65,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/demo" element={<Demo />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="/about" element={<AboutUs />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );
