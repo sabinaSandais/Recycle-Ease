@@ -69,19 +69,6 @@ const Nav = () => {
             </a>
           </li>
           <li
-            className={"navbar-item signUp-btn" + (isLoggedIn ? " hide" : "")}
-            onClick={() => {
-              if (showLoginForm) {
-                setShowLoginForm(!showLoginForm);
-              }
-              setShowSignUpForm(!showSignUpForm);
-            }}
-          >
-            <a href="#" className="navbar-link">
-              Sign Up
-            </a>
-          </li>
-          <li
             className={"navbar-item logOut-btn" + (!isLoggedIn ? " hide" : "")}
             onClick={() => {
               setIsLoggedIn(false);
@@ -101,10 +88,14 @@ const Nav = () => {
       <Login
         showLoginForm={showLoginForm}
         setShowLoginForm={setShowLoginForm}
+        showSignUpForm={showSignUpForm}
+        setShowSignUpForm={setShowSignUpForm}
       />
       <SignUp
         showSignUpForm={showSignUpForm}
         setShowSignUpForm={setShowSignUpForm}
+        showLoginForm={showLoginForm}
+        setShowLoginForm={setShowLoginForm}
       />
     </>
   );

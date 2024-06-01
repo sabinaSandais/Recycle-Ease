@@ -41,6 +41,10 @@
   color: white;
 }
 
+.signUp-form p {
+  color: #ffffff;
+}
+
 .close-btn {
   position: absolute;
   top: 0;
@@ -60,4 +64,10 @@
 .close-btn button:hover {
   background-color: #ffcc00;
   cursor: pointer;
+}
+
+.login-link {
+  color: #ffcc00;
+  text-decoration: none;
+  margin-left: 10px;
 }

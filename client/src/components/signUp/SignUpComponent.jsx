@@ -4,7 +4,12 @@ import PropTypes from "prop-types";
 import "./signUp.css";
 
 import { useApplicationContext } from "../../context/applicationContext";
-function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
+function SignUpComponent({
+  showSignUpForm,
+  setShowSignUpForm,
+  showLoginForm,
+  setShowLoginForm,
+}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -85,6 +90,21 @@ function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Sign Up</button>
+        <p>
+          Already have account?{" "}
+          <a
+            href="#"
+            className="login-link"
+            onClick={() => {
+              if (showSignUpForm) {
+                setShowSignUpForm(!showSignUpForm);
+              }
+              setShowLoginForm(!showLoginForm);
+            }}
+          >
+            Log In
+          </a>
+        </p>
       </form>
     </div>
   ) : null;
@@ -93,6 +113,8 @@ function SignUpComponent({ showSignUpForm, setShowSignUpForm }) {
 SignUpComponent.propTypes = {
   showSignUpForm: PropTypes.bool,
   setShowSignUpForm: PropTypes.func,
+  showLoginForm: PropTypes.bool,
+  setShowLoginForm: PropTypes.func,
 };
 
 export default SignUpComponent;

@@ -8,32 +8,6 @@
   display: flex;
   padding: 0 40px 0px 0px;
 }
-.navbar-logo {
-  display: flex;
-  align-items: center;
-}
-.navbar-logo h1 {
-  color: rgb(12, 167, 38);
-  margin: 0;
-  margin-left: 5px;
-  background-color: liner-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7)
-  );
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-right: 20px;
-  font-size: 1.8rem;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-.navbar-logo span {
-  color: #fff;
-}
 
 .logo {
   height: 100%;

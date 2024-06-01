@@ -8,7 +8,12 @@ import "./login.css";
 import { logInfo } from "../../../../server/src/util/logging";
 
 import { useApplicationContext } from "../../context/applicationContext";
-function LogInComponent({ showLoginForm, setShowLoginForm }) {
+function LogInComponent({
+  showLoginForm,
+  setShowLoginForm,
+  showSignUpForm,
+  setShowSignUpForm,
+}) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [apiResponse, setApiResponse] = useState({});
@@ -112,6 +117,21 @@ function LogInComponent({ showLoginForm, setShowLoginForm }) {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
+        <p>
+          New to RecycleEase?{" "}
+          <a
+            href="#"
+            className="signUp-link"
+            onClick={() => {
+              if (showLoginForm) {
+                setShowLoginForm(!showLoginForm);
+              }
+              setShowSignUpForm(!showSignUpForm);
+            }}
+          >
+            Sign Up
+          </a>
+        </p>
       </form>
     </div>
   ) : null;
@@ -120,6 +140,8 @@ function LogInComponent({ showLoginForm, setShowLoginForm }) {
 LogInComponent.propTypes = {
   showLoginForm: PropTypes.bool,
   setShowLoginForm: PropTypes.func,
+  showSignUpForm: PropTypes.bool,
+  setShowSignUpForm: PropTypes.func,
 };
 
 export default LogInComponent;
