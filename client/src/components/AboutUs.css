@@ -1,14 +1,11 @@
 .banner {
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  margin-bottom: 20px;
+  width: 100%;
+  margin: auto;
+  border: 1px solid black;
+  height: 600px;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  border-radius: 10px;
 }
 .about {
   margin-top: 70px;

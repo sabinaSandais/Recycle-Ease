@@ -37,8 +37,12 @@
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background-color: #ffcc00;
-  color: #4d4d4d;
+  background-color: #11a37a;
+  color: white;
+}
+
+.login-form p {
+  color: #ffffff;
 }
 
 .close-btn {
@@ -60,4 +64,10 @@
 .close-btn button:hover {
   background-color: #ffcc00;
   cursor: pointer;
+}
+
+.signUp-link {
+  color: #ffcc00;
+  text-decoration: none;
+  margin-left: 10px;
 }

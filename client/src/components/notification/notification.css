@@ -28,11 +28,11 @@
 }
 
 .notification.error {
-  background-color: #f44336;
+  background-color: #d23a57;
 }
 
 .notification--success {
-  background-color: #4caf50;
+  background-color: #11a37a;
 }
 
 .notification--warning {
@@ -40,5 +40,5 @@
 }
 
 .notification--error {
-  background-color: #f44336;
+  background-color: #d23a57;
 }

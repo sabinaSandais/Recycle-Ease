@@ -130,14 +130,14 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #4caf50;
+  background-color: #11a37a;
   animation: pulse 1s infinite alternate;
 }
 .Closed {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #f44336;
+  background-color: #d23a57;
   animation: redPulse 1s infinite alternate;
 }
 @keyframes pulse {

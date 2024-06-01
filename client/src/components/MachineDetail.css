@@ -29,12 +29,12 @@
 }
 
 .closed {
-  color: red;
+  color: #d23a57;
   font-size: 20px;
 }
 .open {
   font-size: 20px;
-  color: green;
+  color: #11a37a;
 }
 .machine-detail {
   list-style: none;

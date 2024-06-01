@@ -6,6 +6,7 @@ import SignUp from "../signUp/SignUpComponent";
 import Login from "../logIn/LogInComponent";
 import AddressSearch from "../SearchBar";
 import { useApplicationContext } from "../../context/applicationContext";
+import logo from "../../components/assets/Logo.png";
 
 import TEST_ID from "../Nav.testid";
 
@@ -25,12 +26,9 @@ const Nav = () => {
     <>
       <div className="navbar">
         <div className="navbar-logo">
-          <h1 className="logo">
-            <span>R</span>ecycle<span>E</span>ase
-          </h1>
-
-          <AddressSearch />
+          <img src={logo} alt="logo" className="logo"></img>
         </div>
+        <AddressSearch />
 
         <ul className="navbar-items">
           <li className="navbar-item">
@@ -71,19 +69,6 @@ const Nav = () => {
             </a>
           </li>
           <li
-            className={"navbar-item signUp-btn" + (isLoggedIn ? " hide" : "")}
-            onClick={() => {
-              if (showLoginForm) {
-                setShowLoginForm(!showLoginForm);
-              }
-              setShowSignUpForm(!showSignUpForm);
-            }}
-          >
-            <a href="#" className="navbar-link">
-              Sign Up
-            </a>
-          </li>
-          <li
             className={"navbar-item logOut-btn" + (!isLoggedIn ? " hide" : "")}
             onClick={() => {
               setIsLoggedIn(false);
@@ -103,10 +88,14 @@ const Nav = () => {
       <Login
         showLoginForm={showLoginForm}
         setShowLoginForm={setShowLoginForm}
+        showSignUpForm={showSignUpForm}
+        setShowSignUpForm={setShowSignUpForm}
       />
       <SignUp
         showSignUpForm={showSignUpForm}
         setShowSignUpForm={setShowSignUpForm}
+        showLoginForm={showLoginForm}
+        setShowLoginForm={setShowLoginForm}
       />
     </>
   );
