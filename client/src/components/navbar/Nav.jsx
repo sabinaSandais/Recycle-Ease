@@ -25,9 +25,8 @@ const Nav = () => {
   return (
     <>
       <div className="navbar">
-        <div className="navbar-logo">
-          <img src={logo} alt="logo" className="logo"></img>
-        </div>
+        <img src={logo} alt="logo" className="logo"></img>
+
         <AddressSearch />
 
         <ul className="navbar-items">
