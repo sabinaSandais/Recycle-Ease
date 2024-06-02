@@ -20,3 +20,9 @@
   font-size: x-large;
   font-weight: bolder;
 }
+
+@media screen and (max-width: 768px) {
+  .userFavicon {
+    display: none;
+  }
+}

@@ -47,6 +47,14 @@
   display: none;
 }
 
+@media screen and (max-width: 1024px) {
+  .login-btn,
+  .logOut-btn {
+    padding: 5px 5px;
+    margin: 5px 5px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .navbar {
     height: 50px;
@@ -57,8 +65,7 @@
   }
   .login-btn,
   .logOut-btn {
-    padding: 5px 5px;
-    margin: 5px 5px;
+    padding: 2px 1px;
   }
   .navbar-link {
     padding: 5px;
@@ -68,6 +75,6 @@
 @media screen and (max-width: 480px) {
   .navbar {
     height: 40px;
-    font-size: smaller;
+    font-size: xx-small;
   }
 }
