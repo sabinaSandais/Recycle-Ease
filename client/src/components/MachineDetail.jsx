@@ -173,7 +173,7 @@ const MachineDetail = ({ content, onClose, className }) => {
         </div>
 
         <div className="reviews">
-          <h2>Reviews</h2>
+          <h3>Reviews</h3>
           {isLoading && <div>Loading...</div>}
           {error && <div>{error}</div>}
           {reviews &&

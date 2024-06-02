@@ -2,17 +2,24 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
+  min-width: 300px;
 }
 
 .center-button {
   position: absolute;
-  bottom: 50px;
+  bottom: 5vh;
   right: 50px;
   z-index: 10000;
-  font-size: xx-large;
+  font-size: x-large;
   color: white;
   background-color: #11a37a;
   padding: 15px;
   border-radius: 30%;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .center-button {
+    font-size: large;
+  }
 }

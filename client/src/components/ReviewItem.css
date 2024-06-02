@@ -32,10 +32,41 @@
 }
 
 .comment {
-  font-size: 17px;
+  font-size: 16px;
   font-style: italic;
-  font-weight: 500;
 }
 .user-name {
-  font-size: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1024px) {
+  .comment {
+    font-size: 12px;
+  }
+  .star {
+    font-size: 16px;
+    color: #ccc;
+  }
+  .created-at {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .comment {
+    font-size: 10px;
+  }
+  .star {
+    font-size: 14px;
+    color: #ccc;
+  }
+  .created-at {
+    font-size: 8px;
+  }
+  .user-name {
+    font-size: 10px;
+  }
+  .star {
+    font-size: 12px;
+  }
 }

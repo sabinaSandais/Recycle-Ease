@@ -71,3 +71,25 @@
   text-decoration: none;
   margin-left: 10px;
 }
+
+@media screen and (max-width: 1024px) {
+  .login-container {
+    width: 50%;
+  }
+  .login-form {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .login-container {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .login-container {
+    width: 86%;
+  }
+  .login-form {
+    width: 70%;
+  }
+}

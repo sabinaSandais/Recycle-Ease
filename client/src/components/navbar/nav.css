@@ -27,7 +27,6 @@
 }
 
 .login-btn,
-.signUp-btn,
 .logOut-btn {
   color: white;
   border: none;
@@ -35,25 +34,47 @@
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 10px;
-}
-
-.login-btn:hover,
-.signUp-btn:hover,
-.logOut-btn:hover {
-  opacity: 0.8;
-}
-
-.login-btn,
-.logOut-btn {
   background-color: #11a37a;
 }
 
-.signUp-btn {
-  background-color: #d23a57;
-  color: #302939;
+.login-btn:hover,
+.logOut-btn:hover {
+  opacity: 0.8;
 }
 
 /* hide the login and signup buttons when the user is logged in */
 .hide {
   display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .login-btn,
+  .logOut-btn {
+    padding: 5px 5px;
+    margin: 5px 5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: 50px;
+  }
+  .logo {
+    height: 60%;
+    margin: auto;
+  }
+  .login-btn,
+  .logOut-btn {
+    padding: 2px 1px;
+  }
+  .navbar-link {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    height: 40px;
+    font-size: xx-small;
+  }
 }
