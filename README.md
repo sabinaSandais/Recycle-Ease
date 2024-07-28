@@ -1,12 +1,13 @@
-`TODO: Add a nice screenshot of the app!`
+
 
 # Cohort 46 final project
 
 This is the final project for the HackYourFuture curriculum we did as a cohort using the [MERN stack](https://www.mongodb.com/resources/languages/mern-stack) by following the agile methodology with our team and a group of mentors. A quick guide to what we built:
 
-> TODO: Add short description of the app
+## Empowering Sustainable Choices with Convenience
+Welcome to RecycleEase, where technology meets sustainability to make your recycling experience seamless and efficient. Our mission is to eliminate the frustration of arriving at a recycling machine only to find it out of order or full, ensuring your efforts to care for our planet are as smooth as possible.What We Do RecycleEase provides real-time updates on the status of recycling machines at various locations, helping you plan your recycling trips efficiently. No more wasted journeys with bags of cans, only to be met with disappointment. Our app ensures that you always know which machines are operational and ready to accept your recyclables.
 
-`[Click here for the Demo version](https://c46-group-a-f3ebdee28d59.herokuapp.com/)`
+[Click here for the Demo version](https://c46-group-a-f3ebdee28d59.herokuapp.com/)
 
 ## 1. Setup
 
